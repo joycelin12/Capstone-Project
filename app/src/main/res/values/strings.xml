@@ -1,3 +1,3927 @@
 <resources>
     <string name="app_name">Dream Destinations</string>
+    <string name="action_favourite">Favourite</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="planeimage">planeImage</string>
+    <string name="fromLabel">Flying From:</string>
+    <string name="toLabel">Landing At:</string>
+    <string name="permission_rationale">Permission Rationale</string>
+    <string name="permission_denied_explanation">Permission denied explanation</string>
+    <string name="settings">settings</string>
+    <string name="no_location">No Location Detected. Please turn on location services.</string>
+    <string name="no_location_services">Please turn on location services.</string>
+    <string-array name="airports_array">
+        <item>Aalborg</item>
+        <item>Aalesund Vigra</item>
+        <item>Aarhus</item>
+        <item>Aasiaat</item>
+        <item>Aba/Hongyuan</item>
+        <item>Abadan</item>
+        <item>Abakan</item>
+        <item>Abbotsford</item>
+        <item>Aberdeen (United Kingdom)</item>
+        <item>Aberdeen (United States)</item>
+        <item>Abha</item>
+        <item>Abidjan</item>
+        <item>Abilene Municipal</item>
+        <item>Abu Dhabi International</item>
+        <item>Abu Musa</item>
+        <item>Abu Simbel</item>
+        <item>Abuja</item>
+        <item>Acandi</item>
+        <item>Acapulco</item>
+        <item>Accra</item>
+        <item>Achutupo</item>
+        <item>Ada</item>
+        <item>Adado</item>
+        <item>Adak Island</item>
+        <item>Adampur</item>
+        <item>Adana</item>
+        <item>Addis Ababa</item>
+        <item>Adelaide</item>
+        <item>Aden</item>
+        <item>Adiyaman</item>
+        <item>Adrar</item>
+        <item>Aek Godang</item>
+        <item>Aeropuerto de Shumba</item>
+        <item>Agadir</item>
+        <item>Agartala</item>
+        <item>Agatti island</item>
+        <item>Agen</item>
+        <item>Agra</item>
+        <item>Agri</item>
+        <item>Aguadilla</item>
+        <item>Aguascalientes</item>
+        <item>Ahe</item>
+        <item>Ahmedabad</item>
+        <item>Ahwaz</item>
+        <item>Aitutaki</item>
+        <item>Aix en Provence</item>
+        <item>Aizawl</item>
+        <item>Ajaccio</item>
+        <item>Akhiok</item>
+        <item>Akiachak</item>
+        <item>Akiak</item>
+        <item>Akita</item>
+        <item>Aklavik</item>
+        <item>Akron / Canton Regional</item>
+        <item>Aksu</item>
+        <item>Aktau</item>
+        <item>Aktobe</item>
+        <item>Akulivik</item>
+        <item>Akure</item>
+        <item>Akureyri</item>
+        <item>Akutan</item>
+        <item>Al Ain</item>
+        <item>Al Ghaydah</item>
+        <item>Al Hoceima Charif Idr</item>
+        <item>Al-Baha</item>
+        <item>Alahsa</item>
+        <item>Alakanuk</item>
+        <item>Alamosa</item>
+        <item>Albany (Australia)</item>
+        <item>Albany (United States)</item>
+        <item>Albany Dougherty County</item>
+        <item>Albuquerque</item>
+        <item>Albury</item>
+        <item>Aldan</item>
+        <item>Alderney</item>
+        <item>Alexandria Borg El Arab</item>
+        <item>Alexandria El Nohza</item>
+        <item>Alexandria Internation</item>
+        <item>Alexandroupolis Dimokritos</item>
+        <item>Alghero Sardinia</item>
+        <item>Algiers</item>
+        <item>Alicante</item>
+        <item>Alice Springs</item>
+        <item>Alitak</item>
+        <item>Allahabad</item>
+        <item>Allakaket</item>
+        <item>Allentown</item>
+        <item>Alliance</item>
+        <item>Almaty</item>
+        <item>Almeria</item>
+        <item>Alor Island</item>
+        <item>Alor Setar</item>
+        <item>Alotau</item>
+        <item>Alpena</item>
+        <item>Alta</item>
+        <item>Altamira</item>
+        <item>Altay</item>
+        <item>Alxa Left Banner Bayanhot Airport</item>
+        <item>Alxa Right Banner</item>
+        <item>Amakusa Airport</item>
+        <item>Amami O Shima</item>
+        <item>Amarillo International</item>
+        <item>Ambler</item>
+        <item>Ambon</item>
+        <item>Amboseli</item>
+        <item>Amgu</item>
+        <item>Aminu Kano Intl</item>
+        <item>Amman Civil - Marka</item>
+        <item>Amman Queen Alia</item>
+        <item>Amook</item>
+        <item>Amritsar</item>
+        <item>Amsterdam</item>
+        <item>An Shun</item>
+        <item>Anaa</item>
+        <item>Anadyr</item>
+        <item>Anahim Lake</item>
+        <item>Anaktuvuk</item>
+        <item>Anapa</item>
+        <item>Anchorage International</item>
+        <item>Ancona</item>
+        <item>Andahuaylas</item>
+        <item>Andenes</item>
+        <item>Andizhan</item>
+        <item>Aneityum</item>
+        <item>Angama Mara</item>
+        <item>Angelholm Helsingborg</item>
+        <item>Angers</item>
+        <item>Anglesey</item>
+        <item>Angling Lake</item>
+        <item>Angoon</item>
+        <item>Aniak</item>
+        <item>Aniwa</item>
+        <item>Anjouan</item>
+        <item>Ankara Esenboga</item>
+        <item>Annaba</item>
+        <item>Annobon</item>
+        <item>Anqing</item>
+        <item>Anshan</item>
+        <item>Anta</item>
+        <item>Antakya</item>
+        <item>Antalya</item>
+        <item>Antananarivo</item>
+        <item>Antofagasta</item>
+        <item>Antsiranana / Arrachart</item>
+        <item>Antwerp Deurne</item>
+        <item>Anvik</item>
+        <item>Aomori</item>
+        <item>Apartado</item>
+        <item>Apataki</item>
+        <item>Apia Fagali I</item>
+        <item>Apia Faleolo</item>
+        <item>Appleton</item>
+        <item>Aqaba</item>
+        <item>Aracaju</item>
+        <item>Araguaina</item>
+        <item>Arathusa Safari Lodge</item>
+        <item>Aratika</item>
+        <item>Arauca</item>
+        <item>Araxos</item>
+        <item>Arba Mintch</item>
+        <item>Arcata</item>
+        <item>Arctic Bay</item>
+        <item>Arctic Village</item>
+        <item>Ardabil</item>
+        <item>Arequipa</item>
+        <item>Argostoli Kefalonia</item>
+        <item>Argyle</item>
+        <item>Arica (Chile)</item>
+        <item>Arkhangelsk</item>
+        <item>Armenia</item>
+        <item>Armidale</item>
+        <item>Arona (Solomon Islands)</item>
+        <item>Arthur's Town</item>
+        <item>Arua</item>
+        <item>Arusha</item>
+        <item>Arutua</item>
+        <item>Arviat</item>
+        <item>Arvidsjaur</item>
+        <item>Arxan Airport</item>
+        <item>Asaba International Airport</item>
+        <item>Asahikawa</item>
+        <item>Asaloyeh Persian Gulf International</item>
+        <item>Asheville</item>
+        <item>Ashgabat</item>
+        <item>Asmara</item>
+        <item>Asosa</item>
+        <item>Aspen</item>
+        <item>Assab</item>
+        <item>Assiut</item>
+        <item>Astana</item>
+        <item>Astrakhan</item>
+        <item>Asturias</item>
+        <item>Astypalaia</item>
+        <item>Asuncion</item>
+        <item>Aswan Daraw</item>
+        <item>Atambua</item>
+        <item>Ataq</item>
+        <item>Athens International</item>
+        <item>Atiu Island</item>
+        <item>Atka</item>
+        <item>Atlanta De Kalb / Peachtree</item>
+        <item>Atlanta Hartsfield-Jackson</item>
+        <item>Atlantic City International</item>
+        <item>Atmautluak</item>
+        <item>Atoifi</item>
+        <item>Atqasuk</item>
+        <item>Attawapiskat</item>
+        <item>Atuona</item>
+        <item>Atyrau</item>
+        <item>Auckland International</item>
+        <item>Auckland Mechanics Bay</item>
+        <item>Augusta</item>
+        <item>Augusta Bush Field</item>
+        <item>Auki</item>
+        <item>Aupaluk</item>
+        <item>Aurangabad</item>
+        <item>Aurillac Tronquiere</item>
+        <item>Aurukun Mission</item>
+        <item>Austin-Bergstrom</item>
+        <item>Avignon</item>
+        <item>Awassa</item>
+        <item>Axum</item>
+        <item>Ayacucho (Peru)</item>
+        <item>Ba Tong</item>
+        <item>Babo</item>
+        <item>Bacau International</item>
+        <item>Bacolod-Silay</item>
+        <item>Badajoz</item>
+        <item>Badu Island</item>
+        <item>Bagdogra</item>
+        <item>Baghdad International (Iraq)</item>
+        <item>Bagotville</item>
+        <item>Bahar Dar</item>
+        <item>Bahawalpur</item>
+        <item>Bahia Blanca</item>
+        <item>Bahia Pinas</item>
+        <item>Bahia Solano</item>
+        <item>Bahrain</item>
+        <item>Baie Comeau</item>
+        <item>Baikal International</item>
+        <item>Baise</item>
+        <item>Bajawa</item>
+        <item>Bakalalan</item>
+        <item>Baker Lake</item>
+        <item>Bakersfield</item>
+        <item>Baku Heydar Aliyev International</item>
+        <item>Balalae</item>
+        <item>Balboa</item>
+        <item>Balhash</item>
+        <item>Bali (Denpasar)</item>
+        <item>Balikpapan</item>
+        <item>Balkanabat</item>
+        <item>Ballina</item>
+        <item>Balmaceda</item>
+        <item>Baltimore Glenn L Martin</item>
+        <item>Baltimore Washington International</item>
+        <item>Bam</item>
+        <item>Bamaga</item>
+        <item>Bamako</item>
+        <item>Bancasi (Butuan)</item>
+        <item>Banda Aceh</item>
+        <item>Bandar Abbas</item>
+        <item>Bandar Lampung</item>
+        <item>Bandar Lengeh</item>
+        <item>Bandar Mahshahr</item>
+        <item>Bandar Seri Begawan</item>
+        <item>Bandung</item>
+        <item>Bangda</item>
+        <item>Banggai (Luwuk)</item>
+        <item>Bangkok Suvarnabhumi</item>
+        <item>Bangor</item>
+        <item>Bangui</item>
+        <item>Banja Luka</item>
+        <item>Banjarmasin</item>
+        <item>Banjul</item>
+        <item>Banmethuot</item>
+        <item>Baoshan</item>
+        <item>Baotou</item>
+        <item>Bar Harbor</item>
+        <item>Baracoa</item>
+        <item>Barcaldine</item>
+        <item>Barcelona (Spain)</item>
+        <item>Barcelona (Venezuela)</item>
+        <item>Bardufoss</item>
+        <item>Bari</item>
+        <item>Barimunya</item>
+        <item>Barinas</item>
+        <item>Bario</item>
+        <item>Barisal</item>
+        <item>Barnaul</item>
+        <item>Barquisimeto</item>
+        <item>Barra (United Kingdom)</item>
+        <item>Barrancabermeja</item>
+        <item>Barranquilla</item>
+        <item>Barreiras</item>
+        <item>Barrow Wiley Post / W.Rogers M</item>
+        <item>Barter Island</item>
+        <item>Basco (Batanes)</item>
+        <item>Basel Mulhouse Freiburg</item>
+        <item>Basra</item>
+        <item>Bassein</item>
+        <item>Basseterre</item>
+        <item>Bastia - Corsica</item>
+        <item>Bata</item>
+        <item>Batagay Airport</item>
+        <item>Batam</item>
+        <item>Bathpalathang</item>
+        <item>Bathurst (Australia)</item>
+        <item>Bathurst (Canada)</item>
+        <item>Bathurst Island</item>
+        <item>Batman</item>
+        <item>Batna</item>
+        <item>Baton Rouge Ryan</item>
+        <item>Batsfjord</item>
+        <item>Batticaloa</item>
+        <item>Batu Licin</item>
+        <item>Batumi</item>
+        <item>Baubau</item>
+        <item>Bauchi</item>
+        <item>Bauru-Arealva</item>
+        <item>Bayamo</item>
+        <item>Bayannur Tianjitai Airport</item>
+        <item>Bearskin Lake</item>
+        <item>Beaumont Jefferson County</item>
+        <item>Beaver</item>
+        <item>Bechar</item>
+        <item>Beckley</item>
+        <item>Bedourie</item>
+        <item>Beef Island</item>
+        <item>Beeville</item>
+        <item>Beidaihe</item>
+        <item>Beihai</item>
+        <item>Beijing Capital</item>
+        <item>Beijing Nanyuan</item>
+        <item>Beira</item>
+        <item>Beirut</item>
+        <item>Bejaia</item>
+        <item>Belaya Gora Airport</item>
+        <item>Belem</item>
+        <item>Belep Island</item>
+        <item>Belfast City</item>
+        <item>Belfast International</item>
+        <item>Belgaum</item>
+        <item>Belgorod</item>
+        <item>Belgrade Nikola Tesla</item>
+        <item>Belitung (Tanjung Pandan)</item>
+        <item>Belize City Municipal</item>
+        <item>Belize City Philip S.W.Goldson Int</item>
+        <item>Bella Bella</item>
+        <item>Bella Coola</item>
+        <item>Belleville</item>
+        <item>Bellingham</item>
+        <item>Bellona</item>
+        <item>Belmopan</item>
+        <item>Belo Horizonte Pampulha</item>
+        <item>Belo Horizonte Tancredo Neves Int'l.</item>
+        <item>Beloyarsky</item>
+        <item>Bemidji</item>
+        <item>Ben Bella Airport</item>
+        <item>Ben Gurion Intl</item>
+        <item>Benbecula</item>
+        <item>Bengaluru</item>
+        <item>Benghazi</item>
+        <item>Bengkulu</item>
+        <item>Beni</item>
+        <item>Beni Mellal Airport</item>
+        <item>Benin City</item>
+        <item>Bentota River</item>
+        <item>Berau</item>
+        <item>Berens River</item>
+        <item>Berezovo</item>
+        <item>Bergen</item>
+        <item>Bergerac</item>
+        <item>Berlevag</item>
+        <item>Berlin Schoenefeld</item>
+        <item>Berlin Tegel</item>
+        <item>Bern</item>
+        <item>Bethel</item>
+        <item>Bettles</item>
+        <item>Beziers</item>
+        <item>Bhadrapur</item>
+        <item>Bhairawa</item>
+        <item>Bharatpur</item>
+        <item>Bhavnagar</item>
+        <item>Bhopal</item>
+        <item>Bhubaneswar</item>
+        <item>Bhuj</item>
+        <item>Biak</item>
+        <item>Biarritz</item>
+        <item>Big Trout</item>
+        <item>Bijie Feixiong</item>
+        <item>Bikaner</item>
+        <item>Bilbao</item>
+        <item>Bildudalur</item>
+        <item>Billings</item>
+        <item>Billund</item>
+        <item>Biloela</item>
+        <item>Bima</item>
+        <item>Bimini International</item>
+        <item>Binghamton</item>
+        <item>Bingöl</item>
+        <item>Bintulu (Malaysia)</item>
+        <item>Biratnagar</item>
+        <item>Birch Creek</item>
+        <item>Birdsville</item>
+        <item>Birjand</item>
+        <item>Birmingham (United Kingdom)</item>
+        <item>Birmingham (United States)</item>
+        <item>Bisha</item>
+        <item>Bishkek</item>
+        <item>Biskra</item>
+        <item>Bismarck</item>
+        <item>Bissau</item>
+        <item>Blackall</item>
+        <item>Blackpool</item>
+        <item>Blagoveschensk</item>
+        <item>Blaise Diagne International</item>
+        <item>Blanc Sablon</item>
+        <item>Blantyre</item>
+        <item>Blenheim</item>
+        <item>Blimbingsari</item>
+        <item>Bloemfontein</item>
+        <item>Bloomington-Normal</item>
+        <item>Bo'ao</item>
+        <item>Boa Vista (Brazil)</item>
+        <item>Boa Vista (Cape Verde)</item>
+        <item>Bobo Dioulasso</item>
+        <item>Bocas Del Toro</item>
+        <item>Bodaybo</item>
+        <item>Bodo</item>
+        <item>Bodrum</item>
+        <item>Bogorodskoye</item>
+        <item>Bogota</item>
+        <item>Boigu Island</item>
+        <item>Boise</item>
+        <item>Bojnord</item>
+        <item>Bol (Croatia)</item>
+        <item>Bole Alashankou</item>
+        <item>Bologna International</item>
+        <item>Bonaire</item>
+        <item>Bonaventure</item>
+        <item>Boolgeeda</item>
+        <item>Bora Bora</item>
+        <item>Bordeaux</item>
+        <item>Bordj Badji Mokhtar</item>
+        <item>Borlange Dala</item>
+        <item>Bossaso</item>
+        <item>Boston Logan International</item>
+        <item>Bouake</item>
+        <item>Boulia</item>
+        <item>Bourgas (Bulgaria)</item>
+        <item>Bournemouth</item>
+        <item>Bozeman</item>
+        <item>Bozoum</item>
+        <item>Bradford (United States)</item>
+        <item>Braganca</item>
+        <item>Brainerd</item>
+        <item>Brandon (Canada)</item>
+        <item>Branson</item>
+        <item>Brasilia</item>
+        <item>Bratislava</item>
+        <item>Bratsk</item>
+        <item>Brazzaville</item>
+        <item>Bremen</item>
+        <item>Brest (Belarus)</item>
+        <item>Brest (France)</item>
+        <item>Briansk</item>
+        <item>Bridgetown</item>
+        <item>Brindisi</item>
+        <item>Brisbane</item>
+        <item>Brisbane West Wellcamp</item>
+        <item>Bristol</item>
+        <item>Brive Vallée de la Dordogne</item>
+        <item>Brno-Turany</item>
+        <item>Brochet</item>
+        <item>Broken Hill</item>
+        <item>Bronnoysund Bronnoy</item>
+        <item>Broome</item>
+        <item>Brownsville</item>
+        <item>Brunswick Glynco Jetport</item>
+        <item>Brus Laguna</item>
+        <item>Brussels International</item>
+        <item>Brussels S. Charleroi</item>
+        <item>Bucaramanga</item>
+        <item>Bucharest Otopeni</item>
+        <item>Buckland</item>
+        <item>Budapest</item>
+        <item>Buenos Aires Jorge Newbery</item>
+        <item>Buenos Aires Ministro Pistarini</item>
+        <item>Buffalo Niagara</item>
+        <item>Bugulma</item>
+        <item>Bujumbura</item>
+        <item>Buka</item>
+        <item>Bukavu</item>
+        <item>Bukhara</item>
+        <item>Bukoba</item>
+        <item>Bulawayo</item>
+        <item>Bumba</item>
+        <item>Bundaberg</item>
+        <item>Bunia</item>
+        <item>Buol</item>
+        <item>Burbank</item>
+        <item>Burgos</item>
+        <item>Buri Ram</item>
+        <item>Burketown</item>
+        <item>Burlington (United States)</item>
+        <item>Burlington (United States)</item>
+        <item>Burnie</item>
+        <item>Burqin</item>
+        <item>Bursa (Turkey)</item>
+        <item>Bushehr</item>
+        <item>Busselton</item>
+        <item>Busuanga</item>
+        <item>Butte</item>
+        <item>Bydgoszcz</item>
+        <item>Ca Mau</item>
+        <item>Cabinda</item>
+        <item>Caen</item>
+        <item>Cagayan De Oro</item>
+        <item>Cagliari</item>
+        <item>Cairns</item>
+        <item>Cairo (Egypt)</item>
+        <item>Cajamarca</item>
+        <item>Calabar</item>
+        <item>Calama</item>
+        <item>Calbayog</item>
+        <item>Caldas Novas</item>
+        <item>Calgary</item>
+        <item>Cali</item>
+        <item>Calvi</item>
+        <item>Camaguey</item>
+        <item>Cambridge (United Kingdom)</item>
+        <item>Cambridge Bay</item>
+        <item>Camiguin</item>
+        <item>Campbell River</item>
+        <item>Campbell River Harbor SPB</item>
+        <item>Campbeltown</item>
+        <item>Campeche</item>
+        <item>Campina Grande</item>
+        <item>Campo Grande</item>
+        <item>Can Tho</item>
+        <item>Canakkale</item>
+        <item>Canberra</item>
+        <item>Cancun</item>
+        <item>Cap Haitien</item>
+        <item>Cape Barren Island</item>
+        <item>Cape Dorset</item>
+        <item>Cape Girardeau</item>
+        <item>Cape Lisburne</item>
+        <item>Cape Town</item>
+        <item>Caracas</item>
+        <item>Carajas</item>
+        <item>Carauari</item>
+        <item>Carcassonne</item>
+        <item>Cardiff</item>
+        <item>Carlisle</item>
+        <item>Carlsbad</item>
+        <item>Carmel Monterey Peninsula</item>
+        <item>Carnarvon</item>
+        <item>Cartagena</item>
+        <item>Carupano</item>
+        <item>Casablanca Mohamed V.</item>
+        <item>Casper</item>
+        <item>Castellon de la Plana</item>
+        <item>Castlegar</item>
+        <item>Castlereigh Resrvr SPB</item>
+        <item>Castres Mazamet</item>
+        <item>Cat Lake</item>
+        <item>Catamarca</item>
+        <item>Catania Fontanarossa</item>
+        <item>Catarman</item>
+        <item>Caticlan (Boracay)</item>
+        <item>Catumbela</item>
+        <item>Cauayan</item>
+        <item>Caucasia</item>
+        <item>Caxias Do Sul</item>
+        <item>Caye Caulker</item>
+        <item>Caye Chapel</item>
+        <item>Cayenne</item>
+        <item>Cayman Brac Is</item>
+        <item>Cayo Coco</item>
+        <item>Cayo Largo Del Sur</item>
+        <item>Cedar City</item>
+        <item>Cedar Rapids</item>
+        <item>Ceduna</item>
+        <item>Central</item>
+        <item>Chadron</item>
+        <item>Chaganhu</item>
+        <item>Chah-Bahar</item>
+        <item>Chakcharan</item>
+        <item>Chalkyitsik</item>
+        <item>Châlons-en-Champagne</item>
+        <item>Chambery</item>
+        <item>Champaign</item>
+        <item>Chandigarh</item>
+        <item>Chang'an</item>
+        <item>Changbaishan</item>
+        <item>Changchun</item>
+        <item>Changde</item>
+        <item>Changsha</item>
+        <item>Changsha Huanghua International</item>
+        <item>Changuinola</item>
+        <item>Changzhi</item>
+        <item>Changzhou</item>
+        <item>Chaoyang</item>
+        <item>Chapeco</item>
+        <item>Charleston (United States)</item>
+        <item>Charleston (United States)</item>
+        <item>Charleville</item>
+        <item>Charlo</item>
+        <item>Charlotte Douglas</item>
+        <item>Charlottesville</item>
+        <item>Charlottetown (Canada)</item>
+        <item>Chateauroux</item>
+        <item>Chatham Island</item>
+        <item>Chattanooga</item>
+        <item>Cheboksary</item>
+        <item>Chefornak</item>
+        <item>Chelinda</item>
+        <item>Chelyabinsk</item>
+        <item>Cheng Xian</item>
+        <item>Chengdu</item>
+        <item>Chengjisihan</item>
+        <item>Chennai</item>
+        <item>Cheongju</item>
+        <item>Cherepovets</item>
+        <item>Chernivtsi</item>
+        <item>Cherskiy</item>
+        <item>Chesterfield Inlet</item>
+        <item>Chetumal</item>
+        <item>Chevak</item>
+        <item>Chevery</item>
+        <item>Cheyenne</item>
+        <item>Chi Mei</item>
+        <item>Chiang Mai</item>
+        <item>Chiang Rai</item>
+        <item>Chiayi</item>
+        <item>Chibougamau</item>
+        <item>Chicago Dupage County</item>
+        <item>Chicago Midway</item>
+        <item>Chicago O'Hare International</item>
+        <item>Chicago Pal-Waukee</item>
+        <item>Chicago Rockford</item>
+        <item>Chicken</item>
+        <item>Chiclayo</item>
+        <item>Chifeng</item>
+        <item>Chignik Fisheries</item>
+        <item>Chignik Lagoon</item>
+        <item>Chignik Lake</item>
+        <item>Chihuahua</item>
+        <item>Chimoio</item>
+        <item>Chimore</item>
+        <item>Chios</item>
+        <item>Chipata</item>
+        <item>Chisana</item>
+        <item>Chisasibi</item>
+        <item>Chisinau</item>
+        <item>Chita</item>
+        <item>Chitral</item>
+        <item>Chitre</item>
+        <item>Chittagong</item>
+        <item>Chizhou Jiuhuashan</item>
+        <item>Chlef</item>
+        <item>Choibalsan</item>
+        <item>Choiseul Bay</item>
+        <item>Chokurdah</item>
+        <item>Chongqing</item>
+        <item>Christchurch</item>
+        <item>Christmas Island (Kiribati)</item>
+        <item>Chuathbaluk</item>
+        <item>Chumphon</item>
+        <item>Churchill</item>
+        <item>Churchill Falls</item>
+        <item>Cicia</item>
+        <item>Cienfuegos</item>
+        <item>Cilacap</item>
+        <item>Cincinnati Municipal</item>
+        <item>Cincinnati Northern Kentucky</item>
+        <item>Circle</item>
+        <item>Ciudad Bolivar</item>
+        <item>Ciudad Del Carmen</item>
+        <item>Ciudad Juarez</item>
+        <item>Ciudad Obregon</item>
+        <item>Ciudad Victoria</item>
+        <item>Clarks Point</item>
+        <item>Clarksburg</item>
+        <item>Clearwater Executive</item>
+        <item>Clermont-Ferrand</item>
+        <item>Cleveland Burke Lakefront</item>
+        <item>Cleveland Hopkins International</item>
+        <item>Cloncurry</item>
+        <item>Clovis Municipal</item>
+        <item>Club Makokola</item>
+        <item>Cluj-Napoca</item>
+        <item>Clyde River</item>
+        <item>Coari</item>
+        <item>Cobija</item>
+        <item>Coca</item>
+        <item>Cochabamba</item>
+        <item>Coconut Island</item>
+        <item>Cody / Yellowstone</item>
+        <item>Coen</item>
+        <item>Coffman Cove</item>
+        <item>Coffs Harbour</item>
+        <item>Coimbatore</item>
+        <item>Cold Bay</item>
+        <item>Coldfoot</item>
+        <item>Colima</item>
+        <item>Coll Island</item>
+        <item>College Station</item>
+        <item>Cologne</item>
+        <item>Colombo Bandaranayake</item>
+        <item>Colombo Ratmalana</item>
+        <item>Colonsay Is</item>
+        <item>Colorado Springs Peterson Field</item>
+        <item>Columbia (United States)</item>
+        <item>Columbia Metropolitan</item>
+        <item>Columbus Golden Triangle Reg.</item>
+        <item>Columbus Metropolitain</item>
+        <item>Columbus Rickenbacker</item>
+        <item>Colville Lake</item>
+        <item>Comiso</item>
+        <item>Comodoro Rivadavia</item>
+        <item>Comox</item>
+        <item>Con Dao</item>
+        <item>Conakry</item>
+        <item>Concepcion (Chile)</item>
+        <item>Concord Regional</item>
+        <item>Confreza</item>
+        <item>Connellan</item>
+        <item>Constanta Kogalniceanu</item>
+        <item>Constantine</item>
+        <item>Contadora</item>
+        <item>Coober Pedy</item>
+        <item>Cooktown</item>
+        <item>Cooma</item>
+        <item>Coondewanna</item>
+        <item>Copan</item>
+        <item>Copenhagen</item>
+        <item>Copenhagen Roskilde</item>
+        <item>Copiapo</item>
+        <item>Coral Harbour</item>
+        <item>Cordoba (Argentina)</item>
+        <item>Cordova City</item>
+        <item>Cordova Mudhole Smith</item>
+        <item>Corfu</item>
+        <item>Cork</item>
+        <item>Coro</item>
+        <item>Corozal (Belize)</item>
+        <item>Corozal (Colombia)</item>
+        <item>Corpus Christi International</item>
+        <item>Corrientes</item>
+        <item>Corsicana</item>
+        <item>Cortez</item>
+        <item>Corumba</item>
+        <item>Cotabato</item>
+        <item>Cotonou</item>
+        <item>Cox's Bazar</item>
+        <item>Cozumel</item>
+        <item>Craig</item>
+        <item>Craig Cove</item>
+        <item>Craiova</item>
+        <item>Cranbrook</item>
+        <item>Crete Chania</item>
+        <item>Crete Heraklion</item>
+        <item>Croker Island</item>
+        <item>Crooked Creek</item>
+        <item>Crooked Island</item>
+        <item>Cross Lake</item>
+        <item>Crotone</item>
+        <item>Cruzeiro Do Sul</item>
+        <item>Cucuta</item>
+        <item>Cuenca</item>
+        <item>Cuiaba</item>
+        <item>Culebra</item>
+        <item>Culiacan</item>
+        <item>Cumana</item>
+        <item>Cuneo Levaldigi</item>
+        <item>Cunnamulla</item>
+        <item>Curacao</item>
+        <item>Curitiba</item>
+        <item>Cuzco</item>
+        <item>Da Nang</item>
+        <item>Daegu</item>
+        <item>Dakhla</item>
+        <item>Dalaman</item>
+        <item>Dalanzadgad</item>
+        <item>Dalat</item>
+        <item>Dalbandin</item>
+        <item>Dali City</item>
+        <item>Dalian</item>
+        <item>Dallas Fort Worth International</item>
+        <item>Dallas Love Field</item>
+        <item>Dalnegorsk</item>
+        <item>Dalnerechensk</item>
+        <item>Damascus</item>
+        <item>Dammam</item>
+        <item>Dandong</item>
+        <item>Dangriga</item>
+        <item>Daocheng Yading</item>
+        <item>Daqing</item>
+        <item>Dar Es Salaam</item>
+        <item>Darnley Island</item>
+        <item>Daru (Papua New Guinea)</item>
+        <item>Darwin</item>
+        <item>Dashoguz</item>
+        <item>Datadawai</item>
+        <item>Datong</item>
+        <item>Davao International</item>
+        <item>David</item>
+        <item>Dawe</item>
+        <item>Dawson City</item>
+        <item>Dawson Creek</item>
+        <item>Daxian</item>
+        <item>Dayong</item>
+        <item>Dayton International</item>
+        <item>Daytona Beach</item>
+        <item>Deadhorse (Prudhoe Bay)</item>
+        <item>Dease Lake</item>
+        <item>Deauville St. Gatien</item>
+        <item>Debrecen</item>
+        <item>Deer Harbor Seaplane</item>
+        <item>Deer Lake (Canada)</item>
+        <item>Deer Lake (Canada)</item>
+        <item>Deering</item>
+        <item>Dehong Mangshi</item>
+        <item>Dehradun</item>
+        <item>Del Rio International</item>
+        <item>Deline</item>
+        <item>Delingha</item>
+        <item>Delma</item>
+        <item>Delta Junction</item>
+        <item>Dembidollo</item>
+        <item>Denizli Cardak</item>
+        <item>Denver International</item>
+        <item>Deputatsky</item>
+        <item>Dera Ghazi Khan</item>
+        <item>Dera Ismail Khan</item>
+        <item>Derby Curtin</item>
+        <item>Derry</item>
+        <item>Des Moines</item>
+        <item>Dessie</item>
+        <item>Destin</item>
+        <item>Detroit Wayne County</item>
+        <item>Devils Lake</item>
+        <item>Devonport</item>
+        <item>Dezful</item>
+        <item>Dhaka</item>
+        <item>Dhangarhi</item>
+        <item>Dharamsala</item>
+        <item>Dibrugarh</item>
+        <item>Dickinson</item>
+        <item>Dien Bien Phu</item>
+        <item>Dikson</item>
+        <item>Dikwella</item>
+        <item>Dili (East Timor)</item>
+        <item>Dillingham</item>
+        <item>Dillons Bay</item>
+        <item>Dimapur</item>
+        <item>Dinard</item>
+        <item>Dipolog</item>
+        <item>Diqing</item>
+        <item>Dire Dawa</item>
+        <item>Diu</item>
+        <item>Diyarbakir</item>
+        <item>Diyawanna Oya</item>
+        <item>Djanet</item>
+        <item>Djerba</item>
+        <item>Djibouti</item>
+        <item>Dnipro</item>
+        <item>Dobo</item>
+        <item>Dodge City</item>
+        <item>Dodoma</item>
+        <item>Dole Tavaux</item>
+        <item>Dolpa</item>
+        <item>Dominica Cane Field</item>
+        <item>Dominica Melville Hall</item>
+        <item>Don Mueang</item>
+        <item>Doncaster Sheffield</item>
+        <item>Donegal</item>
+        <item>Dong Hoi</item>
+        <item>Dongsheng</item>
+        <item>Dongying</item>
+        <item>Doomadgee</item>
+        <item>Dora Bay</item>
+        <item>Dortmund</item>
+        <item>Dothan</item>
+        <item>Douala</item>
+        <item>Drake Bay</item>
+        <item>Dresden</item>
+        <item>Dryden</item>
+        <item>Dubai</item>
+        <item>Dubai Al Maktoum International</item>
+        <item>Dubai Creek SPB</item>
+        <item>Dubbo</item>
+        <item>Dublin (Ireland)</item>
+        <item>Dubois (United States)</item>
+        <item>Dubrovnik</item>
+        <item>Dubuque</item>
+        <item>Duluth International</item>
+        <item>Dumaguete</item>
+        <item>Dumai</item>
+        <item>Dumatubin - Langgur</item>
+        <item>Dundee</item>
+        <item>Dundo</item>
+        <item>Dunedin</item>
+        <item>Dunhuang</item>
+        <item>Duqm International</item>
+        <item>Durango</item>
+        <item>Durango La Plata</item>
+        <item>Durban King Shaka International</item>
+        <item>Durham Tees Valley</item>
+        <item>Dushanbe</item>
+        <item>Dusseldorf International</item>
+        <item>Dutch Harbor</item>
+        <item>Dzaoudzi</item>
+        <item>Eagle</item>
+        <item>East London</item>
+        <item>East Midlands</item>
+        <item>East Texas Regional</item>
+        <item>Easter Island</item>
+        <item>Eastmain River</item>
+        <item>Eastsound</item>
+        <item>Eau Claire</item>
+        <item>Eday</item>
+        <item>Edinburgh</item>
+        <item>Edmonton International</item>
+        <item>Edmonton Municipal</item>
+        <item>Edna Bay</item>
+        <item>Edremit / Korfez</item>
+        <item>Edward River</item>
+        <item>Eek</item>
+        <item>Egegik</item>
+        <item>Egilsstadir</item>
+        <item>Eilat (J. Hozman)</item>
+        <item>Eindhoven</item>
+        <item>Eirunepe</item>
+        <item>Ekaterinburg</item>
+        <item>Ekwok</item>
+        <item>El Bagre</item>
+        <item>El Calafate</item>
+        <item>El Dorado (United States)</item>
+        <item>El Fasher</item>
+        <item>El Golea</item>
+        <item>El Nido</item>
+        <item>El Obeid</item>
+        <item>El Oued</item>
+        <item>El Palomar</item>
+        <item>El Paso Biggs AAF</item>
+        <item>El Paso International</item>
+        <item>El Vigia</item>
+        <item>El Yopal</item>
+        <item>Elazig</item>
+        <item>Elba Island</item>
+        <item>Elcho Island</item>
+        <item>Eldoret</item>
+        <item>Elfin Cove</item>
+        <item>Elim</item>
+        <item>Elista</item>
+        <item>Elko</item>
+        <item>Elmira</item>
+        <item>Emae</item>
+        <item>Emerald</item>
+        <item>Emmonak</item>
+        <item>Ende</item>
+        <item>Enfidha</item>
+        <item>Enontekio</item>
+        <item>Enshi</item>
+        <item>Entebbe</item>
+        <item>Enugu</item>
+        <item>Epinal Mirecourt</item>
+        <item>Erbil</item>
+        <item>Ercan</item>
+        <item>Erechim</item>
+        <item>Erenhot</item>
+        <item>Erfurt</item>
+        <item>Erie</item>
+        <item>Errachidia</item>
+        <item>Errol</item>
+        <item>Erzincan</item>
+        <item>Erzurum</item>
+        <item>Esbjerg</item>
+        <item>Escanaba</item>
+        <item>Eskisehir (Turkey)</item>
+        <item>Esmeraldas</item>
+        <item>Esperance</item>
+        <item>Espiritu Santo</item>
+        <item>Esquel</item>
+        <item>Essaouira</item>
+        <item>Eua</item>
+        <item>Eugene</item>
+        <item>Evansville</item>
+        <item>Evenes</item>
+        <item>Excursion Inlet</item>
+        <item>Exeter</item>
+        <item>Faaite</item>
+        <item>Fair Isle</item>
+        <item>Fairbanks International</item>
+        <item>Faisalabad</item>
+        <item>Faizabad</item>
+        <item>Fak Fak</item>
+        <item>Fakahina</item>
+        <item>Fakarava</item>
+        <item>Fall River</item>
+        <item>False Pass</item>
+        <item>Fangatau</item>
+        <item>Farah</item>
+        <item>Fargo</item>
+        <item>Farmington (United States)</item>
+        <item>Farmington (United States)</item>
+        <item>Faro</item>
+        <item>Fayetteville Municipal</item>
+        <item>Fayetteville Northwest Arkansas Rgn</item>
+        <item>Fera Island</item>
+        <item>Ferdinand Lumban Tobing</item>
+        <item>Fergana</item>
+        <item>Fernando De Noronha</item>
+        <item>Fes-Saïss</item>
+        <item>Figari Sud Corse</item>
+        <item>Fitzroy Crossing</item>
+        <item>Flin Flon</item>
+        <item>Flinders Island</item>
+        <item>Flint</item>
+        <item>Florence (Italy)</item>
+        <item>Florence (United States)</item>
+        <item>Florencia</item>
+        <item>Flores</item>
+        <item>Florianopolis</item>
+        <item>Floro</item>
+        <item>Foggia Gino Lisa</item>
+        <item>Fond Du Lac</item>
+        <item>Forde Bringeland</item>
+        <item>Formosa</item>
+        <item>Fort Albany</item>
+        <item>Fort Chipewyan</item>
+        <item>Fort Dauphin</item>
+        <item>Fort De France</item>
+        <item>Fort Dodge</item>
+        <item>Fort Frances</item>
+        <item>Fort Good Hope</item>
+        <item>Fort Hope</item>
+        <item>Fort Lauderdale Executive</item>
+        <item>Fort Lauderdale International</item>
+        <item>Fort Leonard Wood</item>
+        <item>Fort Mcmurray</item>
+        <item>Fort McPherson</item>
+        <item>Fort Myers Page Field</item>
+        <item>Fort Myers Southwest Florida Reg</item>
+        <item>Fort Nelson</item>
+        <item>Fort Severn</item>
+        <item>Fort Simpson</item>
+        <item>Fort Smith (Canada)</item>
+        <item>Fort Smith (United States)</item>
+        <item>Fort St John</item>
+        <item>Fort Wayne</item>
+        <item>Fort Yukon</item>
+        <item>Fortaleza</item>
+        <item>Fortuna</item>
+        <item>Foula</item>
+        <item>Franceville / Mvengue</item>
+        <item>Francistown</item>
+        <item>Frankfurt am Main</item>
+        <item>Frankfurt Hahn</item>
+        <item>Franklin (United States)</item>
+        <item>Fredericton</item>
+        <item>Freeport (Bahamas)</item>
+        <item>Freetown Lungi International</item>
+        <item>Fresno Yosemite</item>
+        <item>Friday Harbor</item>
+        <item>Friday Harbor SPB</item>
+        <item>Friedrichshafen</item>
+        <item>Fuerteventura</item>
+        <item>Fukue</item>
+        <item>Fukuoka</item>
+        <item>Fukushima</item>
+        <item>Funafuti</item>
+        <item>Futuna Island (Vanuatu)</item>
+        <item>Fuyang</item>
+        <item>Fuyuan Airport</item>
+        <item>Fuyun</item>
+        <item>Fuzhou</item>
+        <item>Gabes</item>
+        <item>Gaborone</item>
+        <item>Gachsaran</item>
+        <item>Gainesville (United States)</item>
+        <item>Gal Oya (Sri Lanka)</item>
+        <item>Galapagos Is</item>
+        <item>Galcaio</item>
+        <item>Galela</item>
+        <item>Galena</item>
+        <item>Gallivare</item>
+        <item>Gambela</item>
+        <item>Gambell</item>
+        <item>Gambier Is</item>
+        <item>Gameti (Rae Lakes)</item>
+        <item>Gan Island</item>
+        <item>Gander</item>
+        <item>Ganges Harbor</item>
+        <item>Gannan Xiahe</item>
+        <item>Ganzhou</item>
+        <item>Garden City (United States)</item>
+        <item>Garden Point</item>
+        <item>Garissa</item>
+        <item>Garoe</item>
+        <item>Gaspe</item>
+        <item>Gassim</item>
+        <item>Gaua</item>
+        <item>Gaya</item>
+        <item>Gaziantep</item>
+        <item>Gazipasa</item>
+        <item>Gdansk</item>
+        <item>Gelendzik</item>
+        <item>Gelephu</item>
+        <item>Geneina</item>
+        <item>General Santos International</item>
+        <item>Geneva</item>
+        <item>Genoa</item>
+        <item>George</item>
+        <item>George Town (Bahamas)</item>
+        <item>Georgetown (Guyana)</item>
+        <item>Geraldton (Australia)</item>
+        <item>Gethsemani</item>
+        <item>Ghardaia</item>
+        <item>Gheshm</item>
+        <item>Gibraltar</item>
+        <item>Gilgit</item>
+        <item>Gillam</item>
+        <item>Gillette</item>
+        <item>Gillies Bay</item>
+        <item>Gimhae International</item>
+        <item>Girona</item>
+        <item>Gisborne</item>
+        <item>Gizo</item>
+        <item>Gjoa Haven</item>
+        <item>Gjogur</item>
+        <item>Gladstone</item>
+        <item>Glasgow (United States)</item>
+        <item>Glasgow International</item>
+        <item>Glasgow Prestwick</item>
+        <item>Glendive</item>
+        <item>Gloucestershire</item>
+        <item>Goa</item>
+        <item>Gode / Iddidole</item>
+        <item>Gods Narrows</item>
+        <item>Gods River</item>
+        <item>Goiania</item>
+        <item>Gold Coast</item>
+        <item>Golfito</item>
+        <item>Golmud</item>
+        <item>Golovin</item>
+        <item>Goma</item>
+        <item>Gombe Lawanti</item>
+        <item>Gomel</item>
+        <item>Gondar</item>
+        <item>Goodnews Bay</item>
+        <item>Goose Bay</item>
+        <item>Gorakhpur</item>
+        <item>Gordon</item>
+        <item>Gorgan</item>
+        <item>Gorno-Altaysk</item>
+        <item>Goroka</item>
+        <item>Gorontalo</item>
+        <item>Gothenburg Landvetter</item>
+        <item>Goulburn Island</item>
+        <item>Goulimime</item>
+        <item>Gove</item>
+        <item>Governors Harbour</item>
+        <item>Grafton</item>
+        <item>Gran Canaria Las Palmas</item>
+        <item>Granada</item>
+        <item>Grand Canyon National Park</item>
+        <item>Grand Canyon Pulliam Field</item>
+        <item>Grand Cayman Island</item>
+        <item>Grand Forks</item>
+        <item>Grand Island</item>
+        <item>Grand Junction</item>
+        <item>Grand Rapids (United States)</item>
+        <item>Grand Turk Is</item>
+        <item>Grande Prairie</item>
+        <item>Granites</item>
+        <item>Grants Pass</item>
+        <item>Grayling</item>
+        <item>Graz</item>
+        <item>Great Barrier Island</item>
+        <item>Great Bend</item>
+        <item>Great Falls International</item>
+        <item>Greater Peoria</item>
+        <item>Green Bay</item>
+        <item>Green Island</item>
+        <item>Green River (United States)</item>
+        <item>Greensboro / High Point</item>
+        <item>Greenville (United States)</item>
+        <item>Greenville-Spartanburg</item>
+        <item>Grenoble</item>
+        <item>Griffith</item>
+        <item>Grimsey</item>
+        <item>Grise Fiord</item>
+        <item>Grodna</item>
+        <item>Groningen</item>
+        <item>Groote Eylandt</item>
+        <item>Grosseto Baccarini</item>
+        <item>Grozny</item>
+        <item>Grumeti Airstrip</item>
+        <item>Guadalajara</item>
+        <item>Guam A.B. Won Pat</item>
+        <item>Guanaja</item>
+        <item>Guang Yuan</item>
+        <item>Guangzhou</item>
+        <item>Guantanamo Los Canos</item>
+        <item>Guapi</item>
+        <item>Guatemala City</item>
+        <item>Guayaquil</item>
+        <item>Guayaramerin</item>
+        <item>Guaymas</item>
+        <item>Guernsey</item>
+        <item>Guilin</item>
+        <item>Guiyang</item>
+        <item>Gulfport</item>
+        <item>Gunnison</item>
+        <item>Gunsan</item>
+        <item>Gunungsitoli</item>
+        <item>Gurayat</item>
+        <item>Gustavus Arpt</item>
+        <item>Guwahati</item>
+        <item>Gwadar</item>
+        <item>Gwalior</item>
+        <item>Gwangju</item>
+        <item>Gwangju Muan International</item>
+        <item>Gyandzha</item>
+        <item>Gyoumri</item>
+        <item>Ha'Apai</item>
+        <item>Hachijo Jima</item>
+        <item>Hagerstown</item>
+        <item>Hagfors</item>
+        <item>Haifa</item>
+        <item>Haikou</item>
+        <item>Hail</item>
+        <item>Hailar</item>
+        <item>Hailey</item>
+        <item>Haines</item>
+        <item>Haiphong</item>
+        <item>Haji Aroeppala</item>
+        <item>Hakodate</item>
+        <item>Halifax International</item>
+        <item>Halim Perdana Kusuma</item>
+        <item>Hall Beach</item>
+        <item>Halls Creek</item>
+        <item>Halmstad</item>
+        <item>Hamad International</item>
+        <item>Hamadan</item>
+        <item>Hambantota International Airport</item>
+        <item>Hamburg International</item>
+        <item>Hami</item>
+        <item>Hamilton (Canada)</item>
+        <item>Hamilton (New Zealand)</item>
+        <item>Hamilton Island</item>
+        <item>Hammerfest</item>
+        <item>Hana</item>
+        <item>Hanamaki</item>
+        <item>Hancock</item>
+        <item>Hangzhou</item>
+        <item>Hanimaadhoo</item>
+        <item>Hannover</item>
+        <item>Hanoi</item>
+        <item>Hanzhong</item>
+        <item>Hao Island</item>
+        <item>Harare</item>
+        <item>Harbin</item>
+        <item>Hargeisa</item>
+        <item>Harlingen</item>
+        <item>Harrisburg International</item>
+        <item>Harrisburg Skyport</item>
+        <item>Harrison</item>
+        <item>Hartford Bradley International</item>
+        <item>Hartford Brainard</item>
+        <item>Hassi Messaoud</item>
+        <item>Hasvik</item>
+        <item>Hat Yai</item>
+        <item>Hatanga</item>
+        <item>Hattiesburg-Laurel</item>
+        <item>Haugesund</item>
+        <item>Havana (Cuba)</item>
+        <item>Havre</item>
+        <item>Havre St Pierre</item>
+        <item>Hay River</item>
+        <item>Hayden</item>
+        <item>Hays</item>
+        <item>Healy Lake</item>
+        <item>Hebei Handan</item>
+        <item>Hefei</item>
+        <item>Heho</item>
+        <item>Heihe</item>
+        <item>Helena (United States)</item>
+        <item>Helsinki Vantaa</item>
+        <item>Hemavan Tarnaby</item>
+        <item>Hengchun</item>
+        <item>Hengyang</item>
+        <item>Henry E. Rohlsen</item>
+        <item>Herat</item>
+        <item>Heringsdorf</item>
+        <item>Hermosillo</item>
+        <item>Hervey Bay</item>
+        <item>Hibbing</item>
+        <item>High Level</item>
+        <item>Hikueru</item>
+        <item>Hilo</item>
+        <item>Hilton Head</item>
+        <item>Hiroshima International</item>
+        <item>Ho Chi Minh City</item>
+        <item>Hobart (Australia)</item>
+        <item>Hobbs Lea County</item>
+        <item>Hodeidah</item>
+        <item>Hoedspruit</item>
+        <item>Hohhot</item>
+        <item>Hokitika</item>
+        <item>Holguin</item>
+        <item>Hollis</item>
+        <item>Holy Cross</item>
+        <item>Homalin</item>
+        <item>Homer</item>
+        <item>Hong Kong H K Heliport</item>
+        <item>Hong Kong International</item>
+        <item>Hongping</item>
+        <item>Honiara</item>
+        <item>Honningsvag Valan</item>
+        <item>Honolulu Hickam AFB</item>
+        <item>Honolulu International</item>
+        <item>Hoolehua</item>
+        <item>Hoonah</item>
+        <item>Hooper Bay</item>
+        <item>Hopedale</item>
+        <item>Horn Island</item>
+        <item>Horta</item>
+        <item>Hoskins</item>
+        <item>Hot Springs (United States)</item>
+        <item>Hotan</item>
+        <item>Houeisay</item>
+        <item>Houston George Bush Intercntl.</item>
+        <item>Houston Hobby</item>
+        <item>Hua Hin (Prachuap Khiri Khan)</item>
+        <item>Huahine</item>
+        <item>Huai Hua</item>
+        <item>Huai'an Lianshui Airport</item>
+        <item>Hualien</item>
+        <item>Huambo</item>
+        <item>Huangping</item>
+        <item>Huangyan</item>
+        <item>Huanuco</item>
+        <item>Huatugou</item>
+        <item>Huatulco</item>
+        <item>Hubli</item>
+        <item>Hue</item>
+        <item>Hughenden</item>
+        <item>Hughes Municipal</item>
+        <item>Huizhou</item>
+        <item>Humberside</item>
+        <item>Humberto Bortoluzzi</item>
+        <item>Humera</item>
+        <item>Huntsville International</item>
+        <item>Huolinhe</item>
+        <item>Hurghada</item>
+        <item>Husavik</item>
+        <item>Huslia</item>
+        <item>Hyannis</item>
+        <item>Hydaburg</item>
+        <item>Hyder</item>
+        <item>Hyderabad (India)</item>
+        <item>Iasi</item>
+        <item>Ibadan</item>
+        <item>Ibague</item>
+        <item>Ibiza</item>
+        <item>Idaho Falls</item>
+        <item>Igarka</item>
+        <item>Igdir Airport</item>
+        <item>Igiugig</item>
+        <item>Igloolik</item>
+        <item>Igrim</item>
+        <item>Iguassu Falls</item>
+        <item>Iguazu</item>
+        <item>Ikaria</item>
+        <item>Iki</item>
+        <item>Ilaam</item>
+        <item>Ile Des Pins</item>
+        <item>Iles De La Madeleine</item>
+        <item>Ilheus</item>
+        <item>Iliamna</item>
+        <item>Illizi</item>
+        <item>Iloilo International</item>
+        <item>Ilorin</item>
+        <item>Ilulissat</item>
+        <item>Imam Ali Air Base</item>
+        <item>Imperatriz</item>
+        <item>Imperial County</item>
+        <item>Imphal</item>
+        <item>In Amenas</item>
+        <item>In Salah</item>
+        <item>Inagua</item>
+        <item>Indaselassie</item>
+        <item>Independence (Belize)</item>
+        <item>Indianapolis</item>
+        <item>Indore</item>
+        <item>Inhambane</item>
+        <item>Innsbruck</item>
+        <item>International Falls</item>
+        <item>Inukjuak</item>
+        <item>Inuvik / Mike Zubko</item>
+        <item>Invercargill</item>
+        <item>Inverness</item>
+        <item>Ioannina</item>
+        <item>Ipoh</item>
+        <item>Ipota</item>
+        <item>Iqaluit</item>
+        <item>Iquique</item>
+        <item>Iquitos</item>
+        <item>Iran Shahr</item>
+        <item>Ireland West Airport Knock</item>
+        <item>Iringa</item>
+        <item>Irkutsk</item>
+        <item>Iron Mountain</item>
+        <item>Ironwood</item>
+        <item>Isafjordur</item>
+        <item>Isfahan</item>
+        <item>Ishigaki</item>
+        <item>Islamabad</item>
+        <item>Island Lake</item>
+        <item>Islay Glenegedale</item>
+        <item>Isles of Scilly St. Mary's</item>
+        <item>Islip</item>
+        <item>Isparta</item>
+        <item>Issyk-Kul</item>
+        <item>Istanbul Ataturk</item>
+        <item>Istanbul Sabiha</item>
+        <item>Itaituba</item>
+        <item>Ithaca</item>
+        <item>Ittoqqortoormiit</item>
+        <item>Iturup</item>
+        <item>Ivalo</item>
+        <item>Ivano-Frankivsk</item>
+        <item>Ivanovo</item>
+        <item>Ivujivik</item>
+        <item>Iwakuni</item>
+        <item>Iwami</item>
+        <item>Ixtapa / Zihuatanejo</item>
+        <item>Ixtepec</item>
+        <item>Izhevsk</item>
+        <item>Izmir</item>
+        <item>Izumo</item>
+        <item>J.A. Douglas McCurdy Sydney</item>
+        <item>Jabalpur</item>
+        <item>Jackson (United States)</item>
+        <item>Jackson Hole</item>
+        <item>Jackson-Evers International</item>
+        <item>Jacksonville (United States)</item>
+        <item>Jacksonville International</item>
+        <item>Jaffna</item>
+        <item>Jahrom</item>
+        <item>Jaipur</item>
+        <item>Jaisalmer</item>
+        <item>Jalgaon</item>
+        <item>Jambi</item>
+        <item>Jamestown (United States)</item>
+        <item>Jamestown (United States)</item>
+        <item>Jammu</item>
+        <item>Jamnagar</item>
+        <item>Janakpur</item>
+        <item>Jaque</item>
+        <item>Jauja</item>
+        <item>Jayapura</item>
+        <item>Jazan</item>
+        <item>Jeddah</item>
+        <item>Jeju</item>
+        <item>Jeki</item>
+        <item>Jerez</item>
+        <item>Jericoacoara</item>
+        <item>Jersey</item>
+        <item>Jessore</item>
+        <item>Ji An</item>
+        <item>Jiagedaqi Airport</item>
+        <item>Jiamusi</item>
+        <item>Jiansanjiang</item>
+        <item>Jiaohe</item>
+        <item>Jiayuguan</item>
+        <item>Jijel</item>
+        <item>Jijiga</item>
+        <item>Jimma</item>
+        <item>Jin Cheng Jiang</item>
+        <item>Jinan Yaoqiang</item>
+        <item>Jinchuan</item>
+        <item>Jingdezhen</item>
+        <item>Jingmai</item>
+        <item>Jining</item>
+        <item>Jinja</item>
+        <item>Jinjiang</item>
+        <item>Jinju</item>
+        <item>Jinka</item>
+        <item>Jinzhou</item>
+        <item>Jiroft</item>
+        <item>Jiujiang</item>
+        <item>Jixi Khanka Lake</item>
+        <item>Joao Pessoa</item>
+        <item>Jodhpur</item>
+        <item>Joensuu</item>
+        <item>Johannesburg O.R. Tambo</item>
+        <item>Johnstown</item>
+        <item>Johor Bahru</item>
+        <item>Joinville</item>
+        <item>Jomsom</item>
+        <item>Jonesboro</item>
+        <item>Jonkoping Axamo</item>
+        <item>Joplin</item>
+        <item>Jorhat</item>
+        <item>Jos</item>
+        <item>Joshkar-Ola</item>
+        <item>Jouf</item>
+        <item>Juazeiro Do Norte</item>
+        <item>Juba</item>
+        <item>Jujuy</item>
+        <item>Julia Creek</item>
+        <item>Juliaca</item>
+        <item>Juneau (United States)</item>
+        <item>Juzhou</item>
+        <item>Jyvaskyla</item>
+        <item>Kabri Dar</item>
+        <item>Kabul</item>
+        <item>Kadapa</item>
+        <item>Kaduna</item>
+        <item>Kagau</item>
+        <item>Kagoshima</item>
+        <item>Kahramanmaras</item>
+        <item>Kaikoura</item>
+        <item>Kaitaia</item>
+        <item>Kajaani</item>
+        <item>Kake</item>
+        <item>Kakhonak</item>
+        <item>Kalabo</item>
+        <item>Kalaleh</item>
+        <item>Kalamata International</item>
+        <item>Kalamazoo</item>
+        <item>Kalaupapa</item>
+        <item>Kalemie</item>
+        <item>Kalemyo</item>
+        <item>Kalgoorlie</item>
+        <item>Kalibo International (Boracay)</item>
+        <item>Kaliningrad</item>
+        <item>Kalispell</item>
+        <item>Kalmar</item>
+        <item>Kalskag</item>
+        <item>Kaltag</item>
+        <item>Kaluga</item>
+        <item>Kalymnos</item>
+        <item>Kamembe</item>
+        <item>Kameshli</item>
+        <item>Kamloops</item>
+        <item>Kamuela</item>
+        <item>Kandahar</item>
+        <item>Kandavu</item>
+        <item>Kandla</item>
+        <item>Kangding</item>
+        <item>Kangerlussuaq</item>
+        <item>Kangiqsualujjuaq</item>
+        <item>Kangiqsujuaq</item>
+        <item>Kangirsuk</item>
+        <item>Kanpur</item>
+        <item>Kansas City Downtown</item>
+        <item>Kansas City International</item>
+        <item>Kanua</item>
+        <item>Kaohsiung</item>
+        <item>Kapalua</item>
+        <item>Karachi</item>
+        <item>Karaganda</item>
+        <item>Karamay</item>
+        <item>Karamea</item>
+        <item>Kardla</item>
+        <item>Karlovy Vary</item>
+        <item>Karlsruhe / Baden-Baden</item>
+        <item>Karlstad</item>
+        <item>Karluk</item>
+        <item>Karpathos</item>
+        <item>Karratha</item>
+        <item>Kars</item>
+        <item>Karshi</item>
+        <item>Karumba</item>
+        <item>Karup</item>
+        <item>Kasabonika</item>
+        <item>Kasama</item>
+        <item>Kasane</item>
+        <item>Kasese</item>
+        <item>Kashan</item>
+        <item>Kashechewan</item>
+        <item>Kashi</item>
+        <item>Kasigluk</item>
+        <item>Kasos Island</item>
+        <item>Kassala</item>
+        <item>Kastamonu</item>
+        <item>Kastelorizo</item>
+        <item>Kastoria Aristotlis</item>
+        <item>Katherine</item>
+        <item>Kathmandu</item>
+        <item>Katiu</item>
+        <item>Katowice</item>
+        <item>Katsina Airport</item>
+        <item>Katugastota</item>
+        <item>Kauai Island Lihue</item>
+        <item>Kauehi</item>
+        <item>Kaukura Atoll</item>
+        <item>Kaunas</item>
+        <item>Kavala Alexandros</item>
+        <item>Kavalerovo</item>
+        <item>Kavieng</item>
+        <item>Kawthaung</item>
+        <item>Kayseri</item>
+        <item>Kazan</item>
+        <item>Kazi Nazrul Islam</item>
+        <item>Kearney</item>
+        <item>Keekorok</item>
+        <item>Keewaywin</item>
+        <item>Kegashka</item>
+        <item>Kelaniya</item>
+        <item>Kelowna</item>
+        <item>Kelsey</item>
+        <item>Kemerovo</item>
+        <item>Kemi / Tornio</item>
+        <item>Kenai</item>
+        <item>Kendari</item>
+        <item>Keng Tung</item>
+        <item>Kenmore Air Harbor</item>
+        <item>Kenora</item>
+        <item>Keperveyem</item>
+        <item>Kerikeri</item>
+        <item>Kerinci</item>
+        <item>Kerman</item>
+        <item>Kermanshah</item>
+        <item>Kerry</item>
+        <item>Kerteh</item>
+        <item>Ketapang</item>
+        <item>Ketchikan International</item>
+        <item>Ketchikan Waterfront SPB</item>
+        <item>Key West International</item>
+        <item>Khabarovsk Novy</item>
+        <item>Khajuraho</item>
+        <item>Khamti</item>
+        <item>Khanty-Mansiysk</item>
+        <item>Kharkiv</item>
+        <item>Khartoum</item>
+        <item>Khasab</item>
+        <item>Khatgal</item>
+        <item>Kherson</item>
+        <item>Khon Kaen</item>
+        <item>Khorramabad</item>
+        <item>Khovd</item>
+        <item>Khoy</item>
+        <item>Khudzhand</item>
+        <item>Kiana</item>
+        <item>Kichwa Tembo</item>
+        <item>Kieta</item>
+        <item>Kiev Borispol</item>
+        <item>Kiev Zhulhany</item>
+        <item>Kigali</item>
+        <item>Kigoma</item>
+        <item>Kihihi</item>
+        <item>Kikaiga Shima</item>
+        <item>Kilimanjaro</item>
+        <item>Killeen Gray AAF</item>
+        <item>Kilwa (Tanzania)</item>
+        <item>Kimberley (South Africa)</item>
+        <item>Kimmirut / Lake Harbour</item>
+        <item>King Cove</item>
+        <item>King Island</item>
+        <item>King Salmon</item>
+        <item>Kingfisher Lake</item>
+        <item>Kings Creek Station</item>
+        <item>Kingscote</item>
+        <item>Kingston</item>
+        <item>Kingston Norman Manley</item>
+        <item>Kingstown</item>
+        <item>Kinmen</item>
+        <item>Kinna Meru</item>
+        <item>Kinoosao</item>
+        <item>Kinshasa N'Djili</item>
+        <item>Kipnuk</item>
+        <item>Kirakira</item>
+        <item>Kirensk</item>
+        <item>Kirkenes Høybuktmoen</item>
+        <item>Kirksville</item>
+        <item>Kirov</item>
+        <item>Kiruna</item>
+        <item>Kisangani</item>
+        <item>Kish Island</item>
+        <item>Kismayu</item>
+        <item>Kisumu</item>
+        <item>Kita Kyushu</item>
+        <item>Kitale</item>
+        <item>Kitchener / Waterloo</item>
+        <item>Kithira</item>
+        <item>Kitoi Bay</item>
+        <item>Kittilä</item>
+        <item>Kiunga (Papua New Guinea)</item>
+        <item>Kivalina</item>
+        <item>Klagenfurt</item>
+        <item>Klawock</item>
+        <item>Knoxville</item>
+        <item>Kobe</item>
+        <item>Kobuk / Wien</item>
+        <item>Kocaeli</item>
+        <item>Kochi (India)</item>
+        <item>Kochi (Japan)</item>
+        <item>Kodiak</item>
+        <item>Kogalym</item>
+        <item>Koggala</item>
+        <item>Koh Samui / Samui Island</item>
+        <item>Kokkola / Pietarsaari Kruunupyy</item>
+        <item>Kokshetau</item>
+        <item>Kolhapur</item>
+        <item>Kolkata</item>
+        <item>Komatsu</item>
+        <item>Komsomolsk Na Amure</item>
+        <item>Kona</item>
+        <item>Kongiganak</item>
+        <item>Konya</item>
+        <item>Korhogo</item>
+        <item>Korla</item>
+        <item>Koro Island</item>
+        <item>Koror</item>
+        <item>Kos</item>
+        <item>Kosice</item>
+        <item>Kosrae</item>
+        <item>Kostanay</item>
+        <item>Kota Bharu</item>
+        <item>Kota Kinabalu (Malaysia)</item>
+        <item>Kotabaru</item>
+        <item>Kotlas</item>
+        <item>Kotlik</item>
+        <item>Kotzebue</item>
+        <item>Koumac</item>
+        <item>Kowanyama</item>
+        <item>Koyuk</item>
+        <item>Koyukuk</item>
+        <item>Kozani Philippos</item>
+        <item>Kozhikode</item>
+        <item>Krabi</item>
+        <item>Krakow</item>
+        <item>Kramfors Solleftea</item>
+        <item>Krasnodar</item>
+        <item>Krasnoyarsk</item>
+        <item>Krayniy</item>
+        <item>Kristiansand Kjevik</item>
+        <item>Kristianstad</item>
+        <item>Kristiansund</item>
+        <item>Kuala Lumpur International</item>
+        <item>Kuala Lumpur Sultan Abdul Azziz Shah</item>
+        <item>Kuala Terengganu</item>
+        <item>Kuantan (Malaysia)</item>
+        <item>Kubin Island</item>
+        <item>Kuching (Malaysia)</item>
+        <item>Kudat</item>
+        <item>Kufrah</item>
+        <item>Kugaaruk</item>
+        <item>Kugluktuk</item>
+        <item>Kuito</item>
+        <item>Kulu</item>
+        <item>Kulusuk Island</item>
+        <item>Kulyab</item>
+        <item>Kumamoto</item>
+        <item>Kumasi</item>
+        <item>Kumejima</item>
+        <item>Kunduz</item>
+        <item>Kunming</item>
+        <item>Kununurra</item>
+        <item>Kuopio</item>
+        <item>Kupang</item>
+        <item>Kuqa</item>
+        <item>Kuressaare</item>
+        <item>Kurgan</item>
+        <item>Kurgon-Tyube</item>
+        <item>Kursk</item>
+        <item>Kushiro</item>
+        <item>Kütahya</item>
+        <item>Kutaisi</item>
+        <item>Kuujjuaq</item>
+        <item>Kuujjuarapik</item>
+        <item>Kuusamo</item>
+        <item>Kuwait</item>
+        <item>Kwajalein</item>
+        <item>Kwethluk</item>
+        <item>Kwigillingok</item>
+        <item>Kyaukpyu</item>
+        <item>Kyzyl</item>
+        <item>Kzyl-Orda</item>
+        <item>L.F. Wade International Airport</item>
+        <item>La Ceiba</item>
+        <item>La Chorrera</item>
+        <item>La Coruna</item>
+        <item>La Crosse</item>
+        <item>La Fria</item>
+        <item>La Gomera Tenerife</item>
+        <item>La Grande (Canada)</item>
+        <item>La Isabela International</item>
+        <item>La Palma (Spain)</item>
+        <item>La Paz (Bolivia)</item>
+        <item>La Paz (Mexico)</item>
+        <item>La Rioja</item>
+        <item>La Rochelle</item>
+        <item>La Romana</item>
+        <item>La Ronge</item>
+        <item>La Serena</item>
+        <item>La Tabatiere</item>
+        <item>Laayoune Hassan I</item>
+        <item>Labasa</item>
+        <item>Labrea</item>
+        <item>Labuan</item>
+        <item>Labuan Bajo</item>
+        <item>Labuha</item>
+        <item>Lac Brochet</item>
+        <item>Lae</item>
+        <item>Lafayette (United States)</item>
+        <item>Lagaligo</item>
+        <item>Laghouat</item>
+        <item>Lago Agrio</item>
+        <item>Lagos</item>
+        <item>Lahad Datu</item>
+        <item>Lahore</item>
+        <item>Lake Baringo</item>
+        <item>Lake Charles</item>
+        <item>Lake Evella</item>
+        <item>Lake Manyara</item>
+        <item>Lake Minchumina</item>
+        <item>Lakeba</item>
+        <item>Lakefield</item>
+        <item>Lakeland</item>
+        <item>Lakselv</item>
+        <item>Lalibela</item>
+        <item>Lamacarena</item>
+        <item>Lamap</item>
+        <item>Lamen Bay</item>
+        <item>Lamerd</item>
+        <item>Lamezia Terme</item>
+        <item>Lampang</item>
+        <item>Lampedusa</item>
+        <item>Lamu</item>
+        <item>Lanai City</item>
+        <item>Lancaster</item>
+        <item>Lands End</item>
+        <item>Langkawi</item>
+        <item>Lankaran International</item>
+        <item>Lansdowne House</item>
+        <item>Lanseria</item>
+        <item>Lansing</item>
+        <item>Lanzarote</item>
+        <item>Lanzhou</item>
+        <item>Laoag International</item>
+        <item>Lappeenranta</item>
+        <item>Lar</item>
+        <item>Laramie</item>
+        <item>Larantuka</item>
+        <item>Laredo</item>
+        <item>Larnaca</item>
+        <item>Larsen Bay</item>
+        <item>Las Brujas</item>
+        <item>Las Piedras</item>
+        <item>Las Vegas Mccarran</item>
+        <item>Lashio</item>
+        <item>Latacunga</item>
+        <item>Latakia</item>
+        <item>Latrobe (United States)</item>
+        <item>Laucala Is</item>
+        <item>Launceston</item>
+        <item>Laverton</item>
+        <item>Lawas</item>
+        <item>Lawton</item>
+        <item>Lazaro Cardenas</item>
+        <item>Le Mans Arnage</item>
+        <item>Le Puy Loudes</item>
+        <item>Le Touquet Paris Plag</item>
+        <item>Learmonth</item>
+        <item>Lebanon</item>
+        <item>Leeds Bradford</item>
+        <item>Legaspi</item>
+        <item>Leh</item>
+        <item>Leipzig</item>
+        <item>Leknes</item>
+        <item>Lemnos</item>
+        <item>Lensk Airport</item>
+        <item>Leon</item>
+        <item>Leonora</item>
+        <item>Leopold Sedar Senghor</item>
+        <item>Leros</item>
+        <item>Lethbridge</item>
+        <item>Leticia</item>
+        <item>Levelock</item>
+        <item>Lewisburg</item>
+        <item>Lewiston-Nez Perce County</item>
+        <item>Lewoleba</item>
+        <item>Lexington Blue Grass</item>
+        <item>Lhasa Gonggar</item>
+        <item>Lhoksumawe</item>
+        <item>Lianyungang</item>
+        <item>Liberal</item>
+        <item>Liberia</item>
+        <item>Libo Airport</item>
+        <item>Libreville</item>
+        <item>Lichinga</item>
+        <item>Liege</item>
+        <item>Liepaya</item>
+        <item>Lifou</item>
+        <item>Lihir Island</item>
+        <item>Lijiang City</item>
+        <item>Likoma Island</item>
+        <item>Lilabari</item>
+        <item>Lille</item>
+        <item>Lilongwe</item>
+        <item>Lima (Peru)</item>
+        <item>Limbang</item>
+        <item>Limoges</item>
+        <item>Lin Zhi</item>
+        <item>Lincang</item>
+        <item>Lincoln</item>
+        <item>Linfen Qiaoli</item>
+        <item>LingLing</item>
+        <item>Linkoping City</item>
+        <item>Linyi</item>
+        <item>Linz</item>
+        <item>Lipetsk</item>
+        <item>Liping City</item>
+        <item>Lisbon</item>
+        <item>Lismore</item>
+        <item>Little Cayman</item>
+        <item>Little Grand Rapids</item>
+        <item>Little Rock</item>
+        <item>Liupanshan</item>
+        <item>Liupanshui Yue Zhao</item>
+        <item>Liuzhou</item>
+        <item>Liverpool</item>
+        <item>Livingstone</item>
+        <item>Ljubljana</item>
+        <item>Lleida</item>
+        <item>Lloydminster</item>
+        <item>Lockhart River</item>
+        <item>Lodja</item>
+        <item>Lodwar</item>
+        <item>Lodz</item>
+        <item>Loei</item>
+        <item>Logrono</item>
+        <item>Loikaw</item>
+        <item>Loja</item>
+        <item>Lombok International</item>
+        <item>Lome</item>
+        <item>Londolozi</item>
+        <item>London</item>
+        <item>London City</item>
+        <item>London Gatwick</item>
+        <item>London Heathrow</item>
+        <item>London Luton</item>
+        <item>London Southend</item>
+        <item>London Stansted</item>
+        <item>Londrina</item>
+        <item>Long Akah</item>
+        <item>Long Apung</item>
+        <item>Long Banga</item>
+        <item>Long Beach Municipal</item>
+        <item>Long Island (Bahamas)</item>
+        <item>Long Lellang</item>
+        <item>Long Seridan</item>
+        <item>Longana</item>
+        <item>Longreach</item>
+        <item>Longyan</item>
+        <item>Longyearbyen</item>
+        <item>Lonorore</item>
+        <item>Lopez Island</item>
+        <item>Lord Howe Island</item>
+        <item>Loreto</item>
+        <item>Lorient</item>
+        <item>Los Alamos</item>
+        <item>Los Angeles Century City</item>
+        <item>Los Angeles International</item>
+        <item>Los Mochis</item>
+        <item>Losuia</item>
+        <item>Loubomo</item>
+        <item>Louisville Standiford Field</item>
+        <item>Lourdes</item>
+        <item>Loyangalani</item>
+        <item>Luanda</item>
+        <item>Luang Namtha</item>
+        <item>Luang Prabang</item>
+        <item>Lubango</item>
+        <item>Lubbock International</item>
+        <item>Lublin</item>
+        <item>Lubumbashi</item>
+        <item>Lucknow</item>
+        <item>Luderitz</item>
+        <item>Ludhiana</item>
+        <item>Luena</item>
+        <item>Lugano</item>
+        <item>Luguhu</item>
+        <item>Lukla</item>
+        <item>Lulea Kallax</item>
+        <item>Luoyang</item>
+        <item>Luqa Malta International</item>
+        <item>Lusaka</item>
+        <item>Lutselke / Snowdrift</item>
+        <item>Luxembourg</item>
+        <item>Luxor</item>
+        <item>Luzhou</item>
+        <item>Luzon Clark International</item>
+        <item>Lviv</item>
+        <item>Lvliang Airport</item>
+        <item>Lycksele Hedlunda</item>
+        <item>Lydd</item>
+        <item>Lynchburg</item>
+        <item>Lyon (France)</item>
+        <item>Lyon Bron</item>
+        <item>Maastricht</item>
+        <item>Mabuiag Island</item>
+        <item>Macapa</item>
+        <item>Macas</item>
+        <item>Macau (Macau)</item>
+        <item>Maceio</item>
+        <item>Mackay</item>
+        <item>Maconacon</item>
+        <item>Mactan-Cebu International</item>
+        <item>Madang</item>
+        <item>Madeira</item>
+        <item>Madinah</item>
+        <item>Madison (United States)</item>
+        <item>Madrid</item>
+        <item>Madurai</item>
+        <item>Mae Hong Son</item>
+        <item>Mae Sot (Tak)</item>
+        <item>Maewo</item>
+        <item>Mafia</item>
+        <item>Magadan</item>
+        <item>Magan</item>
+        <item>Magas</item>
+        <item>Magnitogorsk</item>
+        <item>Mahe Island</item>
+        <item>Maiduguri</item>
+        <item>Maijishan</item>
+        <item>Maimana</item>
+        <item>Majunga</item>
+        <item>Majuro</item>
+        <item>Makabana</item>
+        <item>Makale</item>
+        <item>Makassar</item>
+        <item>Makemo</item>
+        <item>Makhachkala</item>
+        <item>Makkovik</item>
+        <item>Makung</item>
+        <item>Malabo</item>
+        <item>Malacca</item>
+        <item>Malaga</item>
+        <item>Malang</item>
+        <item>Malatya</item>
+        <item>Malindi</item>
+        <item>Malmo Sturup</item>
+        <item>Malta</item>
+        <item>Mammoth Lakes</item>
+        <item>Mamuju</item>
+        <item>Man</item>
+        <item>Manado</item>
+        <item>Managua</item>
+        <item>Manaus</item>
+        <item>Manchester (United Kingdom)</item>
+        <item>Manchester (United States)</item>
+        <item>Mandalay</item>
+        <item>Mangaia Island</item>
+        <item>Mangalore</item>
+        <item>Manhattan</item>
+        <item>Manihi</item>
+        <item>Manihiki Island</item>
+        <item>Maniitsoq</item>
+        <item>Manila Ninoy Aquino</item>
+        <item>Maningrida</item>
+        <item>Manistee</item>
+        <item>Manitowoc</item>
+        <item>Manizales</item>
+        <item>Manley Hot Springs</item>
+        <item>Mannheim</item>
+        <item>Manokotak</item>
+        <item>Manokwari</item>
+        <item>Mansa</item>
+        <item>Mansfield</item>
+        <item>Manta</item>
+        <item>Manus Island</item>
+        <item>Manzanillo (Cuba)</item>
+        <item>Manzanillo (Mexico)</item>
+        <item>Manzhouli</item>
+        <item>Manzini</item>
+        <item>Maotai</item>
+        <item>Maple Bay</item>
+        <item>Maputo</item>
+        <item>Maqin</item>
+        <item>Mar Del Plata</item>
+        <item>Mara Lodges</item>
+        <item>Maraba</item>
+        <item>Maracaibo</item>
+        <item>Marau Sound</item>
+        <item>Mardin</item>
+        <item>Mare</item>
+        <item>Maribor</item>
+        <item>Marie Galante</item>
+        <item>Mariehamn</item>
+        <item>Marinda</item>
+        <item>Marion (United States)</item>
+        <item>Maroantsetra</item>
+        <item>Marquette</item>
+        <item>Marrakech Menara</item>
+        <item>Marsa Allam</item>
+        <item>Marseille</item>
+        <item>Marsh Harbour</item>
+        <item>Marshall (United States)</item>
+        <item>Martha's Vineyard</item>
+        <item>Martinsburg (United States)</item>
+        <item>Marudi</item>
+        <item>Mary</item>
+        <item>Masamba</item>
+        <item>Masbate</item>
+        <item>Maseru</item>
+        <item>Mashhad</item>
+        <item>Mason City</item>
+        <item>Massawa</item>
+        <item>Massena</item>
+        <item>Masset</item>
+        <item>Mataiva</item>
+        <item>Matak</item>
+        <item>Matamoros</item>
+        <item>Matsu</item>
+        <item>Matsumoto</item>
+        <item>Matsuyama</item>
+        <item>Maturin</item>
+        <item>Maui Kahului</item>
+        <item>Mauke Island</item>
+        <item>Maulmyine</item>
+        <item>Maumere</item>
+        <item>Maun</item>
+        <item>Maupiti</item>
+        <item>Mauritius</item>
+        <item>Mayaguana</item>
+        <item>Mayaguez</item>
+        <item>Mazar-I-Sharif</item>
+        <item>Mazatlan</item>
+        <item>Mbeya</item>
+        <item>Mbuji Mayi</item>
+        <item>Mcallen</item>
+        <item>Mcarthur River</item>
+        <item>McClellan-Palomar</item>
+        <item>Mccook</item>
+        <item>Mcgrath</item>
+        <item>Medan</item>
+        <item>Medan Kuala Namu</item>
+        <item>Medellin Enrique Olaya Herrera</item>
+        <item>Medellin Jose Maria Cordova</item>
+        <item>Medford (United States)</item>
+        <item>Medicine Hat</item>
+        <item>Meekatharra</item>
+        <item>Mehamn</item>
+        <item>Mehrabad International Airport</item>
+        <item>Meixian</item>
+        <item>Mekoryuk</item>
+        <item>Melbourne</item>
+        <item>Melbourne Avalon</item>
+        <item>Melbourne Essendon</item>
+        <item>Melbourne Tullamarine</item>
+        <item>Melilla</item>
+        <item>Memanbetsu</item>
+        <item>Memmingen Allgäu</item>
+        <item>Memphis International</item>
+        <item>Mende</item>
+        <item>Mendeleyevo</item>
+        <item>Mendi (Papua New Guinea)</item>
+        <item>Mendoza</item>
+        <item>Menongue</item>
+        <item>Menorca</item>
+        <item>Merauke</item>
+        <item>Merced Municipal Arpt</item>
+        <item>Merida (Mexico)</item>
+        <item>Meridian</item>
+        <item>Merimbula</item>
+        <item>Mersa Matruh</item>
+        <item>Merzifon</item>
+        <item>Metlakatla</item>
+        <item>Metz / Nancy Lorraine</item>
+        <item>Meulaboh</item>
+        <item>Mexicali</item>
+        <item>Mexico City Juarez International</item>
+        <item>Mfuwe</item>
+        <item>Miami International</item>
+        <item>Mian Yang</item>
+        <item>Midland</item>
+        <item>Midland Odessa Regional</item>
+        <item>Milan Bergamo</item>
+        <item>Milan Linate</item>
+        <item>Milan Malpensa</item>
+        <item>Milanau</item>
+        <item>Mildura</item>
+        <item>Milingimbi</item>
+        <item>Milos</item>
+        <item>Milwaukee General Mitchell</item>
+        <item>Minatitlan</item>
+        <item>Mineralnye Vody</item>
+        <item>Minna</item>
+        <item>Minneapolis St Paul</item>
+        <item>Minneriya</item>
+        <item>Minot International</item>
+        <item>Minsk International 2</item>
+        <item>Minto</item>
+        <item>Miri</item>
+        <item>Mirny</item>
+        <item>Misawa</item>
+        <item>Misima Island</item>
+        <item>Miskolc</item>
+        <item>Missoula</item>
+        <item>Misurata</item>
+        <item>Mitiaro Island</item>
+        <item>Mitu</item>
+        <item>Miyako Jima</item>
+        <item>Miyazaki</item>
+        <item>Mmabatho</item>
+        <item>Mo I Rana Rossvoll</item>
+        <item>Moab</item>
+        <item>Mobile Municipal Arpt</item>
+        <item>Mogadishu</item>
+        <item>Mohe</item>
+        <item>Mohenjodaro</item>
+        <item>Molde Aro</item>
+        <item>Moline</item>
+        <item>Moma Airport</item>
+        <item>Mombasa</item>
+        <item>Monastir</item>
+        <item>Monbetsu</item>
+        <item>Moncton</item>
+        <item>Mongomeyen</item>
+        <item>Mongu</item>
+        <item>Monkey Bay</item>
+        <item>Monkey Mia</item>
+        <item>Monroe</item>
+        <item>Monrovia Roberts</item>
+        <item>Monrovia Sprigg Payne</item>
+        <item>Mont Joli</item>
+        <item>Mont Tremblant</item>
+        <item>Monteagudo</item>
+        <item>Montego Bay</item>
+        <item>Monteria</item>
+        <item>Monterrey Gen Mariano Escobedo</item>
+        <item>Montes Claros</item>
+        <item>Montevideo (Uruguay)</item>
+        <item>Montgomery Dannelly Fld</item>
+        <item>Montpellier</item>
+        <item>Montreal Mirabel</item>
+        <item>Montreal Pierre Elliott Trudeau</item>
+        <item>Montreal St Hubert</item>
+        <item>Montrose</item>
+        <item>Montserrat</item>
+        <item>Monywa</item>
+        <item>Moorea</item>
+        <item>Moosonee</item>
+        <item>Mora-Siljan</item>
+        <item>Moranbah</item>
+        <item>Moree</item>
+        <item>Morelia</item>
+        <item>Morgantown</item>
+        <item>Mornington</item>
+        <item>Moro</item>
+        <item>Moron (Mongolia)</item>
+        <item>Morondava</item>
+        <item>Moroni Prince Said Ibrahim In</item>
+        <item>Morotai Island</item>
+        <item>Morrisville-Stowe</item>
+        <item>Moruya</item>
+        <item>Moscow Domodedovo</item>
+        <item>Moscow Sheremetyevo</item>
+        <item>Moscow Vnukovo</item>
+        <item>Moser Bay</item>
+        <item>Mosjoen Kjaerstad</item>
+        <item>Mostar</item>
+        <item>Mosul</item>
+        <item>Mota Lava</item>
+        <item>Mount Gambier</item>
+        <item>Mount Hagen</item>
+        <item>Mount Hotham</item>
+        <item>Mount Isa</item>
+        <item>Mount Magnet</item>
+        <item>Mountain Village</item>
+        <item>Mpacha</item>
+        <item>Mtwara</item>
+        <item>Mudanjiang</item>
+        <item>Mukah</item>
+        <item>Mulatupo</item>
+        <item>Mulhouse</item>
+        <item>Multan</item>
+        <item>Mulu</item>
+        <item>Mumbai</item>
+        <item>Munda</item>
+        <item>Munich</item>
+        <item>Munster Osnabruck</item>
+        <item>Murcia</item>
+        <item>Murmansk</item>
+        <item>Murray Island</item>
+        <item>Mus</item>
+        <item>Muscat</item>
+        <item>Muscle Shoals</item>
+        <item>Muskegon</item>
+        <item>Muskrat Dam</item>
+        <item>Musoma</item>
+        <item>Mwanza</item>
+        <item>Myeik</item>
+        <item>Myitkyina</item>
+        <item>Mykonos</item>
+        <item>Myrtle Beach AFB</item>
+        <item>Mysore</item>
+        <item>Mytilene</item>
+        <item>Mzuzu</item>
+        <item>N'Djamena</item>
+        <item>Naberezhnye Chelny</item>
+        <item>Nabire</item>
+        <item>Nacala</item>
+        <item>Nadi</item>
+        <item>Nador</item>
+        <item>Nadym</item>
+        <item>Naga</item>
+        <item>Nagasaki</item>
+        <item>Nagoya Chubu Centrair</item>
+        <item>Nagoya Komaki Air Force Base</item>
+        <item>Nagpur</item>
+        <item>Naha</item>
+        <item>Nain</item>
+        <item>Nairobi Jomo Kenyatta</item>
+        <item>Nairobi Wilson</item>
+        <item>Najaf</item>
+        <item>Nakashibetsu</item>
+        <item>Nakhichevan</item>
+        <item>Nakhon Phanom</item>
+        <item>Nakhon Si Thammarat</item>
+        <item>Nalchik</item>
+        <item>Namangan</item>
+        <item>Namibe</item>
+        <item>Nampula</item>
+        <item>Namsos</item>
+        <item>Nan</item>
+        <item>Nanaimo</item>
+        <item>Nanaimo Harbour</item>
+        <item>Nanchang</item>
+        <item>Nanchong</item>
+        <item>Nanded</item>
+        <item>Nangan</item>
+        <item>Nanking / Nanjing</item>
+        <item>Nanning</item>
+        <item>Nantes</item>
+        <item>Nantong</item>
+        <item>Nantucket</item>
+        <item>Nanwalek</item>
+        <item>Nanyang</item>
+        <item>Nanyuki</item>
+        <item>Napakiak</item>
+        <item>Napaskiak</item>
+        <item>Napier-Hastings</item>
+        <item>Naples International</item>
+        <item>Napuka Island</item>
+        <item>Narathiwat</item>
+        <item>Narrabri</item>
+        <item>Narrandera</item>
+        <item>Narsarsuaq</item>
+        <item>Naryan-Mar</item>
+        <item>Nashville</item>
+        <item>Nasik</item>
+        <item>Nassau International</item>
+        <item>Natal</item>
+        <item>Natashquan</item>
+        <item>Natuashish</item>
+        <item>Natuna Ranai</item>
+        <item>Naukiti</item>
+        <item>Navegantes</item>
+        <item>Navoiy</item>
+        <item>Naxos</item>
+        <item>Naypyidaw Airport</item>
+        <item>Ndola</item>
+        <item>Neerlerit Inaat</item>
+        <item>Neiva</item>
+        <item>Nejran</item>
+        <item>Nelson</item>
+        <item>Nelson Lagoon</item>
+        <item>Nelspruit (South Africa)</item>
+        <item>Nelspruit (South Africa)</item>
+        <item>Nemiscau</item>
+        <item>Nepalganj</item>
+        <item>Neryungri</item>
+        <item>Neuquen</item>
+        <item>Nevis</item>
+        <item>Nevsehir</item>
+        <item>New Bern</item>
+        <item>New Delhi</item>
+        <item>New Haven</item>
+        <item>New Koliganek</item>
+        <item>New Orleans Lakefront</item>
+        <item>New Orleans Louis Armstrong</item>
+        <item>New Plymouth</item>
+        <item>New Stuyahok</item>
+        <item>New York John F. Kennedy</item>
+        <item>New York LaGuardia</item>
+        <item>New York Newark</item>
+        <item>Newcastle (United Kingdom)</item>
+        <item>Newcastle Williamtown</item>
+        <item>Newman</item>
+        <item>Newport News / Williamsb</item>
+        <item>Newquay</item>
+        <item>Newtok</item>
+        <item>Ngala</item>
+        <item>Nha Trang Cam Ranh</item>
+        <item>Niagara Falls</item>
+        <item>Niamey</item>
+        <item>Niau</item>
+        <item>Nice</item>
+        <item>Nifty</item>
+        <item>Nightmute</item>
+        <item>Niigata</item>
+        <item>Nikolaevsk-na-Amure</item>
+        <item>Nikolski</item>
+        <item>Nimes</item>
+        <item>Ningbo</item>
+        <item>Nis</item>
+        <item>Niuafo'ou</item>
+        <item>Niuatoputapu</item>
+        <item>Niue Island</item>
+        <item>Nizhnevartovsk</item>
+        <item>Nizhniy Novgorod</item>
+        <item>Njombe</item>
+        <item>Noatak</item>
+        <item>Nogliki</item>
+        <item>Nojabrxsk</item>
+        <item>Nome</item>
+        <item>Nondalton</item>
+        <item>Noorvik</item>
+        <item>Nop Goliath</item>
+        <item>Norfolk International</item>
+        <item>Norfolk Island</item>
+        <item>Norilsk</item>
+        <item>Norman Wells</item>
+        <item>Normanton</item>
+        <item>Norrkoping Kungsangen</item>
+        <item>Norsup</item>
+        <item>North Bay</item>
+        <item>North Bend</item>
+        <item>North Eleuthera</item>
+        <item>North Halmahera (Kau)</item>
+        <item>North Platte</item>
+        <item>North Ronaldsay</item>
+        <item>North Spirit Lake</item>
+        <item>Northwest Florida Beaches International</item>
+        <item>Norway House</item>
+        <item>Norwich (United Kingdom)</item>
+        <item>Nosara Beach</item>
+        <item>Nossi-be</item>
+        <item>Noto Hadinegoro</item>
+        <item>Notodden</item>
+        <item>Nouakchott</item>
+        <item>Noumea Magenta</item>
+        <item>Noumea Tontouta</item>
+        <item>Novokuzinetsk</item>
+        <item>Novosibirsk</item>
+        <item>Novy Urengoy</item>
+        <item>Now Shahr</item>
+        <item>Nueva Gerona</item>
+        <item>Nuevo Laredo</item>
+        <item>Nuiqsut</item>
+        <item>Nuku Hiva</item>
+        <item>Nukus</item>
+        <item>Nukutavake</item>
+        <item>Nukutepipi</item>
+        <item>Nulato</item>
+        <item>Nunapitchuk</item>
+        <item>Nunukan</item>
+        <item>Nuremberg</item>
+        <item>Nuuk</item>
+        <item>Nuwara Eliya</item>
+        <item>Nyagan</item>
+        <item>Nyala</item>
+        <item>Nyaung-u</item>
+        <item>Nyurba Airport</item>
+        <item>Oakland Metropolitan Oak</item>
+        <item>Oaxaca</item>
+        <item>Oban Connel</item>
+        <item>Obihiro</item>
+        <item>Odate Noshiro</item>
+        <item>Odesa Central</item>
+        <item>Odienne</item>
+        <item>Ogden Municipal</item>
+        <item>Ogdensburg</item>
+        <item>Ogle</item>
+        <item>Ohrid</item>
+        <item>Oita</item>
+        <item>Okayama</item>
+        <item>Okha</item>
+        <item>Oki Island</item>
+        <item>Okinawa Naha</item>
+        <item>Okino Erabu</item>
+        <item>Oklahoma City Will Rogers World</item>
+        <item>Oksibil</item>
+        <item>Okushiri</item>
+        <item>Olbia</item>
+        <item>Old Crow</item>
+        <item>Old Harbor</item>
+        <item>Olenyok</item>
+        <item>Olga Bay</item>
+        <item>Olkiombo</item>
+        <item>Olsztyn-Mazury</item>
+        <item>Olympic Dam</item>
+        <item>Olyokminsk Airport</item>
+        <item>Omaha Eppley Airfield</item>
+        <item>Omitama</item>
+        <item>Omsk</item>
+        <item>Ondangwa</item>
+        <item>Ongiva</item>
+        <item>Onslow</item>
+        <item>Ontario International</item>
+        <item>Oradea</item>
+        <item>Orange (Australia)</item>
+        <item>Orange Walk</item>
+        <item>Oranjemund</item>
+        <item>Oranjestad</item>
+        <item>Orchid Island</item>
+        <item>Ordu/Giresun</item>
+        <item>Orebro</item>
+        <item>Orenburg</item>
+        <item>Orkney Kirkwall</item>
+        <item>Orland</item>
+        <item>Orlando International</item>
+        <item>Orlando Sanford</item>
+        <item>Ornskoldsvik</item>
+        <item>Orsk</item>
+        <item>Orsta / Volda Hovden</item>
+        <item>Oruro</item>
+        <item>Osaka Itami</item>
+        <item>Osaka Kansai International</item>
+        <item>Osh</item>
+        <item>Osijek</item>
+        <item>Oslo Gardermoen</item>
+        <item>Oslo Rygge</item>
+        <item>Oslo Torp</item>
+        <item>Osorno</item>
+        <item>Ostend - Bruges</item>
+        <item>Ostersund Froesoe</item>
+        <item>Ostrava</item>
+        <item>Ottawa Gatineau</item>
+        <item>Ottawa International</item>
+        <item>Ouagadougou</item>
+        <item>Ouargla</item>
+        <item>Ouarzazate</item>
+        <item>Oudomxay</item>
+        <item>Oujda L. Angades</item>
+        <item>Oulu</item>
+        <item>Ouvea</item>
+        <item>Ouzinkie SPB</item>
+        <item>Ovda (Eilat)</item>
+        <item>Owensboro</item>
+        <item>Owerri</item>
+        <item>Oxford House</item>
+        <item>Ozamis City</item>
+        <item>Paama</item>
+        <item>Paamiut</item>
+        <item>Padang</item>
+        <item>Paderborn</item>
+        <item>Paducah</item>
+        <item>Pagadian</item>
+        <item>Pagar Alam</item>
+        <item>Page</item>
+        <item>Pago Pago</item>
+        <item>Pai (Mae Hong Son)</item>
+        <item>Pajala</item>
+        <item>Pakse</item>
+        <item>Pakuashipi</item>
+        <item>Pakuba</item>
+        <item>Palanga International</item>
+        <item>Palangkaraya</item>
+        <item>Palembang</item>
+        <item>Palenque</item>
+        <item>Palermo</item>
+        <item>Palm Island (Australia)</item>
+        <item>Palm Springs International</item>
+        <item>Palma - Majorca</item>
+        <item>Palmas</item>
+        <item>Palmerston North</item>
+        <item>Palu</item>
+        <item>Pamplona</item>
+        <item>Pan Zhi Hua</item>
+        <item>Panama City Paitilla</item>
+        <item>Panama City Tocumen International</item>
+        <item>Pangkalanbuun</item>
+        <item>Pangkalpinang</item>
+        <item>Pangnirtung</item>
+        <item>Panjgur</item>
+        <item>Pantelleria</item>
+        <item>Pantnagar</item>
+        <item>Papa Stour</item>
+        <item>Papa Westray</item>
+        <item>Papeete</item>
+        <item>Paphos</item>
+        <item>Paraburdoo</item>
+        <item>Paramaribo Zanderij</item>
+        <item>Parana</item>
+        <item>Paraparaumu</item>
+        <item>Parasi</item>
+        <item>Pardubice</item>
+        <item>Parintins</item>
+        <item>Paris Beauvais</item>
+        <item>Paris Charles de Gaulle</item>
+        <item>Paris Orly</item>
+        <item>Parkersburg</item>
+        <item>Parkes</item>
+        <item>Parma</item>
+        <item>Paro</item>
+        <item>Paros</item>
+        <item>Parsabad</item>
+        <item>Pasco</item>
+        <item>Pasighat</item>
+        <item>Passo Fundo</item>
+        <item>Pasto</item>
+        <item>Patna</item>
+        <item>Pattaya (Chonburi)</item>
+        <item>Pau</item>
+        <item>Paulatuk</item>
+        <item>Pavlodar</item>
+        <item>Peach Springs Grand Canyon West</item>
+        <item>Peawanuck</item>
+        <item>Pecs</item>
+        <item>Pedro Bay</item>
+        <item>Pekanbaru</item>
+        <item>Pelican</item>
+        <item>Pellston</item>
+        <item>Pelotas</item>
+        <item>Pemba (Mozambique)</item>
+        <item>Pemba (Tanzania)</item>
+        <item>Penang (Malaysia)</item>
+        <item>Pendleton</item>
+        <item>Penrhyn Island</item>
+        <item>Pensacola</item>
+        <item>Penticton</item>
+        <item>Penza</item>
+        <item>Penzance</item>
+        <item>Pereira</item>
+        <item>Perigueux</item>
+        <item>Perm</item>
+        <item>Perpignan</item>
+        <item>Perryville</item>
+        <item>Perth (Australia)</item>
+        <item>Perugia Santegidio</item>
+        <item>Pescara</item>
+        <item>Peshawar</item>
+        <item>Petersburg (United States)</item>
+        <item>Petrolina</item>
+        <item>Petropavlovsk</item>
+        <item>Petropavlovsk-Kamchatsky</item>
+        <item>Petrozavodsk</item>
+        <item>Pevek</item>
+        <item>Phalaborwa</item>
+        <item>Philadelphia International</item>
+        <item>Philadelphia Trenton-Mercer</item>
+        <item>Phinda</item>
+        <item>Phitsanulok</item>
+        <item>Phnom Penh</item>
+        <item>Phoenix Sky Harbor</item>
+        <item>Phoenix-Mesa Gateway</item>
+        <item>Phongsaly</item>
+        <item>Phrae</item>
+        <item>Phu Quoc</item>
+        <item>Phuket</item>
+        <item>Pickle Lake</item>
+        <item>Pico Island</item>
+        <item>Picton</item>
+        <item>Piedras Negras</item>
+        <item>Pierre</item>
+        <item>Pietermaritzburg</item>
+        <item>Pikangikum</item>
+        <item>Pilot Point Arpt</item>
+        <item>Pilot Point Ugashik Bay</item>
+        <item>Pilot Station</item>
+        <item>Pisa</item>
+        <item>Pitt Meadows</item>
+        <item>Pitt-Greenville</item>
+        <item>Pittsburgh International</item>
+        <item>Pituffik</item>
+        <item>Piura</item>
+        <item>Placencia</item>
+        <item>Plastun</item>
+        <item>Platinum</item>
+        <item>Platov International, Rostov on Don</item>
+        <item>Plattsburgh AFB</item>
+        <item>Playon Chico</item>
+        <item>Pleiku</item>
+        <item>Plovdiv</item>
+        <item>Plymouth (United Kingdom)</item>
+        <item>Pocatello</item>
+        <item>Podgorica</item>
+        <item>Podkamennaya Tunguska</item>
+        <item>Pohang</item>
+        <item>Pohnpei</item>
+        <item>Point Baker</item>
+        <item>Point Hope</item>
+        <item>Point Lay</item>
+        <item>Pointe Noire</item>
+        <item>Pointe-a-Pitre</item>
+        <item>Points North Landing</item>
+        <item>Poitiers</item>
+        <item>Pokhara</item>
+        <item>Polokwane</item>
+        <item>Polyarnyj</item>
+        <item>Pomala</item>
+        <item>Ponce</item>
+        <item>Pond Inlet</item>
+        <item>Ponta Delgada</item>
+        <item>Pontiac</item>
+        <item>Pontianak</item>
+        <item>Popayan</item>
+        <item>Poplar Hill</item>
+        <item>Popondetta</item>
+        <item>Poprad-Tatry</item>
+        <item>Porbandar</item>
+        <item>Pori</item>
+        <item>Porlamar</item>
+        <item>Port Alsworth</item>
+        <item>Port Au Prince</item>
+        <item>Port Augusta</item>
+        <item>Port Bailey</item>
+        <item>Port blair</item>
+        <item>Port Columbus</item>
+        <item>Port Elizabeth (South Africa)</item>
+        <item>Port Gentil</item>
+        <item>Port Graham</item>
+        <item>Port Harcourt</item>
+        <item>Port Harcourt City</item>
+        <item>Port Hardy</item>
+        <item>Port Hedland</item>
+        <item>Port Heiden</item>
+        <item>Port Lincoln</item>
+        <item>Port Lions</item>
+        <item>Port Macquarie</item>
+        <item>Port Menier</item>
+        <item>Port Moller</item>
+        <item>Port Moresby</item>
+        <item>Port Of Spain</item>
+        <item>Port Protection</item>
+        <item>Port Sudan</item>
+        <item>Port Vila</item>
+        <item>Port Williams</item>
+        <item>Portimao</item>
+        <item>Portland (Australia)</item>
+        <item>Portland (United States)</item>
+        <item>Portland (United States)</item>
+        <item>Porto</item>
+        <item>Porto Alegre (Brazil)</item>
+        <item>Porto Santo</item>
+        <item>Porto Seguro</item>
+        <item>Porto Velho</item>
+        <item>Portsmouth (United States)</item>
+        <item>Porvenir</item>
+        <item>Posadas</item>
+        <item>Poso</item>
+        <item>Postville</item>
+        <item>Potosi</item>
+        <item>Povungnituk</item>
+        <item>Powell River</item>
+        <item>Poza Rica</item>
+        <item>Poznan</item>
+        <item>Prague</item>
+        <item>Praia</item>
+        <item>Praslin Island</item>
+        <item>Preobrazheniye</item>
+        <item>Prescott</item>
+        <item>Presidente Prudente</item>
+        <item>Presque Isle</item>
+        <item>Pretoria Wonderboom Apt.</item>
+        <item>Preveza</item>
+        <item>Prince Albert</item>
+        <item>Prince George</item>
+        <item>Prince Rupert Digby Island</item>
+        <item>Pristina</item>
+        <item>Providence</item>
+        <item>Providenciales</item>
+        <item>Provincetown</item>
+        <item>Provo</item>
+        <item>Pucallpa</item>
+        <item>Puducherry</item>
+        <item>Puebla</item>
+        <item>Pueblo</item>
+        <item>Puerto Asis</item>
+        <item>Puerto Ayacucho</item>
+        <item>Puerto Barrios</item>
+        <item>Puerto Escondido</item>
+        <item>Puerto Jimenez</item>
+        <item>Puerto Leguizamo</item>
+        <item>Puerto Lempira</item>
+        <item>Puerto Madryn</item>
+        <item>Puerto Maldonado</item>
+        <item>Puerto Montt</item>
+        <item>Puerto Obaldia</item>
+        <item>Puerto Ordaz</item>
+        <item>Puerto Plata</item>
+        <item>Puerto Princesa (Palawan)</item>
+        <item>Puerto Vallarta</item>
+        <item>Puerto Williams</item>
+        <item>Puka Puka</item>
+        <item>Puka Puka Is / Attol</item>
+        <item>Pukarua</item>
+        <item>Pula</item>
+        <item>Pullman</item>
+        <item>Pune</item>
+        <item>Puning</item>
+        <item>Punta Arenas</item>
+        <item>Punta Cana</item>
+        <item>Punta Del Este</item>
+        <item>Punta Gorda (Belize)</item>
+        <item>Punta Gorda (United States)</item>
+        <item>Putao</item>
+        <item>Putussibau</item>
+        <item>Pyongyang</item>
+        <item>Qaanaaq</item>
+        <item>Qaarsut</item>
+        <item>Qabala</item>
+        <item>Qiemo</item>
+        <item>Qikiqtarjuaq</item>
+        <item>Qingdao</item>
+        <item>Qingyang</item>
+        <item>Qiqihar</item>
+        <item>Qualicum</item>
+        <item>Quaqtaq</item>
+        <item>Quebec</item>
+        <item>Queenstown (New Zealand)</item>
+        <item>Quelimane</item>
+        <item>Quepos</item>
+        <item>Queretaro</item>
+        <item>Quesnel</item>
+        <item>Quetta</item>
+        <item>Qui Nhon</item>
+        <item>Quibdo</item>
+        <item>Quilpie</item>
+        <item>Quimper</item>
+        <item>Quincy (United States)</item>
+        <item>Quinhagak</item>
+        <item>Quito</item>
+        <item>Rabat</item>
+        <item>Rabaul</item>
+        <item>Rach Gia</item>
+        <item>Rafsanjan</item>
+        <item>Raha</item>
+        <item>Rahim Yar Khan</item>
+        <item>Raiatea</item>
+        <item>Raipur</item>
+        <item>Rairua</item>
+        <item>Rajahmundry</item>
+        <item>Rajkot</item>
+        <item>Rajshahi</item>
+        <item>Raleigh / Durham</item>
+        <item>Ramata</item>
+        <item>Ramingining</item>
+        <item>Rampart</item>
+        <item>Ramsar</item>
+        <item>Ranchi</item>
+        <item>Rangiroa</item>
+        <item>Rankin Inlet</item>
+        <item>Ranong</item>
+        <item>Rapid City Regional</item>
+        <item>Raroia</item>
+        <item>Rarotonga</item>
+        <item>Ras Al Khaimah</item>
+        <item>Rasht</item>
+        <item>Ravensthorpe</item>
+        <item>Reao</item>
+        <item>Recife</item>
+        <item>Red Deer</item>
+        <item>Red Devil</item>
+        <item>Red Lake</item>
+        <item>Red Sucker Lake</item>
+        <item>Redding</item>
+        <item>Redmond</item>
+        <item>Reggio Calabria</item>
+        <item>Regina (Canada)</item>
+        <item>Región de Murcia</item>
+        <item>Regional De Maringa</item>
+        <item>Reims</item>
+        <item>Rembele</item>
+        <item>Rennell</item>
+        <item>Rennes</item>
+        <item>Reno / Tahoe</item>
+        <item>Repulse Bay</item>
+        <item>Resistencia</item>
+        <item>Resolute</item>
+        <item>Retalhuleu</item>
+        <item>Reus</item>
+        <item>Reykjavik Domestic</item>
+        <item>Reykjavik Keflavik</item>
+        <item>Reynosa</item>
+        <item>Rhinelander</item>
+        <item>Rhodes</item>
+        <item>Ribeirao Preto</item>
+        <item>Riberalta</item>
+        <item>Richards Bay</item>
+        <item>Richmond (Australia)</item>
+        <item>Richmond (United States)</item>
+        <item>Riga International</item>
+        <item>Rigolet</item>
+        <item>Rijeka</item>
+        <item>Rimatara</item>
+        <item>Rimini</item>
+        <item>Rio Branco</item>
+        <item>Rio Cuarto</item>
+        <item>Rio De Janeiro Internacional</item>
+        <item>Rio De Janeiro Santos Dumont</item>
+        <item>Rio Gallegos</item>
+        <item>Rio Grande (Argentina)</item>
+        <item>Rio Grande (Brazil)</item>
+        <item>Rio Hondo</item>
+        <item>Riohacha</item>
+        <item>Rishiri</item>
+        <item>Riverside March AFB</item>
+        <item>Riverton</item>
+        <item>Riyadh</item>
+        <item>Riyan Mukalla</item>
+        <item>Roanoke</item>
+        <item>Roatan</item>
+        <item>Roche Harbor</item>
+        <item>Rochester (United States)</item>
+        <item>Rochester Municipal</item>
+        <item>Rock Sound</item>
+        <item>Rock Springs</item>
+        <item>Rockhampton</item>
+        <item>Rockland</item>
+        <item>Rodez</item>
+        <item>Rodrigues Is</item>
+        <item>Roervik Ryumsjoen</item>
+        <item>Roi Et</item>
+        <item>Roma (Australia)</item>
+        <item>Rome Ciampino</item>
+        <item>Rome Fiumicino</item>
+        <item>Ronaldsway</item>
+        <item>Rondonopolis</item>
+        <item>Ronne Bornholm</item>
+        <item>Ronneby</item>
+        <item>Roros</item>
+        <item>Rosario (Argentina)</item>
+        <item>Rosario (United States)</item>
+        <item>Roseires</item>
+        <item>Rost</item>
+        <item>Rostock</item>
+        <item>Roswell</item>
+        <item>Roti</item>
+        <item>Rotorua</item>
+        <item>Rotterdam</item>
+        <item>Rotuma Island</item>
+        <item>Rouen</item>
+        <item>Round Lake</item>
+        <item>Rouyn</item>
+        <item>Rovaniemi</item>
+        <item>Roxas City</item>
+        <item>Royal</item>
+        <item>Ruby</item>
+        <item>Rum Cay</item>
+        <item>Rundu</item>
+        <item>Rurrenabaque</item>
+        <item>Rurutu</item>
+        <item>Russian Mission</item>
+        <item>Rutland</item>
+        <item>Rzeszow</item>
+        <item>Saarbruecken</item>
+        <item>Saba Island</item>
+        <item>Sabang</item>
+        <item>Sabetta International</item>
+        <item>Sabzevar</item>
+        <item>Sachigo Lake</item>
+        <item>Sachs Harbour</item>
+        <item>Sacramento International</item>
+        <item>Sacramento Stockton</item>
+        <item>Saga</item>
+        <item>Saibai Island</item>
+        <item>Saidpur</item>
+        <item>Saint George</item>
+        <item>Saint John</item>
+        <item>Saint John's</item>
+        <item>Saint Marys</item>
+        <item>Saint Paul Island</item>
+        <item>Saint Thomas Cyril E King</item>
+        <item>Saint-Denis</item>
+        <item>Saint-Pierre</item>
+        <item>Sainte Marie</item>
+        <item>Saipan</item>
+        <item>Sakkyryr</item>
+        <item>Sakon Nakhon</item>
+        <item>Sal</item>
+        <item>Salalah</item>
+        <item>Salamanca Matacan</item>
+        <item>Salehard</item>
+        <item>Salem (India)</item>
+        <item>Salina (United States)</item>
+        <item>Salinas (Ecuador)</item>
+        <item>Salisbury-Ocean City</item>
+        <item>Salluit</item>
+        <item>Salt Cay</item>
+        <item>Salt Lake City</item>
+        <item>Salta</item>
+        <item>Saltillo</item>
+        <item>Salvador</item>
+        <item>Salzburg</item>
+        <item>Sam Neua</item>
+        <item>Samana</item>
+        <item>Samara</item>
+        <item>Samarai Island</item>
+        <item>Samarinda</item>
+        <item>Samarkand</item>
+        <item>Sambava</item>
+        <item>Samburu</item>
+        <item>Samos</item>
+        <item>Sampit</item>
+        <item>Samsun Carsamba</item>
+        <item>San Andres Island</item>
+        <item>San Andros</item>
+        <item>San Angelo Mathis Fld</item>
+        <item>San Antonio</item>
+        <item>San Antonio International</item>
+        <item>San Antonio Martindale AAF</item>
+        <item>San Carlos DeBariloche</item>
+        <item>San Cristobal (Ecuador)</item>
+        <item>San Diego International</item>
+        <item>San Domino Island</item>
+        <item>San Felipe (Mexico)</item>
+        <item>San Fernando De Apure</item>
+        <item>San Francisco China Basin Heliport</item>
+        <item>San Francisco International</item>
+        <item>San Ignacio Cayo</item>
+        <item>San Jose (Mindoro)</item>
+        <item>San Jose Cabo</item>
+        <item>San Jose Del Gua</item>
+        <item>San Jose International</item>
+        <item>San Jose Island</item>
+        <item>San Jose Juan Santamaria</item>
+        <item>San Jose Tobias Bolanos</item>
+        <item>San Juan (Argentina)</item>
+        <item>San Juan Isla Grande</item>
+        <item>San Juan Luis Munoz Marin</item>
+        <item>San Luis</item>
+        <item>San Luis Obispo County</item>
+        <item>San Luis Potosi</item>
+        <item>San Martin DeLos Andes</item>
+        <item>San Pedro (Belize)</item>
+        <item>San Pedro (Ivory Coast)</item>
+        <item>San Pedro Sula</item>
+        <item>San Rafael</item>
+        <item>San Salvador (Bahamas)</item>
+        <item>San Salvador (El Salvador)</item>
+        <item>San Sebastian</item>
+        <item>San Tome</item>
+        <item>Sana'a</item>
+        <item>Sanandaj</item>
+        <item>Sand Point</item>
+        <item>Sandakan</item>
+        <item>Sandane</item>
+        <item>Sanday</item>
+        <item>Sandnessjoen</item>
+        <item>Sandspit</item>
+        <item>Sandy Lake</item>
+        <item>Sanggata</item>
+        <item>Sangir Talaud (Melonguane)</item>
+        <item>Sanikiluaq</item>
+        <item>Sanliurfa</item>
+        <item>Sanliurfa Guney Anadoulu Projesi</item>
+        <item>Sanqingshan</item>
+        <item>Santa Ana (Bolivia)</item>
+        <item>Santa Ana (Solomon Islands)</item>
+        <item>Santa Ana John Wayne</item>
+        <item>Santa Barbara Municipal</item>
+        <item>Santa Clara</item>
+        <item>Santa Cruz El Trompillo</item>
+        <item>Santa Cruz Is</item>
+        <item>Santa Cruz Viru Viru</item>
+        <item>Santa Fe (Argentina)</item>
+        <item>Santa Fe (United States)</item>
+        <item>Santa Maria (Brazil)</item>
+        <item>Santa Maria (Portugal)</item>
+        <item>Santa Maria (United States)</item>
+        <item>Santa Marta</item>
+        <item>Santa Rosa (Argentina)</item>
+        <item>Santa Rosa (Ecuador)</item>
+        <item>Santa Rosa (United States)</item>
+        <item>Santander</item>
+        <item>Santarem</item>
+        <item>Santiago (Cuba)</item>
+        <item>Santiago (Dominican Republic)</item>
+        <item>Santiago Arturo Merino Benitez</item>
+        <item>Santiago de Compostela</item>
+        <item>Santiago Del Estero</item>
+        <item>Santiago Los Cerrillos</item>
+        <item>Santo Angelo</item>
+        <item>Santo Domingo</item>
+        <item>Santo Domingo Las Americas</item>
+        <item>Santorini (Thira)</item>
+        <item>Sanya</item>
+        <item>Sao Filipe</item>
+        <item>Sao Gabriel</item>
+        <item>Sao Jose Do Rio Preto</item>
+        <item>Sao Luiz</item>
+        <item>Sao Nicolau</item>
+        <item>Sao Paulo Congonhas</item>
+        <item>Sao Paulo Guarulhos</item>
+        <item>Sao Paulo Viracopos</item>
+        <item>Sao Tome Is</item>
+        <item>Sao Vicente</item>
+        <item>Sapporo Chitose</item>
+        <item>Sapporo Okadama</item>
+        <item>Sara</item>
+        <item>Sarajevo International</item>
+        <item>Saranac Lake</item>
+        <item>Saransk</item>
+        <item>Sarasota</item>
+        <item>Saratov</item>
+        <item>Sarnia</item>
+        <item>Sary</item>
+        <item>Saskatoon</item>
+        <item>Saskylakh</item>
+        <item>Satu Mare</item>
+        <item>Sault Ste Marie</item>
+        <item>Sault Ste Marie Chippewa County</item>
+        <item>Saumlaki</item>
+        <item>Saurimo</item>
+        <item>Savannah / Hilton Head</item>
+        <item>Savannakhet</item>
+        <item>Savonlinna</item>
+        <item>Savoonga</item>
+        <item>Savusavu</item>
+        <item>Sawu</item>
+        <item>Scammon Bay</item>
+        <item>Scarlett Martinez International</item>
+        <item>Schefferville</item>
+        <item>Scottsbluff</item>
+        <item>Seal Bay</item>
+        <item>Seattle / Tacoma International</item>
+        <item>Seattle Boeing Fld</item>
+        <item>Seattle Lake Union SPB</item>
+        <item>Sebha</item>
+        <item>Sechelt</item>
+        <item>Sege</item>
+        <item>Seinajoki Ilmajoki</item>
+        <item>Seiyun</item>
+        <item>Selawik</item>
+        <item>Seldovia</item>
+        <item>Semarang</item>
+        <item>Semera</item>
+        <item>Semipalatinsk</item>
+        <item>Sendai</item>
+        <item>Seoul Gimpo</item>
+        <item>Seoul Incheon Int'l</item>
+        <item>Sept-Iles</item>
+        <item>Seronera</item>
+        <item>Setif</item>
+        <item>Severo-Evensk</item>
+        <item>Seville</item>
+        <item>Sfax El Maou</item>
+        <item>Shache</item>
+        <item>Shageluk</item>
+        <item>Shahre-Kord</item>
+        <item>Shahroud</item>
+        <item>Shakhtyorsk</item>
+        <item>Shaktoolik</item>
+        <item>Shamattawa</item>
+        <item>Shanghai Hongqiao</item>
+        <item>Shanghai Pu Dong</item>
+        <item>Shanhaiguan</item>
+        <item>Shannon</item>
+        <item>Shantou</item>
+        <item>Shanzihe</item>
+        <item>Sharana Airstrip</item>
+        <item>Sharjah</item>
+        <item>Sharm El Sheikh</item>
+        <item>Shaxian</item>
+        <item>Sheldon Point</item>
+        <item>Shenyang</item>
+        <item>Shenzhen Bao'an International</item>
+        <item>Shigatse Peace Airport</item>
+        <item>Shijiazhuang</item>
+        <item>Shillong</item>
+        <item>Shimkent</item>
+        <item>Shimla</item>
+        <item>Shiquanhe</item>
+        <item>Shirahama</item>
+        <item>Shiraz</item>
+        <item>Shirdi</item>
+        <item>Shishmaref</item>
+        <item>Shizuoka</item>
+        <item>Shonai</item>
+        <item>Show Low</item>
+        <item>Shreveport Regional</item>
+        <item>Shungnak</item>
+        <item>Sialkot</item>
+        <item>Siargao Island</item>
+        <item>Siassi</item>
+        <item>Sibiu</item>
+        <item>Siborong-borong</item>
+        <item>Sibu</item>
+        <item>Sidney (United States)</item>
+        <item>Siem Reap</item>
+        <item>Sigiriya</item>
+        <item>Sihanoukville</item>
+        <item>Siirt</item>
+        <item>Silao</item>
+        <item>Silchar</item>
+        <item>Silver City</item>
+        <item>Silver Creek</item>
+        <item>Simao</item>
+        <item>Simara</item>
+        <item>Simferopol</item>
+        <item>Simikot</item>
+        <item>Singapore Changi</item>
+        <item>Sinop Airport</item>
+        <item>Sintang</item>
+        <item>Sion</item>
+        <item>Sioux City</item>
+        <item>Sioux Falls</item>
+        <item>Sioux Lookout</item>
+        <item>Sipora</item>
+        <item>Sir Bani Yas Island</item>
+        <item>Sirjan</item>
+        <item>Sirnak</item>
+        <item>Sishen</item>
+        <item>Sisimiut</item>
+        <item>Sitia</item>
+        <item>Sitka</item>
+        <item>Sittwe</item>
+        <item>Sivas</item>
+        <item>Skagway</item>
+        <item>Skardu</item>
+        <item>Skeldon</item>
+        <item>Skelleftea</item>
+        <item>Skiathos Island National</item>
+        <item>Skiros</item>
+        <item>Skopje</item>
+        <item>Skukuza</item>
+        <item>Sleetmute</item>
+        <item>Smithers</item>
+        <item>Snake Bay</item>
+        <item>Snare Lake</item>
+        <item>Sochi</item>
+        <item>Socotra</item>
+        <item>Soekarno-Hatta</item>
+        <item>Sofia</item>
+        <item>Sogndal Haukasen</item>
+        <item>Sohag</item>
+        <item>Sohar</item>
+        <item>Sokoto</item>
+        <item>Sola</item>
+        <item>Solo / Surakarta</item>
+        <item>Solovetsky</item>
+        <item>Solwezi</item>
+        <item>Sonderborg (Denmark)</item>
+        <item>Song Pan</item>
+        <item>Songea</item>
+        <item>Sorkjosen</item>
+        <item>Sorong</item>
+        <item>Sorvagur</item>
+        <item>South Andros</item>
+        <item>South Bend</item>
+        <item>South Caicos</item>
+        <item>South Indian Lake</item>
+        <item>South Naknek</item>
+        <item>South West Bay</item>
+        <item>Southampton</item>
+        <item>Sovetsky</item>
+        <item>Soyo</item>
+        <item>Split</item>
+        <item>Spokane International</item>
+        <item>Spring Point</item>
+        <item>Springfield (United States)</item>
+        <item>Springfield-Branson Rg</item>
+        <item>Srednekolymsk</item>
+        <item>Srinagar</item>
+        <item>St Anthony</item>
+        <item>St Augustine</item>
+        <item>St Barthelemy</item>
+        <item>St Cloud</item>
+        <item>St Croix Island SPB</item>
+        <item>St Etienne</item>
+        <item>St Eustatius</item>
+        <item>St Gallen Altenrhein</item>
+        <item>St George</item>
+        <item>St George Island</item>
+        <item>St John's</item>
+        <item>St Louis (United States)</item>
+        <item>St Lucia Hewanorra</item>
+        <item>St Lucia Vigie</item>
+        <item>St Maarten</item>
+        <item>St Martin Esperance</item>
+        <item>St Michael</item>
+        <item>St Petersburg Pulkovo</item>
+        <item>St Pierre</item>
+        <item>St. George</item>
+        <item>St. Nazaire Montoir</item>
+        <item>St. Pete–Clearwater International</item>
+        <item>Stanley</item>
+        <item>State College</item>
+        <item>Staunton</item>
+        <item>Stavanger</item>
+        <item>Stavropol</item>
+        <item>Ste Therese Point</item>
+        <item>Stebbins</item>
+        <item>Stella Maris</item>
+        <item>Stephenville (Canada)</item>
+        <item>Stevens Village</item>
+        <item>Stewart International</item>
+        <item>Stillwater</item>
+        <item>Stockholm Arlanda</item>
+        <item>Stockholm Bromma</item>
+        <item>Stockholm Skavsta</item>
+        <item>Stockholm Vasteras</item>
+        <item>Stokmarknes</item>
+        <item>Stony Rapids</item>
+        <item>Stony River</item>
+        <item>Stord</item>
+        <item>Stornoway</item>
+        <item>Strasbourg</item>
+        <item>Stronsay</item>
+        <item>Strzhewoi</item>
+        <item>Stuttgart (Germany)</item>
+        <item>Suavanao</item>
+        <item>Suceava Salcea</item>
+        <item>Sucre</item>
+        <item>Sudbury</item>
+        <item>Sue Island</item>
+        <item>Sukhothai</item>
+        <item>Sukkur</item>
+        <item>Sulaymaniyah International</item>
+        <item>Sumbawa</item>
+        <item>Sumburgh Lerwick / Tingwall</item>
+        <item>Sumburgh Shetland</item>
+        <item>Sumenep</item>
+        <item>Summer Beaver</item>
+        <item>Sun City</item>
+        <item>Sundsvall Timra</item>
+        <item>Sunshine Coast</item>
+        <item>Suntar</item>
+        <item>Surabaya</item>
+        <item>Surat</item>
+        <item>Surat Thani</item>
+        <item>Surgut</item>
+        <item>Surigao</item>
+        <item>Suva</item>
+        <item>Sveg</item>
+        <item>Svetlaya</item>
+        <item>Svolvaer</item>
+        <item>Swansea</item>
+        <item>Sydney</item>
+        <item>Sydney Au-Rose Bay</item>
+        <item>Syktyvkar</item>
+        <item>Sylhet</item>
+        <item>Syracuse</item>
+        <item>Syros Island</item>
+        <item>Szczecin Goleniow</item>
+        <item>Szeged</item>
+        <item>Tabarka</item>
+        <item>Tabas</item>
+        <item>Tablas</item>
+        <item>Tabora</item>
+        <item>Tabriz</item>
+        <item>Tabubil</item>
+        <item>Tabuk</item>
+        <item>Tacheng</item>
+        <item>Tachilek</item>
+        <item>Tacloban</item>
+        <item>Tacna</item>
+        <item>Tadoule Lake</item>
+        <item>Tagbilaran</item>
+        <item>Taichung (Taiwan)</item>
+        <item>Taif</item>
+        <item>Tainan</item>
+        <item>Taipei Sung Shan</item>
+        <item>Taipei Taiwan Taoyuan</item>
+        <item>Taitung</item>
+        <item>Taiyuan</item>
+        <item>Taiz</item>
+        <item>Takaka</item>
+        <item>Takamatsu</item>
+        <item>Takapoto</item>
+        <item>Takaroa</item>
+        <item>Takoradi</item>
+        <item>Takume</item>
+        <item>Talakan</item>
+        <item>Talara</item>
+        <item>Taldy-Kurgan</item>
+        <item>Tallahassee</item>
+        <item>Tallinn</item>
+        <item>Taloyoak</item>
+        <item>Tamale</item>
+        <item>Tamanrasset</item>
+        <item>Tamarindo</item>
+        <item>Tamatave</item>
+        <item>Tambolaka</item>
+        <item>Tambor</item>
+        <item>Tambov</item>
+        <item>Tamky (Vietnam)</item>
+        <item>Tampa International</item>
+        <item>Tampere</item>
+        <item>Tampico</item>
+        <item>Tamworth</item>
+        <item>Tan Tan</item>
+        <item>Tana Toraja</item>
+        <item>Tanahmerah</item>
+        <item>Tanana</item>
+        <item>Tandag</item>
+        <item>Tanegashima</item>
+        <item>Tanga</item>
+        <item>Tangier Boukhalef</item>
+        <item>Tangshan</item>
+        <item>Tanjung Manis</item>
+        <item>Tanjung Pinang</item>
+        <item>Tanjung Selor</item>
+        <item>Tanna</item>
+        <item>Taolai</item>
+        <item>Tapachula</item>
+        <item>Tarakan</item>
+        <item>Tarapoto</item>
+        <item>Tarawa</item>
+        <item>Taree</item>
+        <item>Tari</item>
+        <item>Tarija</item>
+        <item>Tartu</item>
+        <item>Tashkent</item>
+        <item>Tasiilaq</item>
+        <item>Tasikmalaya</item>
+        <item>Tasiujuaq</item>
+        <item>Tatakoto</item>
+        <item>Taupo</item>
+        <item>Tauranga</item>
+        <item>Taveuni</item>
+        <item>Tawau</item>
+        <item>Tawitawi</item>
+        <item>Tbessa</item>
+        <item>Tbilisi</item>
+        <item>Tefe</item>
+        <item>Tegucigalpa</item>
+        <item>Tehran Imam Khomeini</item>
+        <item>Tekirdag</item>
+        <item>Tel Aviv-Yafo Sde Dov</item>
+        <item>Tela</item>
+        <item>Teller</item>
+        <item>Teller Mission</item>
+        <item>Telluride</item>
+        <item>Tembagapura</item>
+        <item>Temuco</item>
+        <item>Tenakee Springs</item>
+        <item>Tenerife North</item>
+        <item>Tenerife South</item>
+        <item>Tengchong</item>
+        <item>Teniente R. Marsh</item>
+        <item>Tennant Creek</item>
+        <item>Tepic</item>
+        <item>Teply Klyuch</item>
+        <item>Terceira Lajes</item>
+        <item>Teresina</item>
+        <item>Termez</item>
+        <item>Ternate</item>
+        <item>Terney</item>
+        <item>Terrace</item>
+        <item>Terre-de-Haut</item>
+        <item>Tete Matunda</item>
+        <item>Tete-a-La-Baleine</item>
+        <item>Tetuan S. Ramel</item>
+        <item>Texarkana</item>
+        <item>Tezpur</item>
+        <item>Thandwe</item>
+        <item>Thanh Hoa Tho Xuan</item>
+        <item>Thargomindah</item>
+        <item>The Bight</item>
+        <item>The Pas</item>
+        <item>The Valley</item>
+        <item>Thessaloniki</item>
+        <item>Thief River Falls</item>
+        <item>Thiruvananthapuram</item>
+        <item>Thompson</item>
+        <item>Thorne Bay</item>
+        <item>Thorshofn</item>
+        <item>Thunder Bay</item>
+        <item>Tianjin</item>
+        <item>Tiga</item>
+        <item>Tijuana</item>
+        <item>Tikehau Atoll</item>
+        <item>Tiksi</item>
+        <item>Timaru</item>
+        <item>Timimoun</item>
+        <item>Timisoara</item>
+        <item>Timmins</item>
+        <item>Tin City</item>
+        <item>Tindouf</item>
+        <item>Tingo Maria</item>
+        <item>Tirana</item>
+        <item>Tiree</item>
+        <item>Tires</item>
+        <item>Tirgu Mures</item>
+        <item>Tiruchirapalli</item>
+        <item>Tirupati</item>
+        <item>Tivat</item>
+        <item>Tlemcen</item>
+        <item>Tobago</item>
+        <item>Tobruk</item>
+        <item>Tofino</item>
+        <item>Togiak Village</item>
+        <item>Tok</item>
+        <item>Tokat</item>
+        <item>Toksook Bay</item>
+        <item>Tokunoshima</item>
+        <item>Tokushima</item>
+        <item>Tokyo Haneda</item>
+        <item>Tokyo Narita</item>
+        <item>Toledo Express</item>
+        <item>Tolitoli</item>
+        <item>Tolu</item>
+        <item>Toluca</item>
+        <item>Tomsk</item>
+        <item>Tongatapu</item>
+        <item>Tonghua</item>
+        <item>Tongliao</item>
+        <item>Tongoa</item>
+        <item>Tongren</item>
+        <item>Toronto Island</item>
+        <item>Toronto Pearson International</item>
+        <item>Torreon</item>
+        <item>Torres (Vanuatu)</item>
+        <item>Torsby Fryklanda</item>
+        <item>Tortuquero</item>
+        <item>Tottori</item>
+        <item>Touggourt</item>
+        <item>Touho</item>
+        <item>Toulon-Hyères</item>
+        <item>Toulouse</item>
+        <item>Tours</item>
+        <item>Townsville</item>
+        <item>Toyama</item>
+        <item>Toyooka</item>
+        <item>Tozeur</item>
+        <item>Trabzon</item>
+        <item>Trail</item>
+        <item>Trang</item>
+        <item>Trapani Birgi</item>
+        <item>Trashigang</item>
+        <item>Trat</item>
+        <item>Traverse City</item>
+        <item>Treasure Cay</item>
+        <item>Trelew</item>
+        <item>Três Lagoas</item>
+        <item>Tri-Cities</item>
+        <item>Tri-State</item>
+        <item>Trieste</item>
+        <item>Trincomalee</item>
+        <item>Trinidad (Bolivia)</item>
+        <item>Tripoli (Libya)</item>
+        <item>Trollhattan Vanersborg</item>
+        <item>Trombetas</item>
+        <item>Tromso</item>
+        <item>Trondheim</item>
+        <item>Trujillo (Peru)</item>
+        <item>Truk</item>
+        <item>Tsushima</item>
+        <item>Tubuai</item>
+        <item>Tucson International</item>
+        <item>Tucuman</item>
+        <item>Tufi</item>
+        <item>Tuguegarao</item>
+        <item>Tuktoyaktuk</item>
+        <item>Tulcan</item>
+        <item>Tulear</item>
+        <item>Tulita / Fort Norman</item>
+        <item>Tulsa International</item>
+        <item>Tuluksak</item>
+        <item>Tumaco</item>
+        <item>Tumbes</item>
+        <item>Tumling Tar</item>
+        <item>Tunis Carthage</item>
+        <item>Tuntutuliak</item>
+        <item>Tununak</item>
+        <item>Tunxi</item>
+        <item>Tupelo</item>
+        <item>Turbat</item>
+        <item>Tureia</item>
+        <item>Turin</item>
+        <item>Turkmenabad</item>
+        <item>Turkmenbashi</item>
+        <item>Turku</item>
+        <item>Turukhansk</item>
+        <item>Tuticorin</item>
+        <item>Tuxtla Gutierrez</item>
+        <item>Tuy Hoa</item>
+        <item>Tuzla</item>
+        <item>Twin Falls</item>
+        <item>Twin Hills</item>
+        <item>Tyler</item>
+        <item>Tynda</item>
+        <item>Tyumen</item>
+        <item>Ua Huka</item>
+        <item>Ua Pou</item>
+        <item>Uberlandia</item>
+        <item>Ubon Ratchathani</item>
+        <item>Udaipur</item>
+        <item>Udon Thani</item>
+        <item>Ufa</item>
+        <item>Uganik</item>
+        <item>Uherske Hradiste</item>
+        <item>Ukhta</item>
+        <item>Ukunda</item>
+        <item>Ulaanbaatar</item>
+        <item>Ulaangom</item>
+        <item>Ulanhot</item>
+        <item>Ulanqab</item>
+        <item>Ulei</item>
+        <item>Ulgit</item>
+        <item>Uliastai</item>
+        <item>Ulsan</item>
+        <item>Ulukhaktok / Holman</item>
+        <item>Ulundi</item>
+        <item>Ulusaba</item>
+        <item>Ulyanovsk</item>
+        <item>Ulyanovsk Baratayevka</item>
+        <item>Umea</item>
+        <item>Umiujaq</item>
+        <item>Umtata</item>
+        <item>Unalakleet</item>
+        <item>Upernavik</item>
+        <item>Upington</item>
+        <item>Upland Cable</item>
+        <item>Uraj</item>
+        <item>Uralsk</item>
+        <item>Uranium City</item>
+        <item>Urdzhar</item>
+        <item>Urgench</item>
+        <item>Urmieh</item>
+        <item>Uruapan</item>
+        <item>Urumqi</item>
+        <item>Usak</item>
+        <item>Ushuaia</item>
+        <item>Usinsk</item>
+        <item>Ust-Kamenogorsk</item>
+        <item>Ust-Kut</item>
+        <item>Ust-Kuyga</item>
+        <item>Ust-Maya</item>
+        <item>Ust-Nera Airport</item>
+        <item>Ustupo Ogobsucum</item>
+        <item>Utarom / Kaimana</item>
+        <item>Utila</item>
+        <item>Uummannaq</item>
+        <item>Uyo</item>
+        <item>Uyuni</item>
+        <item>Vaasa</item>
+        <item>Vadodara</item>
+        <item>Vadso</item>
+        <item>Vaeroy Stolport</item>
+        <item>Vahitahi</item>
+        <item>Vail Eagle County</item>
+        <item>Val D'Or</item>
+        <item>Valdez</item>
+        <item>Valdivia</item>
+        <item>Valdosta Regional</item>
+        <item>Valencia (Spain)</item>
+        <item>Valencia (Venezuela)</item>
+        <item>Valera</item>
+        <item>Valesdir</item>
+        <item>Valladolid</item>
+        <item>Valledupar</item>
+        <item>Valparaiso Ft. Walton Beach</item>
+        <item>Valverde Hierro</item>
+        <item>Van</item>
+        <item>Vancouver Boundary Bay</item>
+        <item>Vancouver Coal Harbour</item>
+        <item>Vancouver International</item>
+        <item>Vanimo</item>
+        <item>Vanuabalavu</item>
+        <item>Varadero</item>
+        <item>Varanasi</item>
+        <item>Vardoe Lufthaun</item>
+        <item>Varna</item>
+        <item>Vava'u</item>
+        <item>Vaxjo</item>
+        <item>Velana International</item>
+        <item>Velikij Ustyug</item>
+        <item>Venetie</item>
+        <item>Venice Marco Polo</item>
+        <item>Venice Treviso</item>
+        <item>Veracruz</item>
+        <item>Verkhnevilyuysk</item>
+        <item>Vernal</item>
+        <item>Verona International</item>
+        <item>Vestmannaeyjar</item>
+        <item>Victoria (United States)</item>
+        <item>Victoria Falls</item>
+        <item>Victoria Inner Harbor</item>
+        <item>Victoria International</item>
+        <item>Victoria Resevour Kandy</item>
+        <item>Vidyanagar</item>
+        <item>Viedma</item>
+        <item>Vienna</item>
+        <item>Vientiane</item>
+        <item>Vieques</item>
+        <item>Vieste</item>
+        <item>Vigo</item>
+        <item>Vijayawada</item>
+        <item>Vila Do Maio</item>
+        <item>Vila Real</item>
+        <item>Vilanculos</item>
+        <item>Vilhelmina Sagadal</item>
+        <item>Villahermosa</item>
+        <item>Villavicencio</item>
+        <item>Vilnius</item>
+        <item>Vilyuysk</item>
+        <item>Vinh City</item>
+        <item>Vinnytsia</item>
+        <item>Vipingo Airstrip</item>
+        <item>Virac</item>
+        <item>Virgin Gorda</item>
+        <item>Visakhapatnam</item>
+        <item>Visalia</item>
+        <item>Visby</item>
+        <item>Viseu G. Lobato</item>
+        <item>Vitebsk</item>
+        <item>Vitoria (Brazil)</item>
+        <item>Vitoria (Spain)</item>
+        <item>Vitoria Da Conquista</item>
+        <item>Vladikavkaz</item>
+        <item>Vladivostok</item>
+        <item>Volgograd</item>
+        <item>Volos</item>
+        <item>Vopnafjordur</item>
+        <item>Vorkuta</item>
+        <item>Voronezh</item>
+        <item>Wabush</item>
+        <item>Waco Municipal</item>
+        <item>Wagga Wagga</item>
+        <item>Waingapu</item>
+        <item>Wainwright</item>
+        <item>Wajima</item>
+        <item>Wajir</item>
+        <item>Wakkanai</item>
+        <item>Walaha</item>
+        <item>Wales</item>
+        <item>Walla Walla</item>
+        <item>Wallis Island</item>
+        <item>Walvis Bay</item>
+        <item>Wamena</item>
+        <item>Wanxian</item>
+        <item>Wapenamanda</item>
+        <item>Warri</item>
+        <item>Warrnambool</item>
+        <item>Warsaw Chopin</item>
+        <item>Warsaw Modlin</item>
+        <item>Washan</item>
+        <item>Washington Dulles</item>
+        <item>Washington Ronald Reagan</item>
+        <item>Waskaganish</item>
+        <item>Waterloo (United States)</item>
+        <item>Watertown (United States)</item>
+        <item>Watertown (United States)</item>
+        <item>Wau (South Sudan)</item>
+        <item>Wausau Central Wisconsin</item>
+        <item>Webequie</item>
+        <item>Weerawila</item>
+        <item>Weeze</item>
+        <item>Weifang</item>
+        <item>Weihai</item>
+        <item>Weipa</item>
+        <item>Wellington</item>
+        <item>Wemindji</item>
+        <item>Wenatchee</item>
+        <item>Wenshan Puzhehei</item>
+        <item>Wenzhou</item>
+        <item>West Angleas</item>
+        <item>West Palm Beach International</item>
+        <item>West Point</item>
+        <item>West Yellowstone</item>
+        <item>Westchester County</item>
+        <item>Westerland</item>
+        <item>Westport</item>
+        <item>Westray</item>
+        <item>Westsound</item>
+        <item>Wewak</item>
+        <item>Wha Ti / Lac La Martre</item>
+        <item>Whakatane</item>
+        <item>Whale Cove</item>
+        <item>Whale Pass</item>
+        <item>Whanganui</item>
+        <item>Whangarei</item>
+        <item>Whistler</item>
+        <item>White Mountain</item>
+        <item>Whitehorse</item>
+        <item>Whitsunday Coast (Proserpine)</item>
+        <item>Whyalla</item>
+        <item>Wichita Falls Sheppard AFB</item>
+        <item>Wichita Mid-Continent</item>
+        <item>Wick</item>
+        <item>Wilkes-Barre International</item>
+        <item>Williams Lake</item>
+        <item>Williamsport</item>
+        <item>Williston</item>
+        <item>Wilmington (United States)</item>
+        <item>Wiluna</item>
+        <item>Windhoek Eros</item>
+        <item>Windhoek Hosea Kutako</item>
+        <item>Windorah</item>
+        <item>Windsor</item>
+        <item>Winnipeg</item>
+        <item>Winton</item>
+        <item>Wolf Point</item>
+        <item>Wollaston Lake</item>
+        <item>Wonan</item>
+        <item>WonJu</item>
+        <item>Woodie Woodie</item>
+        <item>Worcester</item>
+        <item>Wrangell</item>
+        <item>Wrigley</item>
+        <item>Wroclaw</item>
+        <item>Wu Hai</item>
+        <item>Wudangshan</item>
+        <item>Wugang</item>
+        <item>Wuhan</item>
+        <item>Wunnummin Lake</item>
+        <item>Wuxi</item>
+        <item>Wuyishan</item>
+        <item>Wuzhou</item>
+        <item>Wyk Auf Foehr</item>
+        <item>Xi An Xianyang</item>
+        <item>Xiamen</item>
+        <item>Xiangfan</item>
+        <item>Xichang</item>
+        <item>Xilinhot</item>
+        <item>Xingyi</item>
+        <item>Xining</item>
+        <item>Xinyuan City</item>
+        <item>Xinzhou Wutaishan</item>
+        <item>Xishuangbanna Gasa</item>
+        <item>Xuzhou</item>
+        <item>Yacuiba</item>
+        <item>Yakima Air Terminal</item>
+        <item>Yakushima</item>
+        <item>Yakutat</item>
+        <item>Yakutsk</item>
+        <item>Yam Island</item>
+        <item>Yamagata</item>
+        <item>Yamaguchi Ube</item>
+        <item>Yan'an</item>
+        <item>Yanbu</item>
+        <item>Yancheng</item>
+        <item>Yangon</item>
+        <item>Yangyang</item>
+        <item>Yangzhou Taizhou Airport</item>
+        <item>Yanji</item>
+        <item>Yantai</item>
+        <item>Yaounde</item>
+        <item>Yaounde Nsimalen</item>
+        <item>Yap</item>
+        <item>Yaroslavl</item>
+        <item>Yas Island SPB</item>
+        <item>Yasouj</item>
+        <item>Yazd</item>
+        <item>Yedinka</item>
+        <item>Yellowknife</item>
+        <item>Yeosu</item>
+        <item>Yerbogachen Airport</item>
+        <item>Yerevan</item>
+        <item>Yibin</item>
+        <item>Yichang</item>
+        <item>Yichun</item>
+        <item>Yichun Lindu</item>
+        <item>Yinchuan</item>
+        <item>Yingkou</item>
+        <item>Yining</item>
+        <item>Yiwu</item>
+        <item>Yogyakarta</item>
+        <item>Yola</item>
+        <item>Yonago</item>
+        <item>York Landing</item>
+        <item>Yorke Island</item>
+        <item>Yoronjima</item>
+        <item>Youngstown</item>
+        <item>Yuksekova</item>
+        <item>Yulin</item>
+        <item>Yuma International</item>
+        <item>Yun Cheng</item>
+        <item>Yuzhno-Sakhalinsk</item>
+        <item>Zabol</item>
+        <item>Zacatecas</item>
+        <item>Zachar Bay</item>
+        <item>Zadar</item>
+        <item>Zagora</item>
+        <item>Zagreb</item>
+        <item>Zahedan</item>
+        <item>Zaisan</item>
+        <item>Zamboanga International</item>
+        <item>Zante (Zakynthos)</item>
+        <item>Zanzibar</item>
+        <item>Zaporizhia</item>
+        <item>Zaragoza</item>
+        <item>Zaranj</item>
+        <item>Zhambyl</item>
+        <item>Zhangjiakou</item>
+        <item>Zhangye Ganzhou Airport</item>
+        <item>Zhanjiang</item>
+        <item>Zhaotong</item>
+        <item>Zhengzhou</item>
+        <item>Zhezkazgan</item>
+        <item>Zhigansk</item>
+        <item>Zhob</item>
+        <item>Zhongwei</item>
+        <item>Zhoubai Airport</item>
+        <item>Zhoushan</item>
+        <item>Zhuhai</item>
+        <item>Zhukovsky International</item>
+        <item>Zielona Gora Babimost</item>
+        <item>Zintan</item>
+        <item>Zona da Mata Regional Airport</item>
+        <item>Zonguldak</item>
+        <item>Zunyi</item>
+        <item>Zurich</item>
+        <item>Zweibrücken</item>
+        <item>Zyryanka Airport</item>
+    </string-array>
+
 </resources>

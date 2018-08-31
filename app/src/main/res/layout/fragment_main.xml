@@ -1,0 +1,95 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/fragment_main">
+
+    <TextView
+        android:id="@+id/fromLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fromLabel"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/textSize"
+        android:textStyle="italic|bold"
+        app:layout_constraintBottom_toTopOf="@+id/fromAirport"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+         />
+
+    <AutoCompleteTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fromAirport"
+        app:layout_constraintBottom_toTopOf="@+id/plane"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="@dimen/marginBottom"
+
+        />
+
+    <TextView
+        android:id="@+id/toLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/toLabel"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/textSize"
+        android:textStyle="italic|bold"
+        android:layout_marginLeft="@dimen/marginLeft"
+        app:layout_constraintBottom_toTopOf="@+id/toAirport"
+        app:layout_constraintLeft_toRightOf="@+id/fromLabel"
+
+        />
+
+    <AutoCompleteTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toAirport"
+        app:layout_constraintBottom_toTopOf="@+id/plane"
+        app:layout_constraintLeft_toRightOf="@+id/fromAirport"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="@dimen/marginBottom"
+
+        />
+
+
+    <ImageView
+        android:id="@+id/plane"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_plane"
+        app:layout_constraintBottom_toTopOf="@+id/adView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/planeimage"
+
+        />
+
+
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/marginSize"
+        android:layout_marginEnd="@dimen/marginSize"
+        android:layout_marginRight="@dimen/marginSize"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+
+</android.support.constraint.ConstraintLayout>
+
+
+
+

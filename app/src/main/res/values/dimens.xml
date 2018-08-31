@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="elevation">4dp</dimen>
+    <dimen name="list_toolbar_side_margin">52dp</dimen>
+    <dimen name="list_side_margin">4dp</dimen>
+    <dimen name="paddingTop">116dp</dimen>
+    <dimen name="paddingBottom">28dp</dimen>
+    <dimen name="layout_height">112dp</dimen>
+    <dimen name="elevation2nd">8dp</dimen>
+    <dimen name="textSize">13sp</dimen>
+    <dimen name="marginSize">8dp</dimen>
+    <dimen name="marginLeft">100dp</dimen>
+    <dimen name="marginBottom">40dp</dimen>
+
+</resources>
