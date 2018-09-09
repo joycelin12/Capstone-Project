@@ -11,6 +11,13 @@
     </style>
 
 
+    <!-- referencing this https://stackoverflow.com/questions/28523517/appcompat-popup-menu-runtimeexception -->
+    <style name="MyPopupMenu" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:popupBackground">@color/colorPrimary</item>
+        <item name="android:disabledAlpha">0.5</item>
+    </style>
+
+
 
 
 </resources>

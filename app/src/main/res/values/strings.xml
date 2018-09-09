@@ -10,6 +10,7 @@
     <string name="settings">settings</string>
     <string name="no_location">No Location Detected. Please turn on location services.</string>
     <string name="no_location_services">Please turn on location services.</string>
+    <string name="nearby_airports">Nearby Airports</string>
     <string-array name="airports_array">
         <item>Aalborg</item>
         <item>Aalesund Vigra</item>

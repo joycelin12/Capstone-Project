@@ -18,35 +18,31 @@ import okhttp3.Response;
 public class NetworkUtils {
 
     final static String PARAM_API_KEY = "key";
-    final static String PARAM_INP_KEY = "input";
-    final static String PARAM_LOC_KEY = "location";
-    final static String PARAM_RAD_KEY = "radius";
-    final static String PARAM_TYPE_KEY ="types";
-    final static String EST ="establishment";
-    final static String RAD ="500";
-
-
+    final static String PARAM_LAT_KEY = "lat";
+    final static String PARAM_LNG_KEY ="lng";
+    final static String PARAM_DIST_KEY = "distance";
+    final static String DIST ="150";
 
 
     private static final String API_KEY = BuildConfig.API_KEY;
 
     final static String PLACE_BASE_URL =
-            "https://maps.googleapis.com/maps/api/place/autocomplete/xml?input=Amoeba&types=establishment&location=37.76999,-122.44696&radius=500&key=YOUR_API_KEY";
+            "http://aviation-edge.com/api/public/nearby";
 
 
     /**
      * Builds the URL used to get the nearest airport from the current location.
+     * using the following nearby API from https://aviation-edge.com/developers/
      *
      * @return The URL to use to query the google places api.
      */
-    public static URL buildUrl(String input,String location) {
+    public static URL buildUrl(String[] location) {
         // TODO (1) Fill in this method to build the proper place URL
         Uri builtUri = Uri.parse(PLACE_BASE_URL).buildUpon()
-                .appendQueryParameter(PARAM_INP_KEY, input)
-                .appendQueryParameter(PARAM_TYPE_KEY, EST)
-                .appendQueryParameter(PARAM_LOC_KEY, location)
-                .appendQueryParameter(PARAM_RAD_KEY, RAD)
                 .appendQueryParameter(PARAM_API_KEY, API_KEY)
+                .appendQueryParameter(PARAM_LAT_KEY, location[0])
+                .appendQueryParameter(PARAM_LNG_KEY, location[1])
+                .appendQueryParameter(PARAM_DIST_KEY, DIST)
                 .build();
 
         URL url = null;

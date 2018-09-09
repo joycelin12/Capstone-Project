@@ -2,9 +2,12 @@ package com.example.android.dreamdestinations;
 
 import android.Manifest;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -94,13 +97,15 @@ public class MainActivityFragment extends Fragment {
         return root;
     }
 
-    private void getLocationPermission() {
+
+
+    //private void getLocationPermission() {
     /*
      * Request location permission, so that we can get the location of the
      * device. The result of the permission request is handled by a callback,
      * onRequestPermissionsResult.
      */
-        if (ContextCompat.checkSelfPermission(getActivity(),
+    /*    if (ContextCompat.checkSelfPermission(getActivity(),
                 android.Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             mLocationPermissionGranted = true;
@@ -120,7 +125,7 @@ public class MainActivityFragment extends Fragment {
         if (!checkPermissions()) {
             requestPermissions();
         } else {
-            getLastLocation();
+            //getLastLocation();
         }
     }
 
@@ -131,19 +136,21 @@ public class MainActivityFragment extends Fragment {
         if (!checkPermissions()) {
             requestPermissions();
         } else {
-            getLastLocation();
+            //getLastLocation();
         }
 
     }
 
     @SuppressWarnings("MissingPermission")
-    private void getLastLocation() {
-        mFusedLocationProviderClient.getLastLocation()
+    private void getLastLocation(final View v) {
+          mFusedLocationProviderClient.getLastLocation()
                 .addOnCompleteListener(getActivity(), new OnCompleteListener<Location>() {
                     @Override
                     public void onComplete(@NonNull Task<Location> task) {
                         if (task.isSuccessful() && task.getResult() != null) {
                             mLastLocation = task.getResult();
+
+                            String[] location = new String[2];
 
                             Log.e("TAG", String.format(Locale.ENGLISH, "%s: %f",
                                     "Latitude",
@@ -151,6 +158,15 @@ public class MainActivityFragment extends Fragment {
                             Log.e("TAG", String.format(Locale.ENGLISH, "%s: %f",
                                     "Longitude",
                                     mLastLocation.getLongitude()));
+
+
+                            location[0] = String.format(Locale.ENGLISH, "%f",
+                            mLastLocation.getLatitude());
+                            location[1] = String.format(Locale.ENGLISH, "%f",
+                                   mLastLocation.getLongitude());
+
+                            new PlaceTask(getActivity(), v).execute(location);
+
 
                         } else {
 
@@ -241,7 +257,7 @@ public class MainActivityFragment extends Fragment {
                 Log.i("TAG", "User interaction was cancelled.");
             } else if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission granted.
-                getLastLocation();
+                getLastLocation(getView());
             } else {
                 // Permission denied.
 
@@ -287,4 +303,17 @@ public class MainActivityFragment extends Fragment {
                 Snackbar.LENGTH_INDEFINITE)
                 .setAction(getString(actionStringId), listener).show();
     }
+
+
+    //referencing https://stackoverflow.com/questions/3328757/how-to-click-or-tap-on-a-textview-text
+    public void showPopup(View v) {
+
+        if (!checkPermissions()) {
+            requestPermissions();
+        } else {
+            getLastLocation(v);
+        }
+    }
+
+    */
 }
