@@ -23,6 +23,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     protected Location mLastLocation;
     private FusedLocationProviderClient mFusedLocationProviderClient;
     private boolean mLocationPermissionGranted;
-
+    public String status;
 
 
     @Override
@@ -70,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Construct a FusedLocationProviderClient.
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+
+
 
     }
 
@@ -96,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressWarnings("MissingPermission")
-    private void getLastLocation(final View v) {
+    private void getLastLocation(final View v, final MainActivity activity,final String status) {
         mFusedLocationProviderClient.getLastLocation()
                 .addOnCompleteListener(this, new OnCompleteListener<Location>() {
                     @Override
@@ -120,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                                     mLastLocation.getLongitude());
 
 
-                            new PlaceTask(getApplicationContext(),v).execute(location);
+                            new PlaceTask(getApplicationContext(), v, activity, status).execute(location);
 
 
                         } else {
@@ -212,8 +215,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("TAG", "User interaction was cancelled.");
             } else if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission granted.
-                TextView popup = (TextView) findViewById(R.id.nearbyFrom);
-                getLastLocation(popup);
+                //TextView popup = (TextView) findViewById(R.id.nearbyFrom);
+                getLastLocation(this.findViewById(android.R.id.content), this, status);
             } else {
                 // Permission denied.
 
@@ -262,12 +265,24 @@ public class MainActivity extends AppCompatActivity {
 
 
     //referencing https://stackoverflow.com/questions/3328757/how-to-click-or-tap-on-a-textview-text
-    public void showPopup(View v) {
+    public void showPopupFrom(View v) {
 
         if (!checkPermissions()) {
             requestPermissions();
         } else {
-            getLastLocation(v);
+            status = "from";
+            getLastLocation(v, this, status);
+        }
+    }
+
+    //referencing https://stackoverflow.com/questions/3328757/how-to-click-or-tap-on-a-textview-text
+    public void showPopupTo(View v) {
+
+        if (!checkPermissions()) {
+            requestPermissions();
+        } else {
+            status = "to";
+            getLastLocation(v, this, status);
         }
     }
 

@@ -35,13 +35,17 @@ public class PlaceTask extends AsyncTask<String[] , Void, ArrayList<Predictions>
     private Context context;
     private String JSONString;
     private View view;
+    public MainActivity activity;
+    public String status;
 
 
 
-    public PlaceTask(Context context, View view) { //, MovieAdapter.ItemClickListener itemClickListener, RecyclerView mMoviesList,
+    public PlaceTask(Context context, View view, MainActivity activity, String status) { //, MovieAdapter.ItemClickListener itemClickListener, RecyclerView mMoviesList,
                      //MovieResponse movies){
         this.context = context;
         this.view = view;
+        this.activity = activity;
+        this.status = status;
         //this.mClickListener = itemClickListener;
         //this.mMoviesList = mMoviesList;
         //this.movies = movies;
@@ -87,22 +91,27 @@ public class PlaceTask extends AsyncTask<String[] , Void, ArrayList<Predictions>
     @Override
     protected void onPostExecute(final ArrayList<Predictions> predictionsData) {
 
-        String predictlist = "";
+       // String predictlist = "";
 
-        for (Predictions in: predictionsData) {
+        //for (Predictions in: predictionsData) {
 
-            predictlist =  predictlist + in.getCode() + " " +  in.getName() +"\n";
-        }
-
-        Log.e("Prediction", "this is " + predictlist);
-
-       // PopupMenu popup = new PopupMenu(context, );
-         //for (Predictions s : predictionsData) {
-           // popup.getMenu().add(s.getCode() + " " +  s.getName());
+       //     predictlist =  predictlist + in.getCode() + " " +  in.getName() +"\n";
         //}
-        //popup.show();
 
-        final TextView popup = (TextView) view.findViewById(R.id.nearbyFrom);
+        //Log.e("Prediction", "this is " + predictlist);
+
+        final TextView popup;
+        final AutoCompleteTextView nearby;
+        if (status == "from") {
+            popup = (TextView) view.findViewById(R.id.nearbyFrom);
+            nearby = (AutoCompleteTextView) activity.findViewById(R.id.fromAirport);
+
+        } else {
+
+            popup = (TextView) view.findViewById(R.id.nearbyTo);
+            nearby = (AutoCompleteTextView) activity.findViewById(R.id.toAirport);
+
+        }
         Context wrapper = new ContextThemeWrapper(context, R.style.MyPopupMenu);
         PopupMenu menu = new PopupMenu(wrapper, popup);
 
@@ -119,25 +128,13 @@ public class PlaceTask extends AsyncTask<String[] , Void, ArrayList<Predictions>
                         "Clicked popup menu item " + item.getTitle(),
                         Toast.LENGTH_SHORT).show();
 
-                //AutoCompleteTextView fromAirport = (AutoCompleteTextView) view.findViewById(R.id.fromAirport);
-
-                //fromAirport.setText("lalala");
+                nearby.setText(item.getTitle());
 
                 return true;
             }
         });
 
         menu.show();
-
-        popup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-               Toast.makeText(context,"You Clicked : " ,Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
 
         //mAdapter = new MovieAdapter(NUM_LIST_ITEMS, movieData, this.context);
         //mAdapter.setClickListener(this.mClickListener);

@@ -1,93 +1,112 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/fragment_main">
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/fromLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:text="@string/fromLabel"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/textSize"
         android:textStyle="italic|bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/fromAirport"
-        app:layout_constraintLeft_toLeftOf="parent"
-
-        />
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent" />
 
     <AutoCompleteTextView
+        android:id="@+id/fromAirport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/fromAirport"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fromLabel"
-
-        />
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        ads:layout_constraintBottom_toTopOf="@+id/nearbyFrom"
+        ads:layout_constraintEnd_toStartOf="@+id/toAirport"
+        ads:layout_constraintHorizontal_bias="0.0"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@+id/fromLabel"
+        ads:layout_constraintVertical_bias="0.636" />
 
     <TextView
         android:id="@+id/nearbyFrom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="showPopupFrom"
         android:text="@string/nearby_airports"
         android:textSize="@dimen/textSize"
-        android:onClick="showPopup"
-        android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/plane"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fromAirport"
-        android:layout_marginBottom="@dimen/marginBottom"
-
-
-
-        />
+        ads:layout_constraintBottom_toTopOf="@+id/plane"
+        ads:layout_constraintEnd_toStartOf="@+id/nearbyTo"
+        ads:layout_constraintHorizontal_bias="0.0"
+        ads:layout_constraintStart_toStartOf="@+id/fromAirport" />
 
     <TextView
         android:id="@+id/toLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="8dp"
         android:text="@string/toLabel"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/textSize"
         android:textStyle="italic|bold"
-        android:layout_marginLeft="@dimen/marginLeft"
-        app:layout_constraintBottom_toTopOf="@+id/toAirport"
-        app:layout_constraintLeft_toRightOf="@+id/fromLabel"
-
-        />
+        ads:layout_constraintStart_toEndOf="@+id/fromLabel"
+        ads:layout_constraintTop_toTopOf="parent" />
 
     <AutoCompleteTextView
+        android:id="@+id/toAirport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/toAirport"
-        app:layout_constraintBottom_toTopOf="@+id/plane"
-        app:layout_constraintLeft_toRightOf="@+id/fromAirport"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="@dimen/marginBottom"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginRight="180dp"
+        android:layout_marginTop="8dp"
+        ads:layout_constraintBottom_toTopOf="@+id/nearbyTo"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintTop_toBottomOf="@+id/toLabel"
+        ads:layout_constraintVertical_bias="0.6" />
 
-        />
-
-
+    <TextView
+        android:id="@+id/nearbyTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="showPopupTo"
+        android:text="@string/nearby_airports"
+        android:textSize="@dimen/textSize"
+        ads:layout_constraintBottom_toTopOf="@+id/plane"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintHorizontal_bias="0.574"
+        ads:layout_constraintStart_toStartOf="parent" />
 
 
     <ImageView
         android:id="@+id/plane"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/planeimage"
         android:src="@drawable/ic_plane"
         app:layout_constraintBottom_toTopOf="@+id/adView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/planeimage"
 
         />
-
 
 
     <com.google.android.gms.ads.AdView
@@ -103,8 +122,6 @@
         ads:adUnitId="@string/banner_ad_unit_id"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-
 
 
 </android.support.constraint.ConstraintLayout>
