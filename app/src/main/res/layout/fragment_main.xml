@@ -7,6 +7,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
     <TextView
         android:id="@+id/fromLabel"
         android:layout_width="wrap_content"
@@ -23,13 +30,13 @@
 
     <AutoCompleteTextView
         android:id="@+id/fromAirport"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         ads:layout_constraintBottom_toTopOf="@+id/nearbyFrom"
-        ads:layout_constraintEnd_toStartOf="@+id/toAirport"
+        ads:layout_constraintEnd_toStartOf="@+id/guideline"
         ads:layout_constraintHorizontal_bias="0.0"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintTop_toBottomOf="@+id/fromLabel"
@@ -56,8 +63,8 @@
         android:id="@+id/toLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginLeft="90dp"
         android:layout_marginTop="8dp"
         android:text="@string/toLabel"
         android:textColor="@color/colorPrimary"
@@ -68,13 +75,11 @@
 
     <AutoCompleteTextView
         android:id="@+id/toAirport"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="180dp"
-        android:layout_marginRight="180dp"
-        android:layout_marginTop="8dp"
         ads:layout_constraintBottom_toTopOf="@+id/nearbyTo"
+        ads:layout_constraintStart_toEndOf="@+id/fromAirport"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintTop_toBottomOf="@+id/toLabel"
         ads:layout_constraintVertical_bias="0.6" />
@@ -91,8 +96,8 @@
         android:textSize="@dimen/textSize"
         ads:layout_constraintBottom_toTopOf="@+id/plane"
         ads:layout_constraintEnd_toEndOf="parent"
-        ads:layout_constraintHorizontal_bias="0.574"
-        ads:layout_constraintStart_toStartOf="parent" />
+        ads:layout_constraintStart_toEndOf="@+id/guideline"
+        />
 
 
     <ImageView
