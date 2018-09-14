@@ -55,6 +55,25 @@ public class NetworkUtils {
         return url;
 
     }
+    /*
+    HttpResponse<JsonNode> response = Unirest.post("https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/pricing/v1.0")
+            .header("Content-Type", "application/x-www-form-urlencoded")
+            .header("X-Mashape-Key", X-Mashape-Key)
+            .header("X-Mashape-Host", "")
+            .field("country", "US")
+            .field("currency", "USD")
+            .field("locale", "en-US")
+            .field("originPlace", "SFO-sky")
+            .field("destinationPlace", "LHR-sky")
+            .field("outboundDate", "2018-11-01")
+            .field("inboundDate", "2018-11-10")
+            .field("cabinClass", "business")
+            .field("adults", 1)
+            .field("children", 0)
+            .field("infants", 0)
+            .field("includeCarriers", "")
+            .field("excludeCarriers", "")
+            .asJson(); */
 
     //trying out OkHttp https://square.github.io/okhttp/
     OkHttpClient client = new OkHttpClient();

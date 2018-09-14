@@ -1,6 +1,7 @@
 package com.example.android.dreamdestinations;
 
 import android.Manifest;
+import android.app.DatePickerDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -18,13 +19,18 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
@@ -35,10 +41,14 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Locale;
 
 /**
  * Created by joycelin12 on 8/24/18.
+ * referencing https://www.tutlane.com/tutorial/android/android-datepicker-with-examples
  */
 
 public class MainActivityFragment extends Fragment {
@@ -52,6 +62,10 @@ public class MainActivityFragment extends Fragment {
     private FusedLocationProviderClient mFusedLocationProviderClient;
     private boolean mLocationPermissionGranted;
 
+    DatePickerDialog picker;
+    EditText departEditText;
+    EditText arriveEditText;
+    private Long departDate;
 
     public MainActivityFragment() {
     }
@@ -94,9 +108,75 @@ public class MainActivityFragment extends Fragment {
         // Construct a FusedLocationProviderClient.
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
 
+        departEditText= (EditText) root.findViewById(R.id.departDateEditText);
+        departEditText.setInputType(InputType.TYPE_NULL);
+        departEditText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
+                departDate =cldr.getTimeInMillis();
+                // date picker dialog
+                picker = new DatePickerDialog(getContext(),
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                departEditText.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+                            }
+                        }, year, month, day);
+                picker.show();
+            }
+        });
+
+        arriveEditText= (EditText) root.findViewById(R.id.arriveDateEditText);
+        arriveEditText.setInputType(InputType.TYPE_NULL);
+        arriveEditText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
+                final long arrivalDate = cldr.getTimeInMillis();
+                // date picker dialog
+                // check if the date is later than departure date
+                    picker = new DatePickerDialog(getContext(),
+                            new DatePickerDialog.OnDateSetListener() {
+                                @Override
+                                public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                                    Log.e("DATE", departDate + " lala " +arrivalDate );
+
+                                    if(checkDate(departDate, arrivalDate)) {
+
+
+                                        arriveEditText.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+                                    } else {
+
+                                        Toast.makeText(getActivity(), "Please choose a later arrival date than departure date.",Toast.LENGTH_LONG).show();
+
+                                    }
+                                }
+                            }, year, month, day);
+                    picker.show();
+
+
+            }
+        });
+
         return root;
     }
 
+    protected boolean checkDate(Long departDate, Long arrivalDate){
+
+        if(arrivalDate - departDate  < 0){
+            return false;
+        } else {
+            return true;
+        }
+    }
 
 
     //private void getLocationPermission() {

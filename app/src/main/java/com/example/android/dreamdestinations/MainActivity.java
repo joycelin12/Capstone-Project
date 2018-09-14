@@ -24,6 +24,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
+import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -286,9 +287,23 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //referencing from https://stackoverflow.com/questions/1560788/how-to-check-internet-access-on-android-inetaddress-never-times-out/27312494#27312494
+    public boolean isOnline() {
+        ConnectivityManager cm =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnectedOrConnecting();
+    }
 
 
+    public void findFlights(View view) {
+        if (isOnline()) {
 
+            //new SessionTask(getApplicationContext()).execute();
 
-
+        } else  {
+            String message = "There is no internet connection";
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        }
+    }
 }

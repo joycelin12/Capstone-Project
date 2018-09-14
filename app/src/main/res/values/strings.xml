@@ -11,6 +11,11 @@
     <string name="no_location">No Location Detected. Please turn on location services.</string>
     <string name="no_location_services">Please turn on location services.</string>
     <string name="nearby_airports">Nearby Airports</string>
+    <string name="depart_date">Depart Date</string>
+    <string name="arrival_date">Arrival Date</string>
+    <string name="select_depart_date">Select Depart Date</string>
+    <string name="select_arrival_date">Select Arrival Date</string>
+    <string name="find_flights">Find Flights</string>
     <string-array name="airports_array">
         <item>Aalborg</item>
         <item>Aalesund Vigra</item>
