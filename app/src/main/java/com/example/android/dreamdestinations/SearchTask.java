@@ -3,30 +3,23 @@ package com.example.android.dreamdestinations;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.view.View;
 
-import com.example.android.dreamdestinations.Model.Predictions;
 import com.example.android.dreamdestinations.Utilities.NetworkUtils;
-
-import org.json.JSONException;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-
-import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getPredictionsFromJson;
 
 /**
- * Created by joycelin12 on 9/15/18.
+ * Created by joycelin12 on 9/17/18.
  */
 
-public class SessionTask extends AsyncTask<String[] , Void, String> {
+public class SearchTask extends AsyncTask<String , Void, String> {
 
     private Context context;
     private String JSONString;
 
 
-    public SessionTask(Context context) { //, MovieAdapter.ItemClickListener itemClickListener, RecyclerView mMoviesList,
+    public SearchTask(Context context) { //, MovieAdapter.ItemClickListener itemClickListener, RecyclerView mMoviesList,
         //MovieResponse movies){
         this.context = context;
         //this.mClickListener = itemClickListener;
@@ -36,21 +29,20 @@ public class SessionTask extends AsyncTask<String[] , Void, String> {
     }
 
     @Override
-    protected String doInBackground(String[]... params) {
+    protected String doInBackground(String... strings) {
 
-        if (params.length == 0) {
+        if (strings.length == 0) {
             return null;
         }
 
-        String[] param = params[0];
-        URL sessionUrl = NetworkUtils.buildSessionUrl(param);
+       URL searchUrl = NetworkUtils.buildSearchUrl(strings[0]);
 
         try {
 
             NetworkUtils test = new NetworkUtils();
-            JSONString = test.runSession(sessionUrl.toString());
+            JSONString = test.runSearch(searchUrl.toString());
 
-            //Log.e("session2", JSONString);
+             //Log.e("search", JSONString);
 
             //ArrayList<Predictions> simpleJsonData = new ArrayList<>();
 
@@ -62,11 +54,7 @@ public class SessionTask extends AsyncTask<String[] , Void, String> {
         } catch (IOException e) {
             e.printStackTrace();
             return null;
-        } /* catch (JSONException e) {
-            e.printStackTrace();
-            return null;
-
-        }*/
+        }
     }
 
     // Override onPostExecute to display the results in the GridView
@@ -74,9 +62,10 @@ public class SessionTask extends AsyncTask<String[] , Void, String> {
     protected void onPostExecute(final String location) {
 
 
-        String[] search = location.split("/");
+        Log.e("TAG", location);
 
-        new SearchTask(context).execute(search[7]);
+
+        //new SearchTask(this).execute(session[7]);
 
 
     }

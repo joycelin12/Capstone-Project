@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
     private FusedLocationProviderClient mFusedLocationProviderClient;
     private boolean mLocationPermissionGranted;
     public String status;
+    private String[] params;
 
 
     @Override
@@ -299,7 +300,7 @@ public class MainActivity extends AppCompatActivity {
     public void findFlights(View view) {
         if (isOnline()) {
 
-            //new SessionTask(getApplicationContext()).execute();
+            new SessionTask(this).execute(params);
 
         } else  {
             String message = "There is no internet connection";

@@ -41,6 +41,8 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -49,6 +51,7 @@ import java.util.Locale;
 /**
  * Created by joycelin12 on 8/24/18.
  * referencing https://www.tutlane.com/tutorial/android/android-datepicker-with-examples
+ * referencing https://stackoverflow.com/questions/30919299/comparing-calendar-objects
  */
 
 public class MainActivityFragment extends Fragment {
@@ -65,7 +68,9 @@ public class MainActivityFragment extends Fragment {
     DatePickerDialog picker;
     EditText departEditText;
     EditText arriveEditText;
-    private Long departDate;
+    private Date departDate;
+    private Date arrivalDate;
+
 
     public MainActivityFragment() {
     }
@@ -117,13 +122,21 @@ public class MainActivityFragment extends Fragment {
                 int day = cldr.get(Calendar.DAY_OF_MONTH);
                 int month = cldr.get(Calendar.MONTH);
                 int year = cldr.get(Calendar.YEAR);
-                departDate =cldr.getTimeInMillis();
                 // date picker dialog
                 picker = new DatePickerDialog(getContext(),
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                departEditText.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+
+                                 String dateString = year + "-" + (monthOfYear + 1) + "-" + dayOfMonth;
+                                 departEditText.setText(dateString);
+                                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                                try {
+                                    departDate = sdf.parse(dateString);
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
+
                             }
                         }, year, month, day);
                 picker.show();
@@ -139,7 +152,6 @@ public class MainActivityFragment extends Fragment {
                 int day = cldr.get(Calendar.DAY_OF_MONTH);
                 int month = cldr.get(Calendar.MONTH);
                 int year = cldr.get(Calendar.YEAR);
-                final long arrivalDate = cldr.getTimeInMillis();
                 // date picker dialog
                 // check if the date is later than departure date
                     picker = new DatePickerDialog(getContext(),
@@ -147,12 +159,17 @@ public class MainActivityFragment extends Fragment {
                                 @Override
                                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
-                                    Log.e("DATE", departDate + " lala " +arrivalDate );
+                                    String dateString = year + "-" + (monthOfYear + 1) + "-" + dayOfMonth;
+                                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                                    try {
+                                        arrivalDate = sdf.parse(dateString);
+                                    } catch (ParseException e) {
+                                        e.printStackTrace();
+                                    }
 
-                                    if(checkDate(departDate, arrivalDate)) {
+                                     if(checkDate(departDate, arrivalDate)) {
 
-
-                                        arriveEditText.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
+                                        arriveEditText.setText(dateString);
                                     } else {
 
                                         Toast.makeText(getActivity(), "Please choose a later arrival date than departure date.",Toast.LENGTH_LONG).show();
@@ -169,9 +186,9 @@ public class MainActivityFragment extends Fragment {
         return root;
     }
 
-    protected boolean checkDate(Long departDate, Long arrivalDate){
+    protected boolean checkDate(Date departDate, Date arrivalDate){
 
-        if(arrivalDate - departDate  < 0){
+        if(arrivalDate.before(departDate)){
             return false;
         } else {
             return true;
