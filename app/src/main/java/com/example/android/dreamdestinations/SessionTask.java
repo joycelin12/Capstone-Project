@@ -26,14 +26,12 @@ public class SessionTask extends AsyncTask<String[] , Void, String> {
     private String JSONString;
 
 
-    public SessionTask(Context context) { //, MovieAdapter.ItemClickListener itemClickListener, RecyclerView mMoviesList,
-        //MovieResponse movies){
+    public SessionTask(Context context) {
         this.context = context;
-        //this.mClickListener = itemClickListener;
-        //this.mMoviesList = mMoviesList;
-        //this.movies = movies;
 
     }
+
+
 
     @Override
     protected String doInBackground(String[]... params) {
@@ -42,31 +40,20 @@ public class SessionTask extends AsyncTask<String[] , Void, String> {
             return null;
         }
 
-        String[] param = params[0];
-        URL sessionUrl = NetworkUtils.buildSessionUrl(param);
+        URL sessionUrl = NetworkUtils.buildSessionUrl();
 
         try {
 
             NetworkUtils test = new NetworkUtils();
-            JSONString = test.runSession(sessionUrl.toString());
+            JSONString = test.runSession(sessionUrl.toString(), params[0]);
 
-            //Log.e("session2", JSONString);
-
-            //ArrayList<Predictions> simpleJsonData = new ArrayList<>();
-
-
-            // simpleJsonData  = getPredictionsFromJson(context, JSONString);
 
             return JSONString;
 
         } catch (IOException e) {
             e.printStackTrace();
             return null;
-        } /* catch (JSONException e) {
-            e.printStackTrace();
-            return null;
-
-        }*/
+        }
     }
 
     // Override onPostExecute to display the results in the GridView

@@ -48,7 +48,7 @@ import java.util.Locale;
 
 import static com.google.android.gms.location.LocationServices.getFusedLocationProviderClient;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements  MainActivityFragment.OnBClickListener{
 
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 0 ;
     private static final int REQUEST_PERMISSIONS_REQUEST_CODE = 34;
@@ -298,13 +298,36 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void findFlights(View view) {
-        if (isOnline()) {
 
-            new SessionTask(this).execute(params);
+        if (params != null) {
+            if (params[0] == null) {
+                Toast.makeText(this, "Please select a departure airport.", Toast.LENGTH_LONG).show();
+            } else if (params[1] == null) {
+                Toast.makeText(this, "Please select an arrival airport.", Toast.LENGTH_LONG).show();
+            } else if (params[2] == null) {
+                Toast.makeText(this, "Please select a departure date.", Toast.LENGTH_LONG).show();
+            } else if (isOnline()) {
 
-        } else  {
-            String message = "There is no internet connection";
+                new SessionTask(this).execute(params);
+            } else {
+                String message = "There is no internet connection";
+                Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+            }
+        } else {
+            String message = "Please fill in the departure airport, arrival airport and departure date.";
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        }
+
+
+
+    }
+
+    @Override
+    public void onButtonSelected(String[] param) {
+
+        if (param != null) {
+
+            params = param;
         }
     }
 }

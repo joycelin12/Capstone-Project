@@ -24,6 +24,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -43,9 +45,12 @@ import com.google.android.gms.tasks.Task;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -70,6 +75,30 @@ public class MainActivityFragment extends Fragment {
     EditText arriveEditText;
     private Date departDate;
     private Date arrivalDate;
+    private String[] params = new String[4];
+
+    // Define a new interface OnBClickListener that triggers a callback in the host activity
+    OnBClickListener mCallback;
+
+    // OnBClickListener interface, calls a method in the host activity named onButtonSelected
+    public interface OnBClickListener {
+        void onButtonSelected(String[] params);
+    }
+
+    // Override onAttach to make sure that the container activity has implemented the callback
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        // This makes sure that the host activity has implemented the callback interface
+        // If not, it throws an exception
+        try {
+            mCallback = (OnBClickListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString()
+                    + " must implement OnButtonClickListener");
+        }
+    }
 
 
     public MainActivityFragment() {
@@ -92,6 +121,11 @@ public class MainActivityFragment extends Fragment {
                 .build();
         mAdView.loadAd(adRequest);
 
+        //store airport id and airport string
+        final String[] airportIdArray = getResources().getStringArray(R.array.airports_id_array);
+        final List<String> airportArray = Arrays.asList(getResources().getStringArray(R.array.airports_array));
+
+
         //add from airport
         ArrayAdapter<CharSequence> fromAdapter = ArrayAdapter.createFromResource(getContext(),
                 R.array.airports_array, android.R.layout.simple_dropdown_item_1line);
@@ -100,6 +134,23 @@ public class MainActivityFragment extends Fragment {
         //referencing https://stackoverflow.com/questions/8863964/android-autocomplete-textview-drop-down-width
         fromTextView.setDropDownWidth(getResources().getDisplayMetrics().widthPixels);
         fromTextView.setAdapter(fromAdapter);
+        fromTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick (AdapterView<?> parent, View view, int position, long id) {
+
+                int pos = airportArray.indexOf(parent.getItemAtPosition(position));
+                params[0] = airportIdArray[pos];
+                Toast.makeText(getActivity(), params[0] + " " + parent.getItemAtPosition(position) +" departure c "  + airportIdArray[pos] + " " +pos,Toast.LENGTH_LONG).show();
+                mCallback.onButtonSelected(params);
+                InputMethodManager inputManager =
+                        (InputMethodManager) getActivity().
+                                getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(
+                        getActivity().getCurrentFocus().getWindowToken(),
+                        InputMethodManager.HIDE_NOT_ALWAYS);
+
+            }
+        });
 
         //add to airport
         ArrayAdapter<CharSequence> toAdapter = ArrayAdapter.createFromResource(getContext(),
@@ -109,6 +160,21 @@ public class MainActivityFragment extends Fragment {
         //referencing https://stackoverflow.com/questions/8863964/android-autocomplete-textview-drop-down-width
         toTextView.setDropDownWidth(getResources().getDisplayMetrics().widthPixels);
         toTextView.setAdapter(toAdapter);
+        toTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick (AdapterView<?> parent, View view, int position, long id) {
+                int pos = airportArray.indexOf(parent.getItemAtPosition(position));
+                params[1] = airportIdArray[pos];
+                Toast.makeText(getActivity(), params[1] + " arrival c "   + airportIdArray[pos] + " " + pos, Toast.LENGTH_LONG).show();
+                mCallback.onButtonSelected(params);
+                InputMethodManager inputManager =
+                (InputMethodManager) getActivity().
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(
+                        getActivity().getCurrentFocus().getWindowToken(),
+                        InputMethodManager.HIDE_NOT_ALWAYS);
+            }
+        });
 
         // Construct a FusedLocationProviderClient.
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
@@ -130,6 +196,9 @@ public class MainActivityFragment extends Fragment {
 
                                  String dateString = year + "-" + (monthOfYear + 1) + "-" + dayOfMonth;
                                  departEditText.setText(dateString);
+                                 params[2] = dateString;
+                                Toast.makeText(getActivity(), params[2] + " departure d" ,Toast.LENGTH_LONG).show();
+                                mCallback.onButtonSelected(params);
                                  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                                 try {
                                     departDate = sdf.parse(dateString);
@@ -170,7 +239,11 @@ public class MainActivityFragment extends Fragment {
                                      if(checkDate(departDate, arrivalDate)) {
 
                                         arriveEditText.setText(dateString);
-                                    } else {
+                                        params[3] = dateString;
+                                        Toast.makeText(getActivity(), params[3] + " arrival d",Toast.LENGTH_LONG).show();
+                                        mCallback.onButtonSelected(params);
+
+                                     } else {
 
                                         Toast.makeText(getActivity(), "Please choose a later arrival date than departure date.",Toast.LENGTH_LONG).show();
 
@@ -188,10 +261,17 @@ public class MainActivityFragment extends Fragment {
 
     protected boolean checkDate(Date departDate, Date arrivalDate){
 
-        if(arrivalDate.before(departDate)){
-            return false;
-        } else {
+        if (departDate != null && arrivalDate != null) {
+
+            if(arrivalDate.before(departDate)){
+             return false;
+             } else {
             return true;
+            }
+        } else {
+
+            Toast.makeText(getActivity(), "Please select the departure date first.",Toast.LENGTH_LONG).show();
+            return false;
         }
     }
 

@@ -93,7 +93,7 @@ public class NetworkUtils {
      *
      * @return The URL to use to query the session which will be use to get flight search results.
      */
-    public static URL buildSessionUrl(String[] params) {
+    public static URL buildSessionUrl() {
         Uri builtUri = Uri.parse(SESSION_BASE_URL).buildUpon()
               /*  .appendQueryParameter(PARAM_COUNTRY_KEY, "US")
                 .appendQueryParameter(PARAM_CURRENCY_KEY, "USD")
@@ -137,18 +137,23 @@ public class NetworkUtils {
         return response.body().string();
     }
 
-    public String runSession(String url) throws IOException {
+    public String runSession(String url, String[] params) throws IOException {
 
         String location ="";
+
+        Log.e("params", params[0]);
+        Log.e("params", params[1]);
+        Log.e("params", params[2]);
+        Log.e("params", params[3]);
 
         RequestBody formBody = new FormBody.Builder()
                 .add(PARAM_COUNTRY_KEY, "US")
                 .add(PARAM_CURRENCY_KEY, "USD")
                 .add(PARAM_LOCALE_KEY, "en-US")
-                .add(PARAM_ORIGIN_KEY, "SFO-sky")
-                .add(PARAM_DEST_KEY, "LHR-sky")
-                .add(PARAM_OUT_KEY, "2018-11-01")
-                .add(PARAM_IN_KEY, "2018-11-10")
+                .add(PARAM_ORIGIN_KEY, params[0])
+                .add(PARAM_DEST_KEY, params[1])
+                .add(PARAM_OUT_KEY, params[2])
+                .add(PARAM_IN_KEY, params[3])
                 .add(PARAM_CABIN_KEY, "economy")
                 .add(PARAM_ADULT_KEY, "1")
                 .add(PARAM_CHILD_KEY, "0")
@@ -211,11 +216,6 @@ public class NetworkUtils {
 
     public String runSearch(String url) throws IOException {
 
-       /*  RequestBody formBody = new FormBody.Builder()
-                .add(PARAM_INDEX_KEY, "0")
-                .add(PARAM_SIZE_KEY, "10")
-                .build(); */
-
         okhttp3.Request request = new okhttp3.Request.Builder()
                 .url(url)
                 .addHeader(PARAM_X_KEY, X_KEY)
@@ -225,6 +225,8 @@ public class NetworkUtils {
         Response response = client.newCall(request).execute();
 
         if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
+
+        Log.e("response" , String.valueOf(response));
 
         return response.body().string();
 
