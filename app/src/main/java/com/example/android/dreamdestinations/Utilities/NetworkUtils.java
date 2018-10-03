@@ -137,23 +137,23 @@ public class NetworkUtils {
         return response.body().string();
     }
 
-    public String runSession(String url, String[] params) throws IOException {
+  //  public String runSession(String url, String[] params) throws IOException {
+      public String runSession(String url) throws IOException {
 
         String location ="";
-
-        Log.e("params", params[0]);
-        Log.e("params", params[1]);
-        Log.e("params", params[2]);
-        Log.e("params", params[3]);
 
         RequestBody formBody = new FormBody.Builder()
                 .add(PARAM_COUNTRY_KEY, "US")
                 .add(PARAM_CURRENCY_KEY, "USD")
                 .add(PARAM_LOCALE_KEY, "en-US")
-                .add(PARAM_ORIGIN_KEY, params[0])
+              /*  .add(PARAM_ORIGIN_KEY, params[0])
                 .add(PARAM_DEST_KEY, params[1])
                 .add(PARAM_OUT_KEY, params[2])
-                .add(PARAM_IN_KEY, params[3])
+                .add(PARAM_IN_KEY, params[3]) */
+                .add(PARAM_ORIGIN_KEY, "SFO-sky")
+                .add(PARAM_DEST_KEY, "LHR-sky")
+                .add(PARAM_OUT_KEY, "2018-11-01")
+                .add(PARAM_IN_KEY, "2018-11-10")
                 .add(PARAM_CABIN_KEY, "economy")
                 .add(PARAM_ADULT_KEY, "1")
                 .add(PARAM_CHILD_KEY, "0")

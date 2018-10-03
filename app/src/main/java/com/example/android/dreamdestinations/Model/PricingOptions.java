@@ -11,50 +11,50 @@ import java.util.ArrayList;
 
 public class PricingOptions implements Parcelable{
 
-    ArrayList<Agents> agents;
-    String quoteAgeInMinutes;
-    String price;
-    String deeplinkUrl;
+    ArrayList<Integer> Agents;
+    String QuoteAgeInMinutes;
+    String Price;
+    String DeeplinkUrl;
 
-    public PricingOptions(ArrayList<Agents> agents, String quoteAgeInMinutes, String price, String deeplinkUrl) {
-        this.agents = agents;
-        this.quoteAgeInMinutes = quoteAgeInMinutes;
-        this.price = price;
-        this.deeplinkUrl = deeplinkUrl;
+    public PricingOptions(ArrayList<Integer> agents, String quoteAgeInMinutes, String price, String deeplinkUrl) {
+        Agents = agents;
+        QuoteAgeInMinutes = quoteAgeInMinutes;
+        Price = price;
+        DeeplinkUrl = deeplinkUrl;
     }
 
-
-    public ArrayList<Agents> getAgents() {
-        return agents;
+    public ArrayList<Integer> getAgents() {
+        return Agents;
     }
 
-    public void setAgents(ArrayList<Agents> agents) {
-        this.agents = agents;
+    public void setAgents(ArrayList<Integer> agents) {
+        Agents = agents;
     }
 
     public String getQuoteAgeInMinutes() {
-        return quoteAgeInMinutes;
+        return QuoteAgeInMinutes;
     }
 
     public void setQuoteAgeInMinutes(String quoteAgeInMinutes) {
-        this.quoteAgeInMinutes = quoteAgeInMinutes;
+        QuoteAgeInMinutes = quoteAgeInMinutes;
     }
 
     public String getPrice() {
-        return price;
+        return Price;
     }
 
     public void setPrice(String price) {
-        this.price = price;
+        Price = price;
     }
 
     public String getDeeplinkUrl() {
-        return deeplinkUrl;
+        return DeeplinkUrl;
     }
 
     public void setDeeplinkUrl(String deeplinkUrl) {
-        this.deeplinkUrl = deeplinkUrl;
+        DeeplinkUrl = deeplinkUrl;
     }
+
 
     @Override
     public int describeContents() {
@@ -63,28 +63,21 @@ public class PricingOptions implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        this.agents = agents;
-        this.quoteAgeInMinutes = quoteAgeInMinutes;
-        this.price = price;
-        this.deeplinkUrl = deeplinkUrl;
-        dest.writeList(this.agents);
-        dest.writeString(this.quoteAgeInMinutes);
-        dest.writeString(this.price);
-        dest.writeString(this.deeplinkUrl);
+        dest.writeList(this.Agents);
+        dest.writeString(this.QuoteAgeInMinutes);
+        dest.writeString(this.Price);
+        dest.writeString(this.DeeplinkUrl);
     }
 
     protected PricingOptions(Parcel in) {
-       this.agents = new ArrayList<Agents>();
-        in.readList(this.agents, Agents.class.getClassLoader());
-        this.quoteAgeInMinutes = in.readString();
-        this.price = in.readString();
-        this.deeplinkUrl = in.readString();
-
-
-
+        this.Agents = new ArrayList<Integer>();
+        in.readList(this.Agents, Integer.class.getClassLoader());
+        this.QuoteAgeInMinutes = in.readString();
+        this.Price = in.readString();
+        this.DeeplinkUrl = in.readString();
     }
 
-    public static final Parcelable.Creator<PricingOptions> CREATOR = new Parcelable.Creator<PricingOptions>() {
+    public static final Creator<PricingOptions> CREATOR = new Creator<PricingOptions>() {
         @Override
         public PricingOptions createFromParcel(Parcel source) {
             return new PricingOptions(source);
@@ -95,5 +88,4 @@ public class PricingOptions implements Parcelable{
             return new PricingOptions[size];
         }
     };
-
 }

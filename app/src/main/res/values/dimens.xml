@@ -3,7 +3,7 @@
     <dimen name="elevation">4dp</dimen>
     <dimen name="list_toolbar_side_margin">52dp</dimen>
     <dimen name="list_side_margin">4dp</dimen>
-    <dimen name="paddingTop">116dp</dimen>
+    <dimen name="paddingTop">16dp</dimen>
     <dimen name="paddingBottom">28dp</dimen>
     <dimen name="layout_height">112dp</dimen>
     <dimen name="elevation2nd">8dp</dimen>

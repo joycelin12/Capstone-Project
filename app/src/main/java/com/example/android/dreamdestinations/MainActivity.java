@@ -299,24 +299,24 @@ public class MainActivity extends AppCompatActivity implements  MainActivityFrag
 
     public void findFlights(View view) {
 
-        if (params != null) {
+     /*   if (params != null) {
             if (params[0] == null) {
                 Toast.makeText(this, "Please select a departure airport.", Toast.LENGTH_LONG).show();
             } else if (params[1] == null) {
                 Toast.makeText(this, "Please select an arrival airport.", Toast.LENGTH_LONG).show();
             } else if (params[2] == null) {
                 Toast.makeText(this, "Please select a departure date.", Toast.LENGTH_LONG).show();
-            } else if (isOnline()) {
+            } else  */if (isOnline()) {
 
                 new SessionTask(this).execute(params);
             } else {
                 String message = "There is no internet connection";
                 Toast.makeText(this, message, Toast.LENGTH_LONG).show();
             }
-        } else {
+     /*   } else {
             String message = "Please fill in the departure airport, arrival airport and departure date.";
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-        }
+        } */
 
 
 

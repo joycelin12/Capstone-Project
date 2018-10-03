@@ -1,7 +1,6 @@
 package com.example.android.dreamdestinations.Utilities;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.example.android.dreamdestinations.Model.Agents;
 import com.example.android.dreamdestinations.Model.Carriers;
@@ -10,8 +9,6 @@ import com.example.android.dreamdestinations.Model.Itineraries;
 import com.example.android.dreamdestinations.Model.Legs;
 import com.example.android.dreamdestinations.Model.Places;
 import com.example.android.dreamdestinations.Model.Predictions;
-import com.example.android.dreamdestinations.Model.Search;
-import com.example.android.dreamdestinations.Model.SegmentIds;
 import com.example.android.dreamdestinations.Model.Segments;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -75,26 +72,10 @@ public class PredictionJsonUtils {
 
         JSONArray searchArray = searchJson.getJSONArray(M_LEGS);
 
-       // Log.e("LEGS",String.valueOf(searchArray));
-
         Gson gson = new GsonBuilder().create();
 
         ArrayList<Legs> parsedSearchData = gson.fromJson(String.valueOf(searchArray), new TypeToken<ArrayList<Legs>>() {
         }.getType());
-
-        //Search search = gson.fromJson(String.valueOf(searchArray), Search.class);
-
-        //ArrayList<Legs> leg = search.getLegs();
-
-
-       /* if(leg.size()>0){
-
-            Legs legs = leg.get(0);
-            String segmentIds = legs.getSegmentIds.get(0);
-
-            System.out.println(segmentIds);
-        }*/
-
 
         return parsedSearchData;
     }

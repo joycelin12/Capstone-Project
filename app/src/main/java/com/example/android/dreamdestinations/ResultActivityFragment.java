@@ -55,11 +55,8 @@ public class ResultActivityFragment extends Fragment {
                 e.printStackTrace();
             }
 
-            Log.e("result2", String.valueOf(itinerariesJsonData.size()));
-            //String price = itinerariesJsonData.get(0).getPricingOptions().get(0).getPrice();
-            //Log.e("result3", price);
 
-            GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 5, GridLayoutManager.HORIZONTAL, false);
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 1, GridLayoutManager.HORIZONTAL, false);
             recyclerView.setLayoutManager(gridLayoutManager);
             recyclerView.setHasFixedSize(true);
 
@@ -81,5 +78,10 @@ public class ResultActivityFragment extends Fragment {
 
         outState.putString(ITINERARIES, mItineraries);
         super.onSaveInstanceState(outState);
+    }
+
+    @Override public void onDestroyView() {
+        super.onDestroyView();
+
     }
 }

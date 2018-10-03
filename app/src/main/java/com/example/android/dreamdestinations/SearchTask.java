@@ -52,30 +52,18 @@ public class SearchTask extends AsyncTask<String , Void, String> {
     private ResultAdapter rAdapter;
     private RecyclerView mResultsList;
     private ResultAdapter.ItemClickListener mClickListener;
+    private ProgressDialog progress;
 
-
-
-    public SearchTask(Context context) { //, MovieAdapter.ItemClickListener itemClickListener, RecyclerView mMoviesList,
+    public SearchTask(Context context, ProgressDialog progress) { //, MovieAdapter.ItemClickListener itemClickListener, RecyclerView mMoviesList,
         //MovieResponse movies){
         this.context = context;
+        this.progress = progress;
         //this.mClickListener = itemClickListener;
         //this.mMoviesList = mMoviesList;
         //this.movies = movies;
 
-    }
-    /*
-    ProgressDialog progress = ProgressDialog.show(context, "Searching for Flights",
-            "Please wait...");
 
-    @Override
-    protected void onPreExecute()
-    {
-        progress.setCancelable(false);
-        progress.isIndeterminate();
-        progress.show();
     }
-    */
-
 
     @Override
     protected String doInBackground(String... strings) {
@@ -89,15 +77,25 @@ public class SearchTask extends AsyncTask<String , Void, String> {
         try {
 
             NetworkUtils test = new NetworkUtils();
+
+
             JSONString = test.runSearch(searchUrl.toString());
 
-            Log.e("search", JSONString);
+            Log.e("search1", JSONString);
+            Log.e("search1 lenght", String.valueOf(JSONString.length()));
+
 
             statusData = getStatusFromJson(context, JSONString);
+            Log.e("status1", statusData);
 
-            Thread.sleep(10000);
+            Thread.sleep(60000);
 
             JSONString = test.runSearch(searchUrl.toString());
+            statusData = getStatusFromJson(context, JSONString);
+
+            Log.e("search2 lenght", String.valueOf(JSONString.length()));
+
+            Log.e("status2", statusData);
 
             return JSONString;
 
@@ -116,7 +114,7 @@ public class SearchTask extends AsyncTask<String , Void, String> {
     // Override onPostExecute to display the results in the GridView
     @Override
     protected void onPostExecute(final String searchJsonStr) {
-
+      /*
 
         try {
             statusData = getStatusFromJson(context, searchJsonStr);
@@ -131,14 +129,14 @@ public class SearchTask extends AsyncTask<String , Void, String> {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
+*/
 
         /*
         rAdapter = new ResultAdapter(itinerariesJsonData.size(), searchJsonStr, this.context);
         rAdapter.setClickListener(this.mClickListener);
         this.mResultsList.setAdapter(rAdapter); */
-
-
+        //Log.e("TAG2", statusData);
+/*
         for(int i=0; i<itinerariesJsonData.size(); i++) {
             Log.e("TAG", String.valueOf(itinerariesJsonData.get(i)));
             Log.e("TAG2",itinerariesJsonData.get(i).getPricingOptions().get(i).getPrice());
@@ -146,8 +144,7 @@ public class SearchTask extends AsyncTask<String , Void, String> {
 
         for(int i=0; i<legsJsonData.size(); i++) {
             Log.e("TAG", String.valueOf(legsJsonData.get(i)));
-        }
-        Log.e("TAG", statusData);
+        }*/
 
        /* if (statusData != "UpdatesComplete"){
             Toast.makeText(context, "not finished", Toast.LENGTH_LONG).show();
@@ -165,9 +162,10 @@ public class SearchTask extends AsyncTask<String , Void, String> {
                 if (statusData == "UpdatesComplete") {
                     Toast.makeText(context, "finished", Toast.LENGTH_LONG).show();
                     handlerTask[0].removeCallbacks(finalRunTask); */
-                    //progress.dismiss();
+                    progress.dismiss();
                     Intent intent = new Intent(this.context, ResultActivity.class);
-                    intent.putExtra(ResultActivity.ITINERARIES, searchJsonStr);
+                    ResultActivity.flight = searchJsonStr;
+                   // intent.putExtra(ResultActivity.ITINERARIES, searchJsonStr);
                     context.startActivity(intent);
 
             /*    } else {

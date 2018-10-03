@@ -13,52 +13,53 @@ public class Itineraries implements Parcelable {
 
     String OutboundLegId;
     String InboundLegId;
-    ArrayList<PricingOptions> pricingOptions;
-    ArrayList<BookingDetailsLink> bookingDetailsLink;
+    ArrayList<PricingOptions> PricingOptions;
+    BookingDetailsLink BookingDetailsLink;
+
+
+    public Itineraries(String outboundLegId, String inboundLegId, ArrayList<com.example.android.dreamdestinations.Model.PricingOptions> pricingOptions,
+                       com.example.android.dreamdestinations.Model.BookingDetailsLink bookingDetailsLink) {
+        OutboundLegId = outboundLegId;
+        InboundLegId = inboundLegId;
+        PricingOptions = pricingOptions;
+        BookingDetailsLink = bookingDetailsLink;
+    }
 
     public String getOutboundLegId() {
         return OutboundLegId;
     }
 
-    public void setOutboundLegId(String OutboundLegId) {
-        this.OutboundLegId = OutboundLegId;
+    public void setOutboundLegId(String outboundLegId) {
+        OutboundLegId = outboundLegId;
     }
 
     public String getInboundLegId() {
         return InboundLegId;
     }
 
-    public void setInboundLegId(String InboundLegId) {
-        this.InboundLegId = InboundLegId;
+    public void setInboundLegId(String inboundLegId) {
+        InboundLegId = inboundLegId;
     }
 
-    public ArrayList<PricingOptions> getPricingOptions() {
-        return pricingOptions;
+    public ArrayList<com.example.android.dreamdestinations.Model.PricingOptions> getPricingOptions() {
+        return PricingOptions;
     }
 
-    public void setPricingOptions(ArrayList<PricingOptions> pricingOptions) {
-        this.pricingOptions = pricingOptions;
+    public void setPricingOptions(ArrayList<com.example.android.dreamdestinations.Model.PricingOptions> pricingOptions) {
+        PricingOptions = pricingOptions;
     }
 
-    public ArrayList<BookingDetailsLink> getBookingDetailsLink() {
-        return bookingDetailsLink;
+    public com.example.android.dreamdestinations.Model.BookingDetailsLink getBookingDetailsLink() {
+        return BookingDetailsLink;
     }
 
-    public void setBookingDetailsLink(ArrayList<BookingDetailsLink> bookingDetailsLink) {
-        this.bookingDetailsLink = bookingDetailsLink;
+    public void setBookingDetailsLink(com.example.android.dreamdestinations.Model.BookingDetailsLink bookingDetailsLink) {
+        BookingDetailsLink = bookingDetailsLink;
     }
 
-
-    public Itineraries(String OutboundLegId, String InboundLegId ,ArrayList<PricingOptions> pricingOptions,
-                  ArrayList<BookingDetailsLink> bookingDetailsLink ) {
-
-        this.OutboundLegId = OutboundLegId;
-        this.InboundLegId = InboundLegId;
-        this.pricingOptions = pricingOptions;
-        this.bookingDetailsLink = bookingDetailsLink;
-
+    public static Creator<Itineraries> getCREATOR() {
+        return CREATOR;
     }
-
 
     @Override
     public int describeContents() {
@@ -69,20 +70,18 @@ public class Itineraries implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.OutboundLegId);
         dest.writeString(this.InboundLegId);
-        dest.writeList(this.pricingOptions);
-        dest.writeList(this.bookingDetailsLink);
+        dest.writeTypedList(this.PricingOptions);
+        dest.writeParcelable(this.BookingDetailsLink, flags);
     }
 
     protected Itineraries(Parcel in) {
         this.OutboundLegId = in.readString();
         this.InboundLegId = in.readString();
-        this.pricingOptions = new ArrayList<PricingOptions>();
-        in.readList(this.pricingOptions, PricingOptions.class.getClassLoader());
-        this.bookingDetailsLink = new ArrayList<BookingDetailsLink>();
-        in.readList(this.bookingDetailsLink, BookingDetailsLink.class.getClassLoader());
+        this.PricingOptions = in.createTypedArrayList(com.example.android.dreamdestinations.Model.PricingOptions.CREATOR);
+        this.BookingDetailsLink = in.readParcelable(com.example.android.dreamdestinations.Model.BookingDetailsLink.class.getClassLoader());
     }
 
-    public static final Parcelable.Creator<Itineraries> CREATOR = new Parcelable.Creator<Itineraries>() {
+    public static final Creator<Itineraries> CREATOR = new Creator<Itineraries>() {
         @Override
         public Itineraries createFromParcel(Parcel source) {
             return new Itineraries(source);

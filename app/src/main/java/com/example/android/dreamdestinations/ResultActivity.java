@@ -10,7 +10,7 @@ import android.widget.Toast;
 public class ResultActivity extends AppCompatActivity {
 
     public static final String ITINERARIES = "itineraries";
-    String flight;
+    public static String flight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +19,12 @@ public class ResultActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
 
-            Intent intent = getIntent();
+          /*  Intent intent = getIntent();
             if (intent == null) {
                 closeOnError();
             }
 
-            flight = intent.getStringExtra(ITINERARIES);
+          flight = intent.getStringExtra(ITINERARIES); */
             Log.e("flight", flight);
 
 
@@ -67,10 +67,9 @@ public class ResultActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public void onSaveInstanceState(Bundle outState) {
        outState.putString(ITINERARIES, flight);
-        super.onSaveInstanceState(outState);
+       super.onSaveInstanceState(outState);
     }
 }

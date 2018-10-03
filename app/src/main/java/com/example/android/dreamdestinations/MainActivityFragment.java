@@ -194,11 +194,22 @@ public class MainActivityFragment extends Fragment {
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
-                                 String dateString = year + "-" + (monthOfYear + 1) + "-" + dayOfMonth;
+                                //referencing https://stackoverflow.com/questions/41845793/how-to-get-datepicker-month-field-in-two-digit-format-in-android
+                                monthOfYear+=1;
+                                String mt,dy;   //local variable
+                                if(monthOfYear<10)
+                                    mt="0"+monthOfYear; //if month less than 10 then ad 0 before month
+                                else mt=String.valueOf(monthOfYear);
+
+                                if(dayOfMonth<10)
+                                    dy = "0"+dayOfMonth;
+                                else dy = String.valueOf(dayOfMonth);
+
+                                 String dateString = year + "-" + mt + "-" + dy;
                                  departEditText.setText(dateString);
                                  params[2] = dateString;
-                                Toast.makeText(getActivity(), params[2] + " departure d" ,Toast.LENGTH_LONG).show();
-                                mCallback.onButtonSelected(params);
+                                 Toast.makeText(getActivity(), params[2] + " departure d" ,Toast.LENGTH_LONG).show();
+                                 mCallback.onButtonSelected(params);
                                  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                                 try {
                                     departDate = sdf.parse(dateString);
@@ -228,7 +239,18 @@ public class MainActivityFragment extends Fragment {
                                 @Override
                                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
-                                    String dateString = year + "-" + (monthOfYear + 1) + "-" + dayOfMonth;
+                                    //referencing from https://stackoverflow.com/questions/41845793/how-to-get-datepicker-month-field-in-two-digit-format-in-android
+                                    monthOfYear+=1;
+                                    String mt,dy;   //local variable
+                                    if(monthOfYear<10)
+                                        mt="0"+monthOfYear; //if month less than 10 then ad 0 before month
+                                    else mt=String.valueOf(monthOfYear);
+
+                                    if(dayOfMonth<10)
+                                        dy = "0"+dayOfMonth;
+                                    else dy = String.valueOf(dayOfMonth);
+
+                                    String dateString = year + "-" + mt + "-" + dy;
                                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                                     try {
                                         arrivalDate = sdf.parse(dateString);
