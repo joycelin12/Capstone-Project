@@ -1,7 +1,11 @@
 package com.example.android.dreamdestinations;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.util.Log;
@@ -17,7 +21,6 @@ import com.example.android.dreamdestinations.Model.Currencies;
 import com.example.android.dreamdestinations.Model.Itineraries;
 import com.example.android.dreamdestinations.Model.Legs;
 import com.example.android.dreamdestinations.Model.Places;
-import com.example.android.dreamdestinations.Model.PricingOptions;
 import com.example.android.dreamdestinations.Model.Segments;
 import com.squareup.picasso.Picasso;
 
@@ -25,9 +28,7 @@ import org.json.JSONException;
 
 import java.util.ArrayList;
 
-import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getAgentsFromJson;
 import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getCarriersFromJson;
-import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getCurrenciesFromJson;
 import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getItinerariesFromJson;
 import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getLegsFromJson;
 import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getPlacesFromJson;
@@ -38,6 +39,9 @@ import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtil
  * Created by joycelin12 on 9/27/18.
  *
  * referencing from https://www.locked.de/how-to-make-html-links-in-android-text-view-work/
+ * https://stackoverflow.com/questions/43025993/how-do-i-open-a-browser-on-clicking-a-text-link-in-textview
+ * https://stackoverflow.com/questions/5882656/no-activity-found-to-handle-intent-android-intent-action-view
+ * https://stackoverflow.com/questions/21569477/click-on-text-a-dialog-box-must-open
  */
 
 public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.NumberViewHolder> {
@@ -48,13 +52,16 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.NumberView
     private Context mContext;
     private Cursor mCursor;
     private String mFlight;
+    private String[] mParams;
+
 
 
     //create a constructor that accepts int as a parameter for number of items and store in the variable
-    public ResultAdapter(int numberOfItems, String flight, Context context){
+    public ResultAdapter(int numberOfItems, String flight, String[] params, Context context){
         mNumberItems = numberOfItems;
         this.mFlight = flight;
         this.mContext = context;
+        this.mParams = params;
     }
 
     @Override
@@ -72,77 +79,37 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.NumberView
     }
 
     @Override
-    public void onBindViewHolder(NumberViewHolder holder, int position) {
+    public void onBindViewHolder(NumberViewHolder holder, final int position) {
 
-        String url = null;
         ArrayList<Itineraries> itinerariesJsonData = new ArrayList<Itineraries>();
         ArrayList<Legs> legsJsonData = new ArrayList<Legs>();
-        ArrayList<Segments> segmentsData = new ArrayList<Segments>();
         ArrayList<Carriers> carriersData = new ArrayList<Carriers>();
-        ArrayList<Agents> agentsData = new ArrayList<Agents>();
-        ArrayList<Places> placesData = new ArrayList<Places>();
-        ArrayList<Currencies> currenciesData = new ArrayList<Currencies>();
 
         try {
             itinerariesJsonData  = getItinerariesFromJson(mContext, mFlight);
             legsJsonData  = getLegsFromJson(mContext, mFlight);
-         //   segmentsData = getSegmentsFromJson(mContext, mFlight);
             carriersData = getCarriersFromJson(mContext, mFlight);
-         //   agentsData = getAgentsFromJson(mContext, mFlight);
-            placesData = getPlacesFromJson(mContext, mFlight);
-        //    currenciesData = getCurrenciesFromJson(mContext, mFlight);
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-
         String outboundLegId = itinerariesJsonData.get(position).getOutboundLegId();
         String inboundLegId = itinerariesJsonData.get(position).getInboundLegId();
         String route ;
-        int outIndex = 0;
-        int inIndex = 0;
-        int outFrom = 0;
-        int outTo = 0;
-        int stopOut =0;
-        int inFrom = 0;
-        int inTo = 0;
-        int stopIn = 0;
         int carr = 0;
 
+        int outIndex = getLegsData(outboundLegId);
 
-        for (Legs legs:legsJsonData) {
-
-            if(legs.getId().equals(outboundLegId)) {
-                outIndex = legsJsonData.indexOf(legs);
-            }
-
-        }
-
-        //int outIndex = legsJsonData.map(function(x) {return x.id; }).indexOf(outboundLegId); // legsJsonData.indexOf(outboundLegId);
         String outOriginStation = legsJsonData.get(outIndex).getOriginStation();
         String outDestStation = legsJsonData.get(outIndex).getDestinationStation();
+        String outTiming = legsJsonData.get(outIndex).getDuration();
+        int outTime = Integer.parseInt(outTiming);
+        int outHours = outTime / 60;
+        int outMinutes = outTime % 60;
 
-        for (Places places:placesData) {
-
-            if(places.getId().equals(outOriginStation)) {
-                outFrom = placesData.indexOf(places);
-            }
-
-        }
-
-        //int outFrom = placesData.indexOf(outOriginStation);
-        String outFromPlace = placesData.get(outFrom).getName();
-
-        for (Places places:placesData) {
-
-            if(places.getId().equals(outDestStation)) {
-                outTo = placesData.indexOf(places);
-            }
-
-        }
-       // int outTo = placesData.indexOf(outDestStation);
-        String outToPlace = placesData.get(outTo).getName();
+        String outFromPlace = getPlacesData(outOriginStation);
+        String outToPlace = getPlacesData(outDestStation);
 
         String carrierId = legsJsonData.get(outIndex).getCarriers().get(0).toString();
         for (Carriers carrier:carriersData) {
@@ -161,101 +128,105 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.NumberView
                 .error(R.drawable.user_placeholder_error)
                 .into(holder.listItemAirlineImage);
 
-        holder.listItemAirline.setText(carriersData.get(carr).getName());
+        holder.listItemAirline.setText(carriersData.get(carr).getName() + "\n\n");
 
-        route = position +" : "+ outFromPlace + " - ";
-        Log.e("route", route);
+        route = "Outgoing: "+ outFromPlace + " - ";
+        String stopOut = getStopsData(outIndex);
+        route = route + stopOut;
+        route = route + outToPlace + "\n";
+        route = route + "Duration: " + outHours + ":" + outMinutes + "\n";
 
-        int stopOutIndex = legsJsonData.get(outIndex).getStops().size();
-        for (int i=0; i<stopOutIndex ; i++) {
+        int inIndex = getLegsData(inboundLegId);
 
-            //int stopOut = placesData.indexOf(legsJsonData.get(outIndex).getStops().get(i));
-            for (Places places:placesData) {
-
-                if(places.getId().equals(legsJsonData.get(outIndex).getStops().get(i))) {
-                    stopOut = placesData.indexOf(places);
-
-                }
-
-            }
-            String stopOutPlace = placesData.get(stopOut).getName();
-            route = route + stopOutPlace + " - ";
-            Log.e("route stop out id ", stopOutPlace);
-            Log.e("route stop out ", route);
-
-        }
-
-        route = route + outToPlace + "\n lala";
-        Log.e("route outto", route);
-
-
-        for (Legs legs:legsJsonData) {
-
-            if(legs.getId().equals(inboundLegId)) {
-                inIndex = legsJsonData.indexOf(legs);
-            }
-
-        }
-
-        //inIndex = legsJsonData.indexOf(inboundLegId);
         String inOriginStation = legsJsonData.get(inIndex).getOriginStation();
         String inDestStation = legsJsonData.get(inIndex).getDestinationStation();
+        String inTiming = legsJsonData.get(inIndex).getDuration();
+        int inTime = Integer.parseInt(inTiming);
+        int inHours = inTime / 60;
+        int inMinutes = inTime % 60;
 
-        //int inFrom = placesData.indexOf(inOriginStation);
-        for (Places places:placesData) {
+        String inFromPlace = getPlacesData(inOriginStation);
+        String inToPlace = getPlacesData(inDestStation);
 
-            if(places.getId().equals(inOriginStation)) {
-                inFrom = placesData.indexOf(places);
-            }
+        route = route + "\nIncoming: " + inFromPlace + " - ";
 
-        }
-
-        String inFromPlace = placesData.get(inFrom).getName();
-        //int inTo = placesData.indexOf(inDestStation);
-
-        for (Places places:placesData) {
-
-            if(places.getId().equals(inDestStation)) {
-                inTo = placesData.indexOf(places);
-            }
-
-        }
-        String inToPlace = placesData.get(inTo).getName();
-
-        route = route + inFromPlace + " - ";
-        Log.e("route in from", route);
-
-
-        int stopInIndex = legsJsonData.get(inIndex).getStops().size();
-        for (int i=0; i<stopInIndex ; i++) {
-
-            //int stopIn = placesData.indexOf(legsJsonData.get(inIndex).getStops().get(i));
-            for (Places places:placesData) {
-
-                if(places.getId().equals(legsJsonData.get(inIndex).getStops().get(i))) {
-                    stopIn = placesData.indexOf(places);
-                }
-
-            }
-            String stopInPlace = placesData.get(stopIn).getName();
-            route = route + stopInPlace + " - ";
-            Log.e("route stop in", route);
-
-        }
-        route = route + inToPlace;
-        Log.e("route into", route);
+        String stopIn = getStopsData(inIndex);
+        route = route + stopIn;
+        route = route + inToPlace + "\n";
+        route = route + "Duration: " + inHours + ":" + inMinutes + "\n";
 
         holder.listItemRoute.setText(route);
 
-        String booking = itinerariesJsonData.get(position).getPricingOptions().get(0).getDeeplinkUrl();
-        int bookingint = itinerariesJsonData.get(position).getPricingOptions().size();
-        Log.e("bookin", booking);
+        final Context bookContext = holder.listItemBook.getContext();
+        final String booking = itinerariesJsonData.get(position).getPricingOptions().get(0).getDeeplinkUrl();
         holder.listItemBook.setText(Html.fromHtml("<a href=\"+ " + booking + "\">Book Now</a>"));
-        holder.listItemBook.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
+        holder.listItemBook.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW);
+                browserIntent.setData(Uri.parse(booking));
+                bookContext.startActivity(browserIntent);
+            }
+        });
 
-        //holder.listItemBook.setText(booking);
         String pricing = itinerariesJsonData.get(position).getPricingOptions().get(0).getPrice();
-        holder.listItemPrice.setText(pricing);
+        holder.listItemPrice.setText("Price: " + pricing + " USD");
+
+        // Set On ClickListener
+        holder.listItemDetails.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                try {
+                    ShowDetailsDialog(position);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+
+    }
+
+    private void ShowDetailsDialog(int position) throws JSONException {
+
+        LayoutInflater li = LayoutInflater.from(mContext);
+        View dialogView = li.inflate(R.layout.details, null);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                mContext);
+        alertDialogBuilder.setTitle("Flight Details");
+        // set prompts.xml to alertdialog builder
+        alertDialogBuilder.setView(dialogView);
+
+        ArrayList<Itineraries> itinerariesJsonData  = getItinerariesFromJson(mContext, mFlight);
+         String outboundLegId = itinerariesJsonData.get(position).getOutboundLegId();
+        String inboundLegId = itinerariesJsonData.get(position).getInboundLegId();
+
+        String outSchedule = getSegments(outboundLegId);
+        String inSchedule = getSegments(inboundLegId);
+        String pricing = itinerariesJsonData.get(position).getPricingOptions().get(0).getPrice();
+
+
+        final TextView outbound = (TextView) dialogView.findViewById(R.id.outboundFlight);
+        outbound.setText(outSchedule);
+        final TextView inbound = (TextView) dialogView.findViewById(R.id.inboundFlight);
+        inbound.setText(inSchedule);
+        final TextView price = (TextView) dialogView.findViewById(R.id.dialogPrice);
+        price.setText("Price: " + pricing + " USD");
+
+
+        // set dialog message
+        alertDialogBuilder.setCancelable(true).setPositiveButton("OK",new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog,
+                                int id) {
+
+            }
+        });
+
+        // create alert dialog
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // show it
+        alertDialog.show();
+
 
     }
 
@@ -270,7 +241,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.NumberView
         TextView listItemAirline;
         TextView listItemPrice;
         TextView listItemBook;
-
+        TextView listItemDetails;
 
         public NumberViewHolder(View itemView) {
             super(itemView);
@@ -280,6 +251,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.NumberView
             listItemAirline = (TextView) itemView.findViewById(R.id.airline);
             listItemPrice = (TextView) itemView.findViewById(R.id.price);
             listItemBook = (TextView) itemView.findViewById(R.id.book);
+            listItemDetails = (TextView) itemView.findViewById(R.id.details);
             itemView.setOnClickListener(this);
         }
 
@@ -309,5 +281,146 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.NumberView
     public interface ItemClickListener {
         void onItemClick(View view, int position) throws JSONException;
     }
+
+    public int getLegsData(String legId)  {
+
+        int index = 0;
+
+        ArrayList<Legs> legsJsonData  = null;
+        try {
+            legsJsonData = getLegsFromJson(mContext, mFlight);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        for (Legs legs:legsJsonData) {
+
+            if(legs.getId().equals(legId)) {
+                index = legsJsonData.indexOf(legs);
+            }
+
+        }
+        return index;
+
+    }
+
+    public String getPlacesData(String station)  {
+
+        ArrayList<Places> placesData  = null;
+        try {
+            placesData = getPlacesFromJson(mContext, mFlight);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        int index = 0;
+
+        for (Places places:placesData) {
+
+            if(places.getId().equals(station)) {
+                index = placesData.indexOf(places);
+            }
+
+        }
+
+        String place = placesData.get(index).getName();
+
+        return place;
+    }
+
+    public String getStopsData(int index) {
+
+        String route = "";
+
+        ArrayList<Legs> legsJsonData  = null;
+        ArrayList<Places> placesData  = null;
+
+        try {
+            legsJsonData = getLegsFromJson(mContext, mFlight);
+            placesData = getPlacesFromJson(mContext, mFlight);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        int stopIndex = legsJsonData.get(index).getStops().size();
+        for (int i = 0; i < stopIndex; i++) {
+
+            int stop =0;
+
+            for (Places places : placesData) {
+
+                if (places.getId().equals(String.valueOf(legsJsonData.get(index).getStops().get(i)))) {
+                    stop = placesData.indexOf(places);
+                }
+
+            }
+            String stopPlace = placesData.get(stop).getName();
+            route = route + stopPlace + " - ";
+
+        }
+
+        return route;
+
+    }
+
+    public int getSegmentId(String id) {
+
+        ArrayList<Segments> segmentsData  = null;
+        try {
+            segmentsData = getSegmentsFromJson(mContext, mFlight);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        int index = 0;
+
+        for (Segments seg:segmentsData) {
+
+            if(seg.getId().equals(id)) {
+                index = segmentsData.indexOf(seg);
+            }
+
+        }
+
+        return index;
+
+
+    }
+
+
+
+    public String getSegments(String legId) {
+
+        String schedule = "";
+
+        ArrayList<Segments> segmentsData  = null;
+        ArrayList<Legs> legsJsonData  = null;
+
+        try {
+            legsJsonData = getLegsFromJson(mContext, mFlight);
+             segmentsData = getSegmentsFromJson(mContext, mFlight);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        ArrayList<Integer> segments = legsJsonData.get(getLegsData(legId)).getSegmentIds();
+
+        for(int i=0; i<segments.size(); i++) {
+
+        int index = getSegmentId(String.valueOf(segments.get(i)));
+        String departTime = segmentsData.get(index).getDepartureDateTime();
+        String arrivalTime = segmentsData.get(index).getArrivalDateTime();
+        String origin = segmentsData.get(index).getOriginStation();
+        String dest = segmentsData.get(index).getDestinationStation();
+
+        String originPlace = getPlacesData(origin);
+        String destPlace = getPlacesData(dest);
+        schedule = schedule + departTime + " - " + arrivalTime + "\n" + originPlace + " - " + destPlace + "\n";
+        }
+
+        return schedule;
+    }
+
+
+
 
 }

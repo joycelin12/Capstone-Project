@@ -6,15 +6,12 @@ import android.util.Log;
 import com.example.android.dreamdestinations.BuildConfig;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 import okhttp3.FormBody;
 import okhttp3.Headers;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
@@ -137,8 +134,8 @@ public class NetworkUtils {
         return response.body().string();
     }
 
-  //  public String runSession(String url, String[] params) throws IOException {
-      public String runSession(String url) throws IOException {
+    public String runSession(String url, String[] params) throws IOException {
+   //   public String runSession(String url) throws IOException {
 
         String location ="";
 
@@ -146,14 +143,14 @@ public class NetworkUtils {
                 .add(PARAM_COUNTRY_KEY, "US")
                 .add(PARAM_CURRENCY_KEY, "USD")
                 .add(PARAM_LOCALE_KEY, "en-US")
-              /*  .add(PARAM_ORIGIN_KEY, params[0])
+                .add(PARAM_ORIGIN_KEY, params[0])
                 .add(PARAM_DEST_KEY, params[1])
                 .add(PARAM_OUT_KEY, params[2])
-                .add(PARAM_IN_KEY, params[3]) */
-                .add(PARAM_ORIGIN_KEY, "SFO-sky")
+                .add(PARAM_IN_KEY, params[3])
+                /*.add(PARAM_ORIGIN_KEY, "SFO-sky")
                 .add(PARAM_DEST_KEY, "LHR-sky")
                 .add(PARAM_OUT_KEY, "2018-11-01")
-                .add(PARAM_IN_KEY, "2018-11-10")
+                .add(PARAM_IN_KEY, "2018-11-10")*/
                 .add(PARAM_CABIN_KEY, "economy")
                 .add(PARAM_ADULT_KEY, "1")
                 .add(PARAM_CHILD_KEY, "0")

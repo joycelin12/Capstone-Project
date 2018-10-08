@@ -4,9 +4,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v7.view.ContextThemeWrapper;
 import android.support.v7.widget.PopupMenu;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
@@ -118,7 +115,8 @@ public class PlaceTask extends AsyncTask<String[] , Void, ArrayList<Predictions>
         //PopupMenu menu = new PopupMenu(context, popup);
         for (Predictions s : predictionsData) {
 
-            menu.getMenu().add(s.getCode() + " " +  s.getName());
+            //with the code menu.getMenu().add(s.getCode() + " " +  s.getName());
+            menu.getMenu().add(s.getName());
         }
 
 

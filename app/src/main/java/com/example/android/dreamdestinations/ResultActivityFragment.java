@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,10 +24,11 @@ public class ResultActivityFragment extends Fragment {
 
     private RecyclerView recyclerView;
     public static final String ITINERARIES = "itineraries";
+    public static final String PARAMS = "params";
     private String mItineraries;
+    private String[] mParams;
     private ArrayList<Itineraries> itinerariesJsonData;
     private ResultAdapter rAdapter;
-    private RecyclerView mResultsList;
     private ResultAdapter.ItemClickListener mClickListener;
 
 
@@ -44,6 +44,8 @@ public class ResultActivityFragment extends Fragment {
 
         if (savedInstanceState != null) {
             mItineraries = savedInstanceState.getString(ITINERARIES);
+            mParams = savedInstanceState.getStringArray(PARAMS);
+
 
 
         }
@@ -60,7 +62,7 @@ public class ResultActivityFragment extends Fragment {
             recyclerView.setLayoutManager(gridLayoutManager);
             recyclerView.setHasFixedSize(true);
 
-            rAdapter = new ResultAdapter(itinerariesJsonData.size(), mItineraries, getContext());
+            rAdapter = new ResultAdapter(itinerariesJsonData.size(), mItineraries, mParams, getContext());
             rAdapter.setClickListener(this.mClickListener);
             recyclerView.setAdapter(rAdapter);
 
@@ -71,12 +73,15 @@ public class ResultActivityFragment extends Fragment {
     }
 
     public void setItineraries(String itineraries) { mItineraries = itineraries; }
+    public void setParams(String[] params) { mParams = params; }
+
 
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
 
         outState.putString(ITINERARIES, mItineraries);
+        outState.putStringArray(PARAMS, mParams);
         super.onSaveInstanceState(outState);
     }
 

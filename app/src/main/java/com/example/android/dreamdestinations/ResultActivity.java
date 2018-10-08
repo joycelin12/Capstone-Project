@@ -1,21 +1,55 @@
 package com.example.android.dreamdestinations;
 
-import android.content.Intent;
+
+import android.content.ContentUris;
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.android.dreamdestinations.Model.Itineraries;
+
+import org.json.JSONException;
+
+import java.util.ArrayList;
+
+import static android.provider.BaseColumns._ID;
+import static com.example.android.dreamdestinations.FavouritesContract.FavouritesEntry.COLUMN_DEST_ID;
+import static com.example.android.dreamdestinations.FavouritesContract.FavouritesEntry.COLUMN_FROM_DATE;
+import static com.example.android.dreamdestinations.FavouritesContract.FavouritesEntry.COLUMN_ORIGIN_ID;
+import static com.example.android.dreamdestinations.FavouritesContract.FavouritesEntry.COLUMN_TO_DATE;
+import static com.example.android.dreamdestinations.FavouritesContract.FavouritesEntry.CONTENT_URI;
+import static com.example.android.dreamdestinations.FavouritesContract.FavouritesPriceEntry.COLUMN_PRICE;
+import static com.example.android.dreamdestinations.FavouritesContract.FavouritesPriceEntry.COLUMN_TRIP_ID;
+import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getItinerariesFromJson;
 
 public class ResultActivity extends AppCompatActivity {
 
     public static final String ITINERARIES = "itineraries";
+    public static final String PARAMS = "params";
+
     public static String flight;
+    public static String[] params;
+    private SQLiteDatabase mDb;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+
+        TextView itinerary = findViewById(R.id.itinerary);
 
         if (savedInstanceState == null) {
 
@@ -27,10 +61,18 @@ public class ResultActivity extends AppCompatActivity {
           flight = intent.getStringExtra(ITINERARIES); */
             Log.e("flight", flight);
 
+            //itinerary.setText("Flying from " + params[4] + " to " + params[5] +
+              //      " on " + params[2] + " to " + params[3]);
+            itinerary.setText("Flying from \n San Francisco International to London Heathrow\n" +
+                            " on\n 2018-11-01 to 2018-11-11");
+
+
 
             ResultActivityFragment resultFragment = new ResultActivityFragment();
 
             resultFragment.setItineraries(flight);
+            resultFragment.setParams(params);
+
 
             //Use a FragmentManager and transaction to add the fragment to the screen
             FragmentManager fragmentManager = getSupportFragmentManager();
@@ -41,11 +83,21 @@ public class ResultActivity extends AppCompatActivity {
 
 
         } else {
+
             flight = savedInstanceState.getString(ITINERARIES);
+            params = savedInstanceState.getStringArray(PARAMS);
+
+            //itinerary.setText("Flying from " + params[4] + " to " + params[5] +
+              //                " on " + params[2] + " to " + params[3]);
+            itinerary.setText("Flying from \n San Francisco International to London Heathrow\n" +
+                    " on\n 2018-11-01 to 2018-11-11");
+
 
             ResultActivityFragment resultFragment = (ResultActivityFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_result);
 
             resultFragment.setItineraries(flight);
+            resultFragment.setParams(params);
+
 
             //Use a FragmentManager and transaction to add the fragment to the screen
             FragmentManager fragmentManager = getSupportFragmentManager();
@@ -56,6 +108,43 @@ public class ResultActivity extends AppCompatActivity {
 
 
         }
+
+        // Create a DB helper (this will create the DB if run for the first time)
+        FavouritesDbHelper dbHelper = new FavouritesDbHelper(this);
+
+        // Keep a reference to the mDb until paused or killed. Get a writable database
+        // because you will be adding restaurant customers
+        mDb = dbHelper.getWritableDatabase();
+
+        //favourite
+        // from the website https://alvinalexander.com/source-code/android/android-checkbox-listener-setoncheckedchangelisteneroncheckedchangelistener-exam
+        CheckBox checkBox = (CheckBox) findViewById(R.id.favbutton);
+
+        //query the database to check the checkbox if is favourite
+       if (params != null) {
+            final int tripId = getTrip(params);
+            if (tripId > 0) {
+                checkBox.setChecked(true);
+            }
+            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    // update your model (or other business logic) based on isChecked
+                    if (isChecked) {
+                        addTrip(params);
+                        //Log.i("Tag", "add to database");
+
+                    } else {
+                        //Log.i("Tag", "remove from database");
+                        if (tripId > 0 ) {
+                            removeTrip(tripId);
+                        }
+
+                    }
+                }
+            });
+        }
+
+
 
 
     }
@@ -70,6 +159,87 @@ public class ResultActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(Bundle outState) {
        outState.putString(ITINERARIES, flight);
-       super.onSaveInstanceState(outState);
+       outState.putStringArray(PARAMS, params);
+
+        super.onSaveInstanceState(outState);
     }
+
+    private int getTrip(String[] params) {
+
+        Cursor cursor = getContentResolver()
+                .query(CONTENT_URI,null, String.valueOf(new String[] {
+                        COLUMN_ORIGIN_ID,
+                        COLUMN_DEST_ID,
+                        COLUMN_FROM_DATE,
+                        COLUMN_TO_DATE})
+                , new String[] {
+                                params[0],
+                                params[1],
+                                params[2],
+                                params[3]},null);
+
+
+        if (cursor != null && cursor.moveToFirst()) {
+
+            int id = cursor.getInt(cursor.getColumnIndex(_ID));
+            return id;
+        } else {
+            return -1;
+        }
+
+
+    }
+
+    private Uri addTrip(String[] params) {
+
+        ArrayList<Itineraries> itinerariesJsonData = null;
+        try {
+            itinerariesJsonData = getItinerariesFromJson(getApplicationContext(), flight);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        String pricing = itinerariesJsonData.get(0).getPricingOptions().get(0).getPrice();
+
+        //create ContentValues to pass values onto insert query
+        ContentValues cv = new ContentValues();
+        //call put to insert name value with the key COLUMN_TITLE
+        cv.put(COLUMN_ORIGIN_ID, params[0]);
+        cv.put(COLUMN_DEST_ID, params[1]);
+        cv.put(COLUMN_FROM_DATE, params[2]);
+        cv.put(COLUMN_TO_DATE, params[3]);
+        //call insert to run an insert query on TABLE_NAME with content values
+        Uri uri = getContentResolver().insert(FavouritesContract.FavouritesEntry.CONTENT_URI, cv);
+
+        long id = ContentUris.parseId(uri);
+
+        ContentValues cv2 = new ContentValues();
+        //call put to insert name value with the key COLUMN_TITLE
+        cv.put(COLUMN_TRIP_ID, (int) id);
+        cv.put(COLUMN_PRICE, pricing);
+
+        return getContentResolver().insert(FavouritesContract.FavouritesPriceEntry.CONTENT_URI, cv2);
+
+
+    }
+
+    private boolean removeTrip(int id) {
+
+        int rows = getContentResolver()
+                .delete(FavouritesContract.FavouritesEntry.buildTripUriWithId(String.valueOf(id)),_ID, new String[]{String.valueOf(id)});
+
+        int rows2 = getContentResolver()
+                .delete(FavouritesContract.FavouritesPriceEntry.buildPriceUriWithId(String.valueOf(id)),COLUMN_TRIP_ID, new String[]{String.valueOf(id)});
+
+
+        if (rows > 0 && rows2 > 0 ) {
+            return true;
+        } else {
+            return false;
+        }
+
+
+    }
+
+
 }

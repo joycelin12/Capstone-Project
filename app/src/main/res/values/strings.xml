@@ -17,6 +17,12 @@
     <string name="select_arrival_date">Select Arrival Date</string>
     <string name="find_flights">Find Flights</string>
     <string name="result_error_message">Error loading the result fragment</string>
+    <string name="airline_image">Airline Image</string>
+    <string name="details">Details</string>
+    <string name="outbound_flight">Outbound Flight</string>
+    <string name="inbound_flight">Inbound Flight</string>
+    <string name="my_saved_trips">My Saved Trips</string>
+    <string name="detail_error_message">There is an error loading the trip activity.</string>
     <string-array name="airports_array">
         <item>Aalborg</item>
         <item>Aalesund Vigra</item>

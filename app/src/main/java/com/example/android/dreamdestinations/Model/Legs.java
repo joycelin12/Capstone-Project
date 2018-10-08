@@ -4,8 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by joycelin12 on 9/21/18.
@@ -15,7 +13,7 @@ public class Legs implements Parcelable {
 
     String Id;
    // Map<Integer, String> SegmentIds;
-    ArrayList<Integer> SegmentIds;
+   ArrayList<Integer> SegmentIds;
     String OriginStation;
     String DestinationStation;
     String Departure;

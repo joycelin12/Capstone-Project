@@ -5,50 +5,48 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.location.Location;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.os.Build;
-import android.os.Looper;
+import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
-import android.widget.DatePicker;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android.dreamdestinations.Model.Trip;
 import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationCallback;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.location.LocationSettingsRequest;
-import com.google.android.gms.location.LocationSettingsResponse;
-import com.google.android.gms.location.SettingsClient;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
 
-import org.w3c.dom.Text;
+import org.json.JSONException;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
-import static com.google.android.gms.location.LocationServices.getFusedLocationProviderClient;
+import static com.example.android.dreamdestinations.FavouritesContract.FavouritesEntry.COLUMN_DEST_ID;
+import static com.example.android.dreamdestinations.FavouritesContract.FavouritesEntry.COLUMN_DEST_NAME;
+import static com.example.android.dreamdestinations.FavouritesContract.FavouritesEntry.COLUMN_FROM_DATE;
+import static com.example.android.dreamdestinations.FavouritesContract.FavouritesEntry.COLUMN_ORIGIN_ID;
+import static com.example.android.dreamdestinations.FavouritesContract.FavouritesEntry.COLUMN_ORIGIN_NAME;
+import static com.example.android.dreamdestinations.FavouritesContract.FavouritesEntry.COLUMN_TIMESTAMP;
+import static com.example.android.dreamdestinations.FavouritesContract.FavouritesEntry.COLUMN_TO_DATE;
 
-public class MainActivity extends AppCompatActivity implements  MainActivityFragment.OnBClickListener{
+//referencing from https://stackoverflow.com/questions/12496700/maximum-length-of-intent-putextra-method-force-close
+
+public class MainActivity extends AppCompatActivity implements MainActivityFragment.OnBClickListener{
 
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 0 ;
     private static final int REQUEST_PERMISSIONS_REQUEST_CODE = 34;
@@ -57,6 +55,11 @@ public class MainActivity extends AppCompatActivity implements  MainActivityFrag
     private boolean mLocationPermissionGranted;
     public String status;
     private String[] params;
+    ArrayList<Trip> tripList;
+    TripAdapter tAdapter;
+    RecyclerView mTripList;
+    private SQLiteDatabase mDb;
+
 
 
     @Override
@@ -74,6 +77,12 @@ public class MainActivity extends AppCompatActivity implements  MainActivityFrag
         // Construct a FusedLocationProviderClient.
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
+        // Create a DB helper (this will create the DB if run for the first time)
+        FavouritesDbHelper dbHelper = new FavouritesDbHelper(this);
+
+        // Keep a reference to the mDb until paused or killed. Get a writable database
+        // because you will be adding restaurant customers
+        mDb = dbHelper.getWritableDatabase();
 
 
     }
@@ -94,10 +103,62 @@ public class MainActivity extends AppCompatActivity implements  MainActivityFrag
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_favourite) {
-            return true;
+
+            //Run the getAllTrips
+
+            tripList = getAllTrips();
+
+            if (tripList == null) {
+
+                Toast.makeText(getApplicationContext(), "There is no saved trips.",Toast.LENGTH_LONG).show();
+
+            } else {
+
+                Intent intent = new Intent(this, TripActivity.class);
+                intent.putParcelableArrayListExtra(TripActivity.TRIP_LIST, tripList);
+                startActivity(intent);
+
+            }
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private ArrayList<Trip> getAllTrips() {
+
+        ArrayList<Trip> trips = new ArrayList<>();
+
+        Cursor cursor = getContentResolver()
+                .query(FavouritesContract.FavouritesEntry.CONTENT_URI,null,null,null,COLUMN_TIMESTAMP);
+
+        if (cursor == null) {
+
+            return null;
+
+        }
+
+        else
+
+        {
+        //https://www.androidhive.info/2011/11/android-sqlite-database-tutorial/
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Trip trip = new Trip();
+                trip.setOrigin_id(cursor.getString(cursor.getColumnIndex(COLUMN_ORIGIN_ID)));
+                trip.setDest_id(cursor.getString(cursor.getColumnIndex(COLUMN_DEST_ID)));
+                trip.setFrom_date(cursor.getString(cursor.getColumnIndex(COLUMN_FROM_DATE)));
+                trip.setTo_date(cursor.getString(cursor.getColumnIndex(COLUMN_TO_DATE)));
+                trip.setOrigin_name(cursor.getString(cursor.getColumnIndex(COLUMN_ORIGIN_NAME)));
+                trip.setDest_name(cursor.getString(cursor.getColumnIndex(COLUMN_DEST_NAME)));
+                trip.setTimestamp(cursor.getString(cursor.getColumnIndex(COLUMN_TIMESTAMP)));
+                trips.add(trip);
+            } while (cursor.moveToNext());
+        }
+
+        // return trip list
+        return trips;
+        }
     }
 
     @SuppressWarnings("MissingPermission")
@@ -299,24 +360,24 @@ public class MainActivity extends AppCompatActivity implements  MainActivityFrag
 
     public void findFlights(View view) {
 
-     /*   if (params != null) {
+       if (params != null) {
             if (params[0] == null) {
                 Toast.makeText(this, "Please select a departure airport.", Toast.LENGTH_LONG).show();
             } else if (params[1] == null) {
                 Toast.makeText(this, "Please select an arrival airport.", Toast.LENGTH_LONG).show();
             } else if (params[2] == null) {
                 Toast.makeText(this, "Please select a departure date.", Toast.LENGTH_LONG).show();
-            } else  */if (isOnline()) {
-
+            } else if (isOnline()) {
+                ResultActivity.params = params;
                 new SessionTask(this).execute(params);
             } else {
                 String message = "There is no internet connection";
                 Toast.makeText(this, message, Toast.LENGTH_LONG).show();
             }
-     /*   } else {
+        } else {
             String message = "Please fill in the departure airport, arrival airport and departure date.";
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-        } */
+        }
 
 
 
@@ -330,4 +391,6 @@ public class MainActivity extends AppCompatActivity implements  MainActivityFrag
             params = param;
         }
     }
+
+
 }

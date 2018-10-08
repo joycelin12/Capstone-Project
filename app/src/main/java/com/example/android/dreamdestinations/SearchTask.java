@@ -4,10 +4,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.example.android.dreamdestinations.Model.Agents;
 import com.example.android.dreamdestinations.Model.Carriers;
@@ -24,13 +22,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 
-import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getAgentsFromJson;
-import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getCarriersFromJson;
-import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getCurrenciesFromJson;
-import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getItinerariesFromJson;
-import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getLegsFromJson;
-import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getPlacesFromJson;
-import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getSegmentsFromJson;
 import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getStatusFromJson;
 
 /**

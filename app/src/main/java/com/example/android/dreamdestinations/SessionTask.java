@@ -3,19 +3,11 @@ package com.example.android.dreamdestinations;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
-import android.view.View;
 
-import com.example.android.dreamdestinations.Model.Predictions;
 import com.example.android.dreamdestinations.Utilities.NetworkUtils;
-
-import org.json.JSONException;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-
-import static com.example.android.dreamdestinations.Utilities.PredictionJsonUtils.getPredictionsFromJson;
 
 /**
  * Created by joycelin12 on 9/15/18.
@@ -59,8 +51,8 @@ public class SessionTask extends AsyncTask<String[] , Void, String> {
         try {
 
             NetworkUtils test = new NetworkUtils();
-           // JSONString = test.runSession(sessionUrl.toString(), params[0]);
-            JSONString = test.runSession(sessionUrl.toString());
+              JSONString = test.runSession(sessionUrl.toString(), params[0]);
+            //JSONString = test.runSession(sessionUrl.toString());
 
             return JSONString;
 

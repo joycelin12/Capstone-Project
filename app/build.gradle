@@ -15,7 +15,6 @@ android {
         buildConfigField("String", "X_Mashape_Host", X_Mashape_Host)
 
 
-
     }
     buildTypes {
         release {
