@@ -4,9 +4,9 @@ android {
     signingConfigs {
         config {
             keyAlias 'key0'
-            keyPassword Password
+            keyPassword 'password'
             storeFile file('keystore')
-            storePassword Password
+            storePassword 'password'
         }
     }
     compileSdkVersion 26
@@ -21,7 +21,6 @@ android {
         buildConfigField("String", "API_KEY", API_KEY)
         buildConfigField("String", "X_Mashape_Key", X_Mashape_Key)
         buildConfigField("String", "X_Mashape_Host", X_Mashape_Host)
-        buildConfigField("String", "Password", Password)
 
 
 
