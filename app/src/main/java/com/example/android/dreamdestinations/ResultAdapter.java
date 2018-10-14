@@ -50,7 +50,6 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.NumberView
     private int mNumberItems;
     private ItemClickListener mClickListener;
     private Context mContext;
-    private Cursor mCursor;
     private String mFlight;
     private String[] mParams;
 

@@ -21,6 +21,8 @@ public class Trip_Price implements Parcelable {
         this.timestamp = timestamp;
     }
 
+    public Trip_Price() {}
+
     public Trip_Price(int tripId, String price, String timestamp) {
         this.tripId = tripId;
         this.price = price;

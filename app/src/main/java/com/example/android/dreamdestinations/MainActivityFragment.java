@@ -118,7 +118,6 @@ public class MainActivityFragment extends Fragment {
                 int pos = airportArray.indexOf(parent.getItemAtPosition(position));
                 params[0] = airportIdArray[pos];
                 params[4] = String.valueOf(parent.getItemAtPosition(position));
-                Toast.makeText(getActivity(), params[0] + " " + parent.getItemAtPosition(position) +" departure c "  + airportIdArray[pos] + " " +pos,Toast.LENGTH_LONG).show();
                 mCallback.onButtonSelected(params);
                 InputMethodManager inputManager =
                         (InputMethodManager) getActivity().
@@ -144,7 +143,6 @@ public class MainActivityFragment extends Fragment {
                 int pos = airportArray.indexOf(parent.getItemAtPosition(position));
                 params[1] = airportIdArray[pos];
                 params[5] = String.valueOf(parent.getItemAtPosition(position));
-                Toast.makeText(getActivity(), params[1] + " arrival c "   + airportIdArray[pos] + " " + pos, Toast.LENGTH_LONG).show();
                 mCallback.onButtonSelected(params);
                 InputMethodManager inputManager =
                 (InputMethodManager) getActivity().
@@ -185,15 +183,23 @@ public class MainActivityFragment extends Fragment {
                                 else dy = String.valueOf(dayOfMonth);
 
                                  String dateString = year + "-" + mt + "-" + dy;
-                                 departEditText.setText(dateString);
-                                 params[2] = dateString;
-                                 Toast.makeText(getActivity(), params[2] + " departure d" ,Toast.LENGTH_LONG).show();
-                                 mCallback.onButtonSelected(params);
                                  SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                                 try {
                                     departDate = sdf.parse(dateString);
                                 } catch (ParseException e) {
                                     e.printStackTrace();
+                                }
+
+                                if(checkTodayDate(departDate)) {
+
+                                    departEditText.setText(dateString);
+                                    params[2] = dateString;
+                                    mCallback.onButtonSelected(params);
+
+                                } else {
+
+                                    Toast.makeText(getActivity(), "Please select a date no earlier than today",Toast.LENGTH_LONG).show();
+
                                 }
 
                             }
@@ -241,7 +247,6 @@ public class MainActivityFragment extends Fragment {
 
                                         arriveEditText.setText(dateString);
                                         params[3] = dateString;
-                                        Toast.makeText(getActivity(), params[3] + " arrival d",Toast.LENGTH_LONG).show();
                                         mCallback.onButtonSelected(params);
 
                                      } else {
@@ -265,9 +270,25 @@ public class MainActivityFragment extends Fragment {
         if (departDate != null && arrivalDate != null) {
 
             if(arrivalDate.before(departDate)){
-             return false;
-             } else {
-            return true;
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+
+            Toast.makeText(getActivity(), "Please select the departure date first.",Toast.LENGTH_LONG).show();
+            return false;
+        }
+    }
+
+    protected boolean checkTodayDate(Date departDate){
+
+        if (departDate != null) {
+
+            if(departDate.before(Calendar.getInstance().getTime())){
+                return false;
+            } else {
+                return true;
             }
         } else {
 

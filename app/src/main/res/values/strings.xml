@@ -23,6 +23,11 @@
     <string name="inbound_flight">Inbound Flight</string>
     <string name="my_saved_trips">My Saved Trips</string>
     <string name="detail_error_message">There is an error loading the trip activity.</string>
+    <string name="origin_airport">Origin Airport</string>
+    <string name="destination_airport">Destination Airport</string>
+    <string name="from_date">From Date</string>
+    <string name="to_date">To Date</string>
+    <string name="to_date_header">To\nDate</string>
     <string-array name="airports_array">
         <item>Aalborg</item>
         <item>Aalesund Vigra</item>
@@ -7850,6 +7855,10 @@
         <item>ZQW-sky</item>
         <item>ZKP-sky</item>
     </string-array>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="no_saved_trips">No Saved Trips</string>
+    <string name="delete_trip">Delete Trip</string>
 
 
 </resources>

@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'key0'
+            keyPassword Password
+            storeFile file('/Users/joycelin12/AndroidStudioProjects/DreamDestinations/app/keystore')
+            storePassword Password
+        }
+    }
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.example.android.dreamdestinations"
@@ -13,6 +21,9 @@ android {
         buildConfigField("String", "API_KEY", API_KEY)
         buildConfigField("String", "X_Mashape_Key", X_Mashape_Key)
         buildConfigField("String", "X_Mashape_Host", X_Mashape_Host)
+        buildConfigField("String", "Password", Password)
+
+
 
 
     }
@@ -20,12 +31,13 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
@@ -41,5 +53,4 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.0'
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.jjoe64:graphview:4.2.2'
-
 }

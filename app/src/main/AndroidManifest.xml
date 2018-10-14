@@ -32,6 +32,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity android:name=".TripActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
 
         <!-- Our ContentProvider -->
         <provider
@@ -39,7 +44,15 @@
             android:authorities="com.example.android.dreamdestinations"
             android:exported="true" />
 
-        <activity android:name=".TripActivity"></activity>
+        <receiver android:name=".DreamDestinationsWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/dream_destinations_widget_provider_info" />
+        </receiver>
     </application>
 
 </manifest>

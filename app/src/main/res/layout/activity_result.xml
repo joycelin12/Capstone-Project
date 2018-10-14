@@ -23,6 +23,7 @@
         android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/favbutton"/>
         app:layout_constraintBottom_toTopOf="@+id/fragment_result"/>
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"

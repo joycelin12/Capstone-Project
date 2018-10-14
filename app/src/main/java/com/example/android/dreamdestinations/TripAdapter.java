@@ -2,6 +2,7 @@ package com.example.android.dreamdestinations;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,13 @@ class TripAdapter extends RecyclerView.Adapter<TripAdapter.NumberViewHolder>  {
     @Override
     public void onBindViewHolder(TripAdapter.NumberViewHolder holder, int position) {
 
+         if (position > 0) {
+            holder.listItemOriginHeader.setVisibility(View.GONE);
+            holder.listItemDestHeader.setVisibility(View.GONE);
+            holder.listItemFromHeader.setVisibility(View.GONE);
+            holder.listItemToHeader.setVisibility(View.GONE);
+
+        }
         holder.listItemOriginName.setText(mTrip.get(position).getOrigin_name());
         holder.listItemDestName.setText(mTrip.get(position).getDest_name());
         holder.listItemFromDate.setText(mTrip.get(position).getFrom_date());
@@ -68,6 +76,10 @@ class TripAdapter extends RecyclerView.Adapter<TripAdapter.NumberViewHolder>  {
         TextView listItemDestName;
         TextView listItemFromDate;
         TextView listItemToDate;
+        TextView listItemOriginHeader;
+        TextView listItemDestHeader;
+        TextView listItemFromHeader;
+        TextView listItemToHeader;
 
         public NumberViewHolder(View itemView) {
             super(itemView);
@@ -76,6 +88,11 @@ class TripAdapter extends RecyclerView.Adapter<TripAdapter.NumberViewHolder>  {
             listItemDestName = (TextView) itemView.findViewById(R.id.dest_name);
             listItemFromDate = (TextView) itemView.findViewById(R.id.from_date);
             listItemToDate = (TextView) itemView.findViewById(R.id.to_date);
+            listItemOriginHeader = (TextView) itemView.findViewById(R.id.origin_name_header);
+            listItemDestHeader = (TextView) itemView.findViewById(R.id.dest_name_header);
+            listItemFromHeader = (TextView) itemView.findViewById(R.id.from_header);
+            listItemToHeader = (TextView) itemView.findViewById(R.id.to_header);
+
             itemView.setOnClickListener(this);
         }
 
@@ -90,6 +107,7 @@ class TripAdapter extends RecyclerView.Adapter<TripAdapter.NumberViewHolder>  {
         }
 
     }
+
 
     // convenience method for getting data at click position
     //Movie getItem(int id) {

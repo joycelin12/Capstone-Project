@@ -45,13 +45,9 @@ public class SearchTask extends AsyncTask<String , Void, String> {
     private ResultAdapter.ItemClickListener mClickListener;
     private ProgressDialog progress;
 
-    public SearchTask(Context context, ProgressDialog progress) { //, MovieAdapter.ItemClickListener itemClickListener, RecyclerView mMoviesList,
-        //MovieResponse movies){
+    public SearchTask(Context context, ProgressDialog progress) {
         this.context = context;
         this.progress = progress;
-        //this.mClickListener = itemClickListener;
-        //this.mMoviesList = mMoviesList;
-        //this.movies = movies;
 
 
     }
@@ -72,28 +68,14 @@ public class SearchTask extends AsyncTask<String , Void, String> {
 
             JSONString = test.runSearch(searchUrl.toString());
 
-            Log.e("search1", JSONString);
-            Log.e("search1 lenght", String.valueOf(JSONString.length()));
-
-
-            statusData = getStatusFromJson(context, JSONString);
-            Log.e("status1", statusData);
-
             Thread.sleep(60000);
 
             JSONString = test.runSearch(searchUrl.toString());
-            statusData = getStatusFromJson(context, JSONString);
 
-            Log.e("search2 lenght", String.valueOf(JSONString.length()));
-
-            Log.e("status2", statusData);
 
             return JSONString;
 
         } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        } catch (JSONException e) {
             e.printStackTrace();
             return null;
         } catch (InterruptedException e) {
@@ -105,69 +87,11 @@ public class SearchTask extends AsyncTask<String , Void, String> {
     // Override onPostExecute to display the results in the GridView
     @Override
     protected void onPostExecute(final String searchJsonStr) {
-      /*
 
-        try {
-            statusData = getStatusFromJson(context, searchJsonStr);
-            itinerariesJsonData  = getItinerariesFromJson(context, searchJsonStr);
-            legsJsonData  = getLegsFromJson(context, searchJsonStr);
-            segmentsData = getSegmentsFromJson(context, searchJsonStr);
-            carriersData = getCarriersFromJson(context, searchJsonStr);
-            agentsData = getAgentsFromJson(context, searchJsonStr);
-            placesData = getPlacesFromJson(context, searchJsonStr);
-            currenciesData = getCurrenciesFromJson(context, searchJsonStr);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-*/
-
-        /*
-        rAdapter = new ResultAdapter(itinerariesJsonData.size(), searchJsonStr, this.context);
-        rAdapter.setClickListener(this.mClickListener);
-        this.mResultsList.setAdapter(rAdapter); */
-        //Log.e("TAG2", statusData);
-/*
-        for(int i=0; i<itinerariesJsonData.size(); i++) {
-            Log.e("TAG", String.valueOf(itinerariesJsonData.get(i)));
-            Log.e("TAG2",itinerariesJsonData.get(i).getPricingOptions().get(i).getPrice());
-        }
-
-        for(int i=0; i<legsJsonData.size(); i++) {
-            Log.e("TAG", String.valueOf(legsJsonData.get(i)));
-        }*/
-
-       /* if (statusData != "UpdatesComplete"){
-            Toast.makeText(context, "not finished", Toast.LENGTH_LONG).show();
-
-        }
-        Runnable runTask = null;
-        final Handler[] handlerTask = new Handler[1];
-        final Runnable finalRunTask = runTask;
-        runTask = new Runnable() {
-            public void run() {
-                handlerTask[0] = new Handler();
-                handlerTask[0].postDelayed(this, 100);
-                Toast.makeText(context, "not finished", Toast.LENGTH_LONG).show();
-
-                if (statusData == "UpdatesComplete") {
-                    Toast.makeText(context, "finished", Toast.LENGTH_LONG).show();
-                    handlerTask[0].removeCallbacks(finalRunTask); */
                     progress.dismiss();
                     Intent intent = new Intent(this.context, ResultActivity.class);
                     ResultActivity.flight = searchJsonStr;
-                   // intent.putExtra(ResultActivity.ITINERARIES, searchJsonStr);
                     context.startActivity(intent);
-
-            /*    } else {
-                    Toast.makeText(context, " still not finished", Toast.LENGTH_LONG).show();
-
-
-                }
-            }
-        }; */
-
-        //new SearchTask(this).execute(session[7]);
 
     }
 }

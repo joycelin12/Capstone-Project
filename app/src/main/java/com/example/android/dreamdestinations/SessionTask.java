@@ -52,7 +52,7 @@ public class SessionTask extends AsyncTask<String[] , Void, String> {
 
             NetworkUtils test = new NetworkUtils();
               JSONString = test.runSession(sessionUrl.toString(), params[0]);
-            //JSONString = test.runSession(sessionUrl.toString());
+                      //JSONString = test.runSession(sessionUrl.toString());
 
             return JSONString;
 

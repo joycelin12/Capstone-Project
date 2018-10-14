@@ -1,9 +1,12 @@
 package com.example.android.dreamdestinations.Utilities;
 
+import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.android.dreamdestinations.BuildConfig;
+import com.example.android.dreamdestinations.MainActivity;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -175,12 +178,17 @@ public class NetworkUtils {
 
                 location = responseHeaders.value(i);
             }
+
             //for testing purposes
             //Log.e("Headers", responseHeaders.name(i) + ": " + responseHeaders.value(i));
         }
 
 
+
         if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
+
+
+          //Toast.makeText(context, "Please select the airports from the dropdown list.", Toast.LENGTH_LONG).show();
 
         return location;
 
