@@ -198,7 +198,7 @@ public class MainActivityFragment extends Fragment {
 
                                 } else {
 
-                                    Toast.makeText(getActivity(), "Please select a date no earlier than today",Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity(), R.string.select_earlier,Toast.LENGTH_LONG).show();
 
                                 }
 
@@ -251,7 +251,7 @@ public class MainActivityFragment extends Fragment {
 
                                      } else {
 
-                                        Toast.makeText(getActivity(), "Please choose a later arrival date than departure date.",Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getActivity(), R.string.select_later,Toast.LENGTH_LONG).show();
 
                                     }
                                 }
@@ -276,7 +276,7 @@ public class MainActivityFragment extends Fragment {
             }
         } else {
 
-            Toast.makeText(getActivity(), "Please select the departure date first.",Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), R.string.select_depart_first,Toast.LENGTH_LONG).show();
             return false;
         }
     }
@@ -292,7 +292,7 @@ public class MainActivityFragment extends Fragment {
             }
         } else {
 
-            Toast.makeText(getActivity(), "Please select the departure date first.",Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), R.string.select_depart_first ,Toast.LENGTH_LONG).show();
             return false;
         }
     }

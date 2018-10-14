@@ -7859,6 +7859,23 @@
     <string name="add_widget">Add widget</string>
     <string name="no_saved_trips">No Saved Trips</string>
     <string name="delete_trip">Delete Trip</string>
+    <string name="turn_on_location">Please turn on location services.</string>
+    <string name="select_departure">Please select a departure airport.</string>
+    <string name="select_arrival">Please select an arrival airport.</string>
+    <string name="select_all_info">Please fill in the departure airport, arrival airport and departure date.</string>
+    <string name="no_internet">There is no internet connection</string>
+    <string name="select_earlier">Please select a date no earlier than today</string>
+    <string name="select_departure_date">Please select a departure date.</string>
+    <string name="select_later">Please choose a later arrival date than departure date.</string>
+    <string name="select_depart_first">Please select the departure date first.</string>
+    <string name="click_popup_menu">Clicked popup menu item</string>
+    <string name="flight_title">Flight Details</string>
+    <string name="ok">OK</string>
+    <string name="search_flights">Searching for Flights</string>
+    <string name="wait">Please wait...</string>
+    <string name="select_delete_trip">Please select a trip to delete.</string>
+    <string name="trip_delete_success">Trip deleted successfully</string>
+    <string name="trip_not_deleted">Trip not deleted</string>
 
 
 </resources>

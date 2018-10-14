@@ -145,11 +145,9 @@ public class ResultActivity extends AppCompatActivity {
 
 
                     } else {
-                        Log.e("remove", "remove from database");
                         if (tripId > 0 ) {
 
                             if (removeTrip(tripId) ) {
-                                Log.e("remove", "remove from database successfully");
                                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                                 SharedPreferences.Editor editor = preferences.edit();
                                 editor.putString("params", "");
@@ -240,12 +238,7 @@ public class ResultActivity extends AppCompatActivity {
         //call insert to run an insert query on TABLE_NAME with content values
         Uri uri = getContentResolver().insert(FavouritesContract.FavouritesEntry.CONTENT_URI, cv);
 
-        Log.e("first", FavouritesContract.FavouritesEntry.CONTENT_URI.toString());
-        Log.e("insert", uri.toString());
-
         long id = ContentUris.parseId(uri);
-
-        Log.e("insert tripid", Long.toString(id));
 
         ContentValues cv2 = new ContentValues();
         //call put to insert name value with the key COLUMN_TITLE
@@ -253,11 +246,6 @@ public class ResultActivity extends AppCompatActivity {
         cv2.put(COLUMN_PRICE, pricing);
 
         Uri uri2 = getContentResolver().insert(FavouritesContract.FavouritesPriceEntry.CONTENT_URI, cv2);
-
-
-        Log.e("insert 2", FavouritesContract.FavouritesPriceEntry.CONTENT_URI.toString());
-        Log.e("insert", uri2.toString());
-
 
         return getContentResolver().insert(FavouritesContract.FavouritesPriceEntry.CONTENT_URI, cv2);
 

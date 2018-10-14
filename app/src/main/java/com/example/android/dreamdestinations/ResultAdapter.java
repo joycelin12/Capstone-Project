@@ -191,7 +191,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.NumberView
         View dialogView = li.inflate(R.layout.details, null);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 mContext);
-        alertDialogBuilder.setTitle("Flight Details");
+        alertDialogBuilder.setTitle(R.string.flight_title);
         // set prompts.xml to alertdialog builder
         alertDialogBuilder.setView(dialogView);
 
@@ -213,7 +213,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.NumberView
 
 
         // set dialog message
-        alertDialogBuilder.setCancelable(true).setPositiveButton("OK",new DialogInterface.OnClickListener() {
+        alertDialogBuilder.setCancelable(true).setPositiveButton(R.string.ok,new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog,
                                 int id) {
 

@@ -94,8 +94,6 @@ public class FavouritesProvider extends ContentProvider {
 
             case CODE_PRICE_WITH_ID: {
 
-                Log.e("CODE_price_WITH_ID", "CODE_price_WITH_ID");
-
                 String _ID = uri.getLastPathSegment();
                 String[] selectionArguments = new String[]{_ID};
 
@@ -146,17 +144,10 @@ public class FavouritesProvider extends ContentProvider {
 
         final SQLiteDatabase db = mHelper.getWritableDatabase();
 
-        Log.e("insert", "begin");
-
-
         switch (mUriMatcher.match(uri)) {
             case CODE_TRIP:
-                Log.e("insert", "in trip");
-                Log.e("insert 2", uri.toString());
-
 
                 long _id = db.insert(TABLE_NAME, null, values);
-                Log.e("long id ", Long.toString(_id));
 
             /* if _id is equal to -1 insertion failed */
                 if (_id != -1) {
@@ -170,9 +161,6 @@ public class FavouritesProvider extends ContentProvider {
                 return FavouritesContract.FavouritesEntry.buildTripUriWithId(Long.toString(_id));
 
             case CODE_PRICE:
-
-                Log.e("insert price ", "in price");
-                Log.e("insert 2", uri.toString());
 
                 long _id2 = db.insert(FavouritesContract.FavouritesPriceEntry.TABLE_NAME, null, values);
 
@@ -201,23 +189,15 @@ public class FavouritesProvider extends ContentProvider {
         String _ID = uri.getLastPathSegment();
         String[] selectionArguments = new String[]{_ID};
 
-        Log.e("delete", _ID);
-
         switch(mUriMatcher.match(uri)) {
 
             case CODE_TRIP_WITH_ID:
-
-                Log.e("delete", "in trip");
-
 
                 numRowsDeleted = db.delete(TABLE_NAME, FavouritesContract.FavouritesEntry._ID + "=?", selectionArguments);
 
                 break;
 
             case CODE_PRICE_WITH_ID:
-
-                Log.e("delete", "in price");
-
 
                 numRowsDeleted = db.delete(FavouritesContract.FavouritesPriceEntry.TABLE_NAME, COLUMN_TRIP_ID + "=?", selectionArguments);
 

@@ -37,15 +37,11 @@ public class PlaceTask extends AsyncTask<String[] , Void, ArrayList<Predictions>
 
 
 
-    public PlaceTask(Context context, View view, MainActivity activity, String status) { //, MovieAdapter.ItemClickListener itemClickListener, RecyclerView mMoviesList,
-                     //MovieResponse movies){
+    public PlaceTask(Context context, View view, MainActivity activity, String status) {
         this.context = context;
         this.view = view;
         this.activity = activity;
         this.status = status;
-        //this.mClickListener = itemClickListener;
-        //this.mMoviesList = mMoviesList;
-        //this.movies = movies;
 
     }
 
@@ -67,7 +63,6 @@ public class PlaceTask extends AsyncTask<String[] , Void, ArrayList<Predictions>
 
             ArrayList<Predictions> simpleJsonData= new ArrayList<>();
 
-
             simpleJsonData  = getPredictionsFromJson(context, JSONString);
 
             return simpleJsonData;
@@ -88,14 +83,6 @@ public class PlaceTask extends AsyncTask<String[] , Void, ArrayList<Predictions>
     @Override
     protected void onPostExecute(final ArrayList<Predictions> predictionsData) {
 
-       // String predictlist = "";
-
-        //for (Predictions in: predictionsData) {
-
-       //     predictlist =  predictlist + in.getCode() + " " +  in.getName() +"\n";
-        //}
-
-        //Log.e("Prediction", "this is " + predictlist);
 
         final TextView popup;
         final AutoCompleteTextView nearby;
@@ -123,7 +110,7 @@ public class PlaceTask extends AsyncTask<String[] , Void, ArrayList<Predictions>
         menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem item) {
                 Toast.makeText(context,
-                        "Clicked popup menu item " + item.getTitle(),
+                        context.getString(R.string.click_popup_menu) + item.getTitle(),
                         Toast.LENGTH_SHORT).show();
 
                 nearby.setText(item.getTitle());
@@ -133,10 +120,6 @@ public class PlaceTask extends AsyncTask<String[] , Void, ArrayList<Predictions>
         });
 
         menu.show();
-
-        //mAdapter = new MovieAdapter(NUM_LIST_ITEMS, movieData, this.context);
-        //mAdapter.setClickListener(this.mClickListener);
-        //this.mMoviesList.setAdapter(mAdapter);
 
     }
 }

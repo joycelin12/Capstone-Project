@@ -23,8 +23,8 @@ public class SessionTask extends AsyncTask<String[] , Void, String> {
 
     public SessionTask(Context context) {
         this.context = context;
-        progress = ProgressDialog.show(context, "Searching for Flights",
-                "Please wait...");
+        progress = ProgressDialog.show(context, context.getString(R.string.search_flights),
+                context.getString(R.string.wait));
 
 
     }

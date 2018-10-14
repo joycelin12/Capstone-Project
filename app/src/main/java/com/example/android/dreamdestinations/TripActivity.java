@@ -200,7 +200,7 @@ public class TripActivity extends AppCompatActivity implements TripAdapter.ItemC
     public void deleteTrip(View view) {
 
         if (tripId  < 0 ) {
-            Toast.makeText(this, "Please select a trip to delete.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.select_delete_trip, Toast.LENGTH_LONG).show();
 
         } else {
 
@@ -214,10 +214,10 @@ public class TripActivity extends AppCompatActivity implements TripAdapter.ItemC
 
 
             if (rows > 0 && rows2 > 0) {
-                Toast.makeText(this, "Trip deleted successfully", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.trip_delete_success, Toast.LENGTH_LONG).show();
 
             } else {
-                Toast.makeText(this, "Trip not deleted", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.trip_not_deleted, Toast.LENGTH_LONG).show();
 
             }
 

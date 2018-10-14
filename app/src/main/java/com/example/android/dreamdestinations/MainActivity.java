@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityFragm
 
             if (tripList.size() == 0) {
 
-                Toast.makeText(getApplicationContext(), "There is no saved trips.",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), getString(R.string.no_saved_trips),Toast.LENGTH_LONG).show();
 
             } else {
 
@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityFragm
                                             } catch (ActivityNotFoundException activityNotFound) {
 
                                                 // Now, You can catch the exception here and do what you want
-                                                Toast.makeText(getApplicationContext(), "Please turn on location services.",Toast.LENGTH_LONG).show();
+                                                Toast.makeText(getApplicationContext(), getString(R.string.turn_on_location),Toast.LENGTH_LONG).show();
                                             }
                                         }
 
@@ -327,20 +327,20 @@ public class MainActivity extends AppCompatActivity implements MainActivityFragm
 
        if (params != null) {
             if (params[0] == null) {
-                Toast.makeText(this, "Please select a departure airport.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.select_departure, Toast.LENGTH_LONG).show();
             } else if (params[1] == null) {
-                Toast.makeText(this, "Please select an arrival airport.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.select_arrival, Toast.LENGTH_LONG).show();
             } else if (params[2] == null) {
-                Toast.makeText(this, "Please select a departure date.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.select_departure_date, Toast.LENGTH_LONG).show();
             } else if (isOnline()) {
                 ResultActivity.params = params;
                 new SessionTask(this).execute(params);
             } else {
-                String message = "There is no internet connection";
+                String message = getString(R.string.no_internet);
                 Toast.makeText(this, message, Toast.LENGTH_LONG).show();
             }
         } else {
-            String message = "Please fill in the departure airport, arrival airport and departure date.";
+            String message = getString(R.string.select_all_info);
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         }
 
