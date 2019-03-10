@@ -1,9 +1,12 @@
 package com.example.android.dreamdestinations;
 
 import android.Manifest;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -30,6 +33,12 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.android.dreamdestinations.Model.Trip;
+import com.firebase.jobdispatcher.Constraint;
+import com.firebase.jobdispatcher.FirebaseJobDispatcher;
+import com.firebase.jobdispatcher.GooglePlayDriver;
+import com.firebase.jobdispatcher.Job;
+import com.firebase.jobdispatcher.Lifetime;
+import com.firebase.jobdispatcher.Trigger;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -39,6 +48,7 @@ import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 import static com.example.android.dreamdestinations.FavouritesContract.FavouritesEntry.COLUMN_DEST_ID;
 import static com.example.android.dreamdestinations.FavouritesContract.FavouritesEntry.COLUMN_DEST_NAME;
@@ -65,6 +75,10 @@ public class MainActivity extends AppCompatActivity implements MainActivityFragm
     private String[] params;
     ArrayList<Trip> tripList = new ArrayList<>();
     private SQLiteDatabase mDb;
+    ResponsePriceBroadcastReceiver broadcastReceiver;
+    final int periodicity = (int) TimeUnit.HOURS.toSeconds(24);
+    final int toleranceInterval = (int)TimeUnit.HOURS.toSeconds(1); // a small(ish) window of time when triggering is OK
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +104,36 @@ public class MainActivity extends AppCompatActivity implements MainActivityFragm
         // or start a new one.
         getSupportLoaderManager().initLoader(0, null, this);
 
+     /*  broadcastReceiver = new ResponsePriceBroadcastReceiver();
+        //Receive the toast
+        IntentFilter intentFilter= new IntentFilter();
+        intentFilter.addAction(AddPriceService.ACTION);
+        registerReceiver(broadcastReceiver,intentFilter);
+
+        Intent toastIntent= new Intent(getApplicationContext(), PriceBroadcastReceiver.class);
+        PendingIntent toastAlarmIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, toastIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+        long startTime=System.currentTimeMillis() + 86400000; //alarm starts immediately
+       */
+      // long startTime=System.currentTimeMillis() + 600000; //alarm starts immediately
+
+      //  AlarmManager backupAlarmMgr= (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+      //  backupAlarmMgr.setInexactRepeating(AlarmManager.RTC_WAKEUP,startTime,AlarmManager.INTERVAL_DAY,toastAlarmIntent); // alarm will repeat after every day
+      // backupAlarmMgr.setInexactRepeating(AlarmManager.RTC_WAKEUP,startTime,AlarmManager.INTERVAL_FIFTEEN_MINUTES,toastAlarmIntent); // alarm will repeat after every day
+
+        // Create a new dispatcher using the Google Play driver.
+        FirebaseJobDispatcher dispatcher = new FirebaseJobDispatcher(new GooglePlayDriver(this));
+
+        Job myJob = dispatcher.newJobBuilder()
+                .setService(AddPriceJobService.class) // the JobService that will be called
+                .setTag("addprice")// uniquely identifies the job
+                .setRecurring(true)
+                .setConstraints(
+                        Constraint.ON_UNMETERED_NETWORK)
+                .setTrigger(Trigger.executionWindow(periodicity, periodicity ))
+                .setLifetime(Lifetime.FOREVER)
+                .build();
+
+        dispatcher.mustSchedule(myJob);
 
     }
 

@@ -5,10 +5,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-   <!--  <com.jjoe64.graphview.GraphView
+     <com.jjoe64.graphview.GraphView
         android:layout_width="match_parent"
         android:layout_height="200dip"
-        android:id="@+id/graph" /> -->
+        android:id="@+id/graph"
+         />
 
      <Button
          android:layout_width="wrap_content"
@@ -17,6 +18,8 @@
          android:onClick="deleteTrip"
          android:visibility="gone"
          android:id="@+id/deleteButton"
+         app:layout_constraintTop_toBottomOf="@+id/graph"
+
          />
 
 

@@ -1,8 +1,12 @@
 package com.example.android.dreamdestinations;
 
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.ContentUris;
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -245,7 +249,7 @@ public class ResultActivity extends AppCompatActivity {
         cv2.put(COLUMN_TRIP_ID, (int) id);
         cv2.put(COLUMN_PRICE, pricing);
 
-        Uri uri2 = getContentResolver().insert(FavouritesContract.FavouritesPriceEntry.CONTENT_URI, cv2);
+       // Uri uri2 = getContentResolver().insert(FavouritesContract.FavouritesPriceEntry.CONTENT_URI, cv2);
 
         return getContentResolver().insert(FavouritesContract.FavouritesPriceEntry.CONTENT_URI, cv2);
 

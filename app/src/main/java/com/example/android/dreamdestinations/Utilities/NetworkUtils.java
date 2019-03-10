@@ -44,6 +44,8 @@ public class NetworkUtils {
     final static String PARAM_INC_KEY = "includeCarriers";
     final static String PARAM_EXC_KEY = "excludeCarriers";
     final static String PARAM_CONTENT_KEY = "Content-Type";
+    final static String PARAM_SORTTYPE_KEY = "sortType";
+    final static String PARAM_SORTORDER_KEY = "sortOrder";
     final static String CONTENT = "application/x-www-form-urlencoded";
     final static String PARAM_X_KEY = "X-Mashape-Key";
     final static String PARAM_HOST_KEY = "X-Mashape-Host";
@@ -203,6 +205,8 @@ public class NetworkUtils {
     public static URL buildSearchUrl(String params) {
         Uri builtUri = Uri.parse(SEARCH_BASE_URL).buildUpon()
                 .appendPath(params)
+                .appendQueryParameter(PARAM_SORTTYPE_KEY, "price")
+                .appendQueryParameter(PARAM_SORTORDER_KEY, "asc")
                 .appendQueryParameter(PARAM_INDEX_KEY, "0")
                 .appendQueryParameter(PARAM_SIZE_KEY, "10")
                 .build();

@@ -1,6 +1,5 @@
 package com.example.android.dreamdestinations;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 
@@ -10,31 +9,18 @@ import java.io.IOException;
 import java.net.URL;
 
 /**
- * Created by joycelin12 on 9/15/18.
+ * Created by joycelin12 on 10/23/18.
  */
 
-public class SessionTask extends AsyncTask<String[] , Void, String> {
+public class SessionBGTask extends AsyncTask<String[] , Void, String> {
 
     private Context context;
+    private int tripId;
     private String JSONString;
-    private ProgressDialog progress;
 
-    public SessionTask(Context context) {
+    public SessionBGTask(Context context, int tripId) {
         this.context = context;
-        progress = ProgressDialog.show(context, context.getString(R.string.search_flights),
-                context.getString(R.string.wait));
-
-
-    }
-
-   
-
-    @Override
-    protected void onPreExecute()
-    {
-        progress.setCancelable(false);
-        progress.isIndeterminate();
-        progress.show();
+        this.tripId = tripId;
     }
 
 
@@ -51,8 +37,8 @@ public class SessionTask extends AsyncTask<String[] , Void, String> {
         try {
 
             NetworkUtils test = new NetworkUtils();
-              JSONString = test.runSession(sessionUrl.toString(), params[0]);
-                      //JSONString = test.runSession(sessionUrl.toString());
+            JSONString = test.runSession(sessionUrl.toString(), params[0]);
+            //JSONString = test.runSession(sessionUrl.toString());
 
             return JSONString;
 
@@ -68,8 +54,7 @@ public class SessionTask extends AsyncTask<String[] , Void, String> {
 
 
         String[] search = location.split("/");
-        new SearchTask(context, progress).execute(search[7]);
-
+        new SearchBGTask(context, tripId).execute(search[7]);
 
 
     }

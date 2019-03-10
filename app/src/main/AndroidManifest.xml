@@ -53,6 +53,28 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/dream_destinations_widget_provider_info" />
         </receiver>
+        <service
+            android:name=".AddPriceService"
+            android:exported="false"/>
+
+        <service
+            android:exported="false"
+            android:name=".AddPriceJobService">
+            <intent-filter>
+                <action android:name="com.firebase.jobdispatcher.ACTION_EXECUTE"/>
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".ResponsePriceBroadcastReceiver"
+            android:process=":remote" >
+        </receiver>
+
+        <receiver
+            android:name=".PriceBroadcastReceiver"
+            android:process=":remote" >
+        </receiver>
+
     </application>
 
 </manifest>

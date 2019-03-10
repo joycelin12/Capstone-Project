@@ -196,7 +196,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.NumberView
         alertDialogBuilder.setView(dialogView);
 
         ArrayList<Itineraries> itinerariesJsonData  = getItinerariesFromJson(mContext, mFlight);
-         String outboundLegId = itinerariesJsonData.get(position).getOutboundLegId();
+        String outboundLegId = itinerariesJsonData.get(position).getOutboundLegId();
         String inboundLegId = itinerariesJsonData.get(position).getInboundLegId();
 
         String outSchedule = getSegments(outboundLegId);

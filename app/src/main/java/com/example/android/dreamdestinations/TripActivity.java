@@ -146,7 +146,7 @@ public class TripActivity extends AppCompatActivity implements TripAdapter.ItemC
             // looping through all rows and adding to list
             if (data.moveToFirst()) {
                 do {
-                    Log.e("data", "not null do while");
+                    //Log.e("data", "not null do while");
                     Trip_Price price = new Trip_Price();
                     price.setPrice(data.getString(data.getColumnIndex(COLUMN_PRICE)));
                     price.setTimestamp(data.getString(data.getColumnIndex(COLUMN_DATE)));
