@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.example.android.dreamdestinations.Model.Trip;
 import com.example.android.dreamdestinations.Model.Trip_Price;
+import com.jjoe64.graphview.GraphView;
 
 import org.json.JSONException;
 
@@ -112,6 +113,9 @@ public class TripActivity extends AppCompatActivity implements TripAdapter.ItemC
 
         Button button = findViewById(R.id.deleteButton);
         button.setVisibility(View.VISIBLE);
+
+    //    GraphView graph = findViewById(R.id.graph);
+      //  graph.setVisibility(View.VISIBLE);
 
 
     }
