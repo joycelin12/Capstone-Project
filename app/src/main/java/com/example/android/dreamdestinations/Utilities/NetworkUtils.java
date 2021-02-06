@@ -47,18 +47,21 @@ public class NetworkUtils {
     final static String PARAM_SORTTYPE_KEY = "sortType";
     final static String PARAM_SORTORDER_KEY = "sortOrder";
     final static String CONTENT = "application/x-www-form-urlencoded";
-    final static String PARAM_X_KEY = "X-Mashape-Key";
-    final static String PARAM_HOST_KEY = "X-Mashape-Host";
-    private static final String X_KEY = BuildConfig.X_Mashape_Key;
-    private static final String X_HOST = BuildConfig.X_Mashape_Host;
+    final static String PARAM_X_KEY = "X-RapidAPI-Key";
+    final static String PARAM_HOST_KEY = "X-RapidAPI-Host";
+    private static final String X_KEY = BuildConfig.X_RapidAPI_Key;
+    private static final String X_HOST = BuildConfig.X_RapidAPI_Host;
     private static final String API_KEY = BuildConfig.API_KEY;
 
     private final static String PLACE_BASE_URL =
-            "http://aviation-edge.com/api/public/nearby";
+        //    "http://aviation-edge.com/api/public/nearby";
+            "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0";
     private final static String SESSION_BASE_URL =
-            "https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/pricing/v1.0";
+        //    "https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/pricing/v1.0";
+            "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0";
     private static final String SEARCH_BASE_URL =
-            "https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/pricing/uk2/v1.0/";
+        //    "https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/pricing/uk2/v1.0/";
+            "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0";
     private static final String PARAM_INDEX_KEY = "pageIndex";
     private static final String PARAM_SIZE_KEY = "pageSize";
 
@@ -151,17 +154,17 @@ public class NetworkUtils {
                 .add(PARAM_ORIGIN_KEY, params[0])
                 .add(PARAM_DEST_KEY, params[1])
                 .add(PARAM_OUT_KEY, params[2])
-                .add(PARAM_IN_KEY, params[3])
+                .add(PARAM_IN_KEY, "?inboundpartialdate="+params[3])
                 /*.add(PARAM_ORIGIN_KEY, "SFO-sky")
                 .add(PARAM_DEST_KEY, "LHR-sky")
                 .add(PARAM_OUT_KEY, "2018-11-01")
-                .add(PARAM_IN_KEY, "2018-11-10")*/
+                .add(PARAM_IN_KEY, "2018-11-10")
                 .add(PARAM_CABIN_KEY, "economy")
                 .add(PARAM_ADULT_KEY, "1")
                 .add(PARAM_CHILD_KEY, "0")
                 .add(PARAM_INFANTS_KEY, "0")
                 .add(PARAM_INC_KEY, "")
-                .add(PARAM_EXC_KEY, "")
+                .add(PARAM_EXC_KEY, "") */
                 .build();
 
         okhttp3.Request request = new okhttp3.Request.Builder()

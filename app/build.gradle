@@ -19,8 +19,8 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "YOUR_ADMOB_APP_ID", YOUR_ADMOB_APP_ID)
         buildConfigField("String", "API_KEY", API_KEY)
-        buildConfigField("String", "X_Mashape_Key", X_Mashape_Key)
-        buildConfigField("String", "X_Mashape_Host", X_Mashape_Host)
+        buildConfigField("String", "X_RapidAPI_Key", X_RapidAPI_Key)
+        buildConfigField("String", "X_RapidAPI_Host", X_RapidAPI_Host)
 
 
 
