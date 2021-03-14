@@ -3,6 +3,7 @@ package com.example.android.dreamdestinations;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.example.android.dreamdestinations.Utilities.NetworkUtils;
 
@@ -69,6 +70,7 @@ public class SessionTask extends AsyncTask<String[] , Void, String> {
 
         String[] search = location.split("/");
         new SearchTask(context, progress).execute(search[7]);
+        Log.e("seach", search[7]);
 
 
 

@@ -1,12 +1,9 @@
 package com.example.android.dreamdestinations.Utilities;
 
-import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.example.android.dreamdestinations.BuildConfig;
-import com.example.android.dreamdestinations.MainActivity;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -30,13 +27,20 @@ public class NetworkUtils {
     final static String PARAM_DIST_KEY = "distance";
     final static String DIST ="150";
     
-    final static String PARAM_COUNTRY_KEY = "country";
+   /* final static String PARAM_COUNTRY_KEY = "country";
     final static String PARAM_CURRENCY_KEY = "currency";
     final static String PARAM_LOCALE_KEY = "locale";
     final static String PARAM_ORIGIN_KEY = "originPlace";
     final static String PARAM_DEST_KEY ="destinationPlace";
     final static String PARAM_OUT_KEY ="outboundDate";
-    final static String PARAM_IN_KEY ="inboundDate";
+    final static String PARAM_IN_KEY ="inboundDate"; */
+    final static String PARAM_COUNTRY_KEY = "";
+    final static String PARAM_CURRENCY_KEY = "";
+    final static String PARAM_LOCALE_KEY = "";
+    final static String PARAM_ORIGIN_KEY = "";
+    final static String PARAM_DEST_KEY ="";
+    final static String PARAM_OUT_KEY ="";
+    final static String PARAM_IN_KEY ="";
     final static String PARAM_CABIN_KEY = "cabinClass";
     final static String PARAM_ADULT_KEY = "adults";
     final static String PARAM_CHILD_KEY = "children";
@@ -49,19 +53,23 @@ public class NetworkUtils {
     final static String CONTENT = "application/x-www-form-urlencoded";
     final static String PARAM_X_KEY = "X-RapidAPI-Key";
     final static String PARAM_HOST_KEY = "X-RapidAPI-Host";
+    final static String PARAM_SHORT_API_KEY = "shortapikey";
+    final static String PARAM_S_API_KEY = "apiKey";
     private static final String X_KEY = BuildConfig.X_RapidAPI_Key;
     private static final String X_HOST = BuildConfig.X_RapidAPI_Host;
     private static final String API_KEY = BuildConfig.API_KEY;
+    private static final String SHORT_API_KEY = BuildConfig.SHORT_API_KEY;
 
-    private final static String PLACE_BASE_URL =
-        //    "http://aviation-edge.com/api/public/nearby";
-            "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0";
+    private final static String PLACE_BASE_URL = "http://aviation-edge.com/api/public/nearby";
     private final static String SESSION_BASE_URL =
         //    "https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/pricing/v1.0";
-            "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0";
+         //   "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/referral/v1.0/US/USD/en-US/JAX-sky/SIN-sky/2021-02-10/";
+        "https://partners.api.skyscanner.net/apiservices/pricing/v1.0";
+            //"https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/SFO-sky/JFK-sky/2021-03-01?inboundpartialdate=2021-03-10";
     private static final String SEARCH_BASE_URL =
-        //    "https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/pricing/uk2/v1.0/";
-            "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0";
+            //"https://skyscanner-skyscanner-flight-search-v1.p.mashape.com/apiservices/pricing/uk2/v1.0/";
+             "https://partners.api.skyscanner.net/apiservices/pricing/uk1/v1.0/";
+         //   "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0";
     private static final String PARAM_INDEX_KEY = "pageIndex";
     private static final String PARAM_SIZE_KEY = "pageSize";
 
@@ -147,24 +155,25 @@ public class NetworkUtils {
 
         String location ="";
 
-        RequestBody formBody = new FormBody.Builder()
-                .add(PARAM_COUNTRY_KEY, "US")
+       RequestBody formBody = new FormBody.Builder().add(PARAM_COUNTRY_KEY, "US")
                 .add(PARAM_CURRENCY_KEY, "USD")
                 .add(PARAM_LOCALE_KEY, "en-US")
                 .add(PARAM_ORIGIN_KEY, params[0])
                 .add(PARAM_DEST_KEY, params[1])
                 .add(PARAM_OUT_KEY, params[2])
-                .add(PARAM_IN_KEY, "?inboundpartialdate="+params[3])
-                /*.add(PARAM_ORIGIN_KEY, "SFO-sky")
+                .add(PARAM_IN_KEY, params[3])
+               /* .add(PARAM_SHORT_API_KEY, SHORT_API_KEY)
+                .add(PARAM_S_API_KEY, PARAM_SHORT_API_KEY)
+                .add(PARAM_ORIGIN_KEY, "SFO-sky")
                 .add(PARAM_DEST_KEY, "LHR-sky")
                 .add(PARAM_OUT_KEY, "2018-11-01")
-                .add(PARAM_IN_KEY, "2018-11-10")
+                .add(PARAM_IN_KEY, "2018-11-10") */
                 .add(PARAM_CABIN_KEY, "economy")
                 .add(PARAM_ADULT_KEY, "1")
                 .add(PARAM_CHILD_KEY, "0")
                 .add(PARAM_INFANTS_KEY, "0")
                 .add(PARAM_INC_KEY, "")
-                .add(PARAM_EXC_KEY, "") */
+                .add(PARAM_EXC_KEY, "")
                 .build();
 
         okhttp3.Request request = new okhttp3.Request.Builder()
@@ -185,7 +194,8 @@ public class NetworkUtils {
             }
 
             //for testing purposes
-            //Log.e("Headers", responseHeaders.name(i) + ": " + responseHeaders.value(i));
+            Log.e("Headers", responseHeaders.name(i) + ": " + responseHeaders.value(i));
+            //Log.e("url", formBody.toString());
         }
 
 
